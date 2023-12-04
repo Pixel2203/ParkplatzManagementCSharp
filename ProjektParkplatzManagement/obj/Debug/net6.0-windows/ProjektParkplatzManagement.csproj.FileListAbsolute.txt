@@ -1,0 +1,7 @@
+C:\Users\elias.liebelt\Source\Repos\ParkplatzManagementCSharp\ProjektParkplatzManagement\obj\Debug\net6.0-windows\ProjektParkplatzManagement.csproj.AssemblyReference.cache
+C:\Users\elias.liebelt\Source\Repos\ParkplatzManagementCSharp\ProjektParkplatzManagement\obj\Debug\net6.0-windows\ProjektParkplatzManagement.Form1.resources
+C:\Users\elias.liebelt\Source\Repos\ParkplatzManagementCSharp\ProjektParkplatzManagement\obj\Debug\net6.0-windows\ProjektParkplatzManagement.csproj.GenerateResource.cache
+C:\Users\elias.liebelt\Source\Repos\ParkplatzManagementCSharp\ProjektParkplatzManagement\obj\Debug\net6.0-windows\ProjektParkplatzManagement.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\elias.liebelt\Source\Repos\ParkplatzManagementCSharp\ProjektParkplatzManagement\obj\Debug\net6.0-windows\ProjektParkplatzManagement.AssemblyInfoInputs.cache
+C:\Users\elias.liebelt\Source\Repos\ParkplatzManagementCSharp\ProjektParkplatzManagement\obj\Debug\net6.0-windows\ProjektParkplatzManagement.AssemblyInfo.cs
+C:\Users\elias.liebelt\Source\Repos\ParkplatzManagementCSharp\ProjektParkplatzManagement\obj\Debug\net6.0-windows\ProjektParkplatzManagement.csproj.CoreCompileInputs.cache
