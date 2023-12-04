@@ -16,6 +16,10 @@ namespace ProjektParkplatzManagement
         public ParkplatzOverview()
         {
             InitializeComponent();
+
+            this.FormBorderStyle = FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+
         }
 
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
@@ -35,12 +39,59 @@ namespace ProjektParkplatzManagement
 
         private void panel2_Paint(object sender, PaintEventArgs e)
         {
-           // if (status = booked)
+            // if (status = booked)
         }
 
         private void label5_Click(object sender, EventArgs e)
         {
 
         }
+
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ParkplatzOverview_Load(object sender, EventArgs e)
+        {
+            dateTimePicker2.CustomFormat = "hh:mm";
+            dateTimePicker2.Format = DateTimePickerFormat.Custom;
+            dateTimePicker2.ShowUpDown = true;
+        }
+
+        private void label8_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label9_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void trackBar1_Scroll_1(object sender, EventArgs e)
+        {
+            label9.Text = trackBar1.Value * 30 + " Minuten gebucht";
+        }
+
+        private void radioButton3_CheckedChanged(object sender, EventArgs e)
+        {
+            deselectRadiobutton("radioButton3");
+        }
+
+        private void deselectRadiobutton(string Input)
+        {
+        }
+
+        private void groupBox7_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void radioButton4_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }

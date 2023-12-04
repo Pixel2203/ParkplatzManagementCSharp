@@ -16,5 +16,12 @@ namespace ProjektParkplatzManagement
             bool valid = controller.isValidUser(textBox1.Text, maskedTextBox1.Text);
             Debug.WriteLine("HELLO valid:" + valid);
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new ParkplatzOverview().ShowDialog();
+            this.Close();
+        }
     }
 }
