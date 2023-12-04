@@ -9,19 +9,25 @@ namespace ProjektParkplatzManagement.com
 {
     public class Benutzer
     {
-        private string hashedName;
-        private string hashedPasswort;
+        public string name;
+        public byte[] hashedPassword;
 
         public Benutzer(string name, string password)
         {
-            this.hashedName = erzeugeHashWert(name);
-            this.hashedPasswort = erzeugeHashWert(password);
+            this.name = name;
+            this.hashedPassword = erzeugeHashWert(password);
         }
 
-        private string erzeugeHashWert()
+        private byte[] erzeugeHashWert(string unhashed)
         {
-            var sha1 = new SHA1CryptoServiceProvider();
-            var sha1data = sha1.ComputeHash(data);
+            SHA1CryptoServiceProvider sha1 = new SHA1CryptoServiceProvider();
+            byte[] hashedString = sha1.ComputeHash(Encoding.ASCII.GetBytes(unhashed));
+            return hashedString;
+        }
+        public bool isPassword(string password)
+        {
+            byte[] hashedPassword = this.erzeugeHashWert(password);
+            return this.hashedPassword == hashedPassword;
         }
     }
 }

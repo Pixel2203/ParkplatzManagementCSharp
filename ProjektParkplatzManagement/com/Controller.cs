@@ -12,13 +12,22 @@ namespace ProjektParkplatzManagement.com
         public Controller()
         {
             this.managementData = new ManagementData();
-            Benutzer[] benutzer = generiereBenutzer();
-            this.managementData.Benutzer = benutzer;
+            this.managementData.Benutzer = generiereBenutzer();
         }
 
         private Benutzer[] generiereBenutzer()
         {
             return new Benutzer[] { new Benutzer("Marvin Kaiser", "1234"), new Benutzer("Elias Liebelt", "56789")};
+        }
+        public bool isValidUser(string name, string password)
+        {
+            Benutzer loginUser = new Benutzer(name, password);
+            Benutzer? foundUser = managementData.getUserByName(name); 
+            if(foundUser == null)
+            {
+                return false;
+            }
+            return foundUser.hashedPassword.SequenceEqual(loginUser.hashedPassword);
         }
     }
 }
