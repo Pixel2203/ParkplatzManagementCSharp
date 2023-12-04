@@ -55,6 +55,7 @@
             panel6 = new Panel();
             label8 = new Label();
             radioButton6 = new RadioButton();
+            button1 = new Button();
             panel2.SuspendLayout();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)BookingLength).BeginInit();
@@ -118,11 +119,11 @@
             // BookingLength
             // 
             BookingLength.LargeChange = 2;
-            BookingLength.Location = new Point(151, 380);
+            BookingLength.Location = new Point(61, 374);
             BookingLength.Maximum = 8;
             BookingLength.Minimum = 1;
             BookingLength.Name = "BookingLength";
-            BookingLength.Size = new Size(507, 45);
+            BookingLength.Size = new Size(414, 45);
             BookingLength.TabIndex = 3;
             BookingLength.Value = 1;
             // 
@@ -356,11 +357,21 @@
             radioButton6.Text = "Parkplatz Wählen";
             radioButton6.UseVisualStyleBackColor = true;
             // 
+            // button1
+            // 
+            button1.Location = new Point(564, 374);
+            button1.Name = "button1";
+            button1.Size = new Size(162, 45);
+            button1.TabIndex = 10;
+            button1.Text = "Parkplatz + ID + buchen";
+            button1.UseVisualStyleBackColor = true;
+            // 
             // ParkplatzOverview
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(button1);
             Controls.Add(groupBox6);
             Controls.Add(groupBox5);
             Controls.Add(groupBox4);
@@ -424,5 +435,6 @@
         private Panel panel6;
         private Label label8;
         private RadioButton radioButton6;
+        private Button button1;
     }
 }
