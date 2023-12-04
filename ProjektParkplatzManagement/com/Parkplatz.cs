@@ -6,11 +6,18 @@ using System.Threading.Tasks;
 
 namespace ProjektParkplatzManagement.com
 {
-    public class Parkplatz
+    public abstract class Parkplatz
     {
-        private byte status;
-        private byte id;
-
+        protected byte status;
+        protected byte id;
+        protected float costs;
+        protected float parkGebühr;
+        public Parkplatz(byte status, byte id)
+        {
+            this.status = status;
+            this.id = id;
+            this.costs = 0;
+        }
 
         public string getStatusInfo()
         {
@@ -32,5 +39,11 @@ namespace ProjektParkplatzManagement.com
         {
             return id;
         }
+        public float getCosts()
+        {
+            return this.costs;
+        }
+        public abstract void calculateCosts(int parkzeitInMinuten);
+
     }
 }

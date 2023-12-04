@@ -12,12 +12,23 @@ namespace ProjektParkplatzManagement.com
         public Controller()
         {
             this.managementData = new ManagementData();
-            this.managementData.Benutzer = generiereBenutzer();
+            registerUsers();
+            registerParkingLots();
         }
 
-        private Benutzer[] generiereBenutzer()
+        private void registerUsers()
         {
-            return new Benutzer[] { new Benutzer("Marvin Kaiser", "1234"), new Benutzer("Elias Liebelt", "56789")};
+            this.managementData.registerUser(new Benutzer("Marvin Kaiser", "1234"));
+            this.managementData.registerUser(new Benutzer("Elias Liebelt", "56789"));
+        }
+        private void registerParkingLots()
+        {
+            this.managementData.registerParkingLot(new Parkplatz(0, 1));
+            this.managementData.registerParkingLot(new Parkplatz(0, 2));
+            this.managementData.registerParkingLot(new Parkplatz(0, 3));
+            this.managementData.registerParkingLot(new Parkplatz(0, 4));
+            this.managementData.registerParkingLot(new Parkplatz(0, 5));
+            this.managementData.registerParkingLot(new Parkplatz(0, 6));
         }
         public bool isValidUser(string name, string password)
         {

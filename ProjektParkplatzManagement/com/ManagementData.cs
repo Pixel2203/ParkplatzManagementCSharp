@@ -10,11 +10,18 @@ namespace ProjektParkplatzManagement.com
 {
     public class ManagementData
     {
-        public Benutzer[] Benutzer { get; set; }
+        private List<Benutzer> users;
+        private List<Parkplatz> parkingLots;
+
+        public ManagementData()
+        {
+            this.users = new List<Benutzer>();
+            this.parkingLots = new List<Parkplatz>();
+        }
 
         public Benutzer? getUserByName(string name)
         {
-            foreach(Benutzer user in Benutzer)
+            foreach(Benutzer user in users)
             {
                 if(user.name.ToUpper().Equals(name.ToUpper()))
                 {
@@ -22,6 +29,27 @@ namespace ProjektParkplatzManagement.com
                 }
             }
             return null;
+        }
+        public void registerUser(Benutzer user)
+        {
+            if(user == null)
+            {
+                return;
+            }
+            this.users.Add(user);
+        }
+        public void registerParkingLot(Parkplatz parkplatz)
+        {
+            if(parkplatz == null)
+            {
+                return;
+            }
+            this.parkingLots.Add(parkplatz);
+        }
+
+        public List<Parkplatz> getParkingLots()
+        {
+            return parkingLots;
         }
     }
 }
