@@ -8,14 +8,16 @@ namespace ProjektParkplatzManagement.com
 {
     public class StandartParkplatz : Parkplatz
     {
-        public StandartParkplatz(byte status, byte id, float parkGebühr) : base(status, id)
+        public StandartParkplatz(byte status, byte id, float parkGebühr) : base(status, id,parkGebühr)
         {
-            this.parkGebühr = parkGebühr;
+        }
+        public StandartParkplatz(byte id, float parkGebühr) : base(0, id,parkGebühr)
+        {
         }
 
         public override void calculateCosts(int parkzeitInMInuten)
         {
-            this.costs = parkGebühr * parkzeitInMInuten;
+            this.costs = getParkGebühr() * parkzeitInMInuten;
         }
     }
 }

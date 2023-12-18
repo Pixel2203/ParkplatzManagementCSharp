@@ -11,14 +11,18 @@ namespace ProjektParkplatzManagement.com
         private readonly float strompreisProMinute;
         private readonly float enegryFlowPerMinute;
         private float verbrauchterStrom;
-        public EParkplatz(byte status, byte id) : base(status, id)
+        public EParkplatz(byte status, byte id, float parkGebühr) : base(status, id, parkGebühr)
         {
+        }
+        public EParkplatz(byte id, float parkGebühr) : base(0, id, parkGebühr)
+        {
+
         }
 
         public override void calculateCosts(int parkzeitInMinuten)
         {
             calculateUsedEnergy(parkzeitInMinuten, this.enegryFlowPerMinute);
-            this.costs = this.parkGebühr * parkzeitInMinuten;
+            this.costs = this.getParkGebühr() * parkzeitInMinuten;
             this.costs += this.verbrauchterStrom * strompreisProMinute;
         }
         private void calculateUsedEnergy(float parkzeitInMinuten, float energyFlowPerMinute )
