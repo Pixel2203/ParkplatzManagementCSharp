@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\marvin.kaiser\\source\\repos\\ProjektParkplatzManagement\\ProjektParkplatzManagement\\ProjektParkplatzManagement.csproj": {}
+    "C:\\Users\\elias.liebelt\\Source\\Repos\\ParkplatzManagementCSharp\\ProjektParkplatzManagement\\ProjektParkplatzManagement.csproj": {}
   },
   "projects": {
-    "C:\\Users\\marvin.kaiser\\source\\repos\\ProjektParkplatzManagement\\ProjektParkplatzManagement\\ProjektParkplatzManagement.csproj": {
+    "C:\\Users\\elias.liebelt\\Source\\Repos\\ParkplatzManagementCSharp\\ProjektParkplatzManagement\\ProjektParkplatzManagement.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\marvin.kaiser\\source\\repos\\ProjektParkplatzManagement\\ProjektParkplatzManagement\\ProjektParkplatzManagement.csproj",
+        "projectUniqueName": "C:\\Users\\elias.liebelt\\Source\\Repos\\ParkplatzManagementCSharp\\ProjektParkplatzManagement\\ProjektParkplatzManagement.csproj",
         "projectName": "ProjektParkplatzManagement",
-        "projectPath": "C:\\Users\\marvin.kaiser\\source\\repos\\ProjektParkplatzManagement\\ProjektParkplatzManagement\\ProjektParkplatzManagement.csproj",
-        "packagesPath": "C:\\Users\\marvin.kaiser\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\marvin.kaiser\\source\\repos\\ProjektParkplatzManagement\\ProjektParkplatzManagement\\obj\\",
+        "projectPath": "C:\\Users\\elias.liebelt\\Source\\Repos\\ParkplatzManagementCSharp\\ProjektParkplatzManagement\\ProjektParkplatzManagement.csproj",
+        "packagesPath": "C:\\Users\\elias.liebelt\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\elias.liebelt\\Source\\Repos\\ParkplatzManagementCSharp\\ProjektParkplatzManagement\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\marvin.kaiser\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\elias.liebelt\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -64,7 +64,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     }

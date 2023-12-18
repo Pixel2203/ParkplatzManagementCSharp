@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProjektParkplatzManagement.com;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -100,6 +101,7 @@ namespace ProjektParkplatzManagement
 
         private void button1_Click(object sender, EventArgs e)
         {
+            int Stunden = 0;
             UpdateSliderValue();
             if (comboBox1.SelectedItem != null)
             {
@@ -115,7 +117,7 @@ namespace ProjektParkplatzManagement
             {
                 // Abrufen und Anzeigen des ausgewählten Inhalts
                 string ausgewaehlteZeit = comboBox2.SelectedItem.ToString();
-                int Stunden = int.Parse(ausgewaehlteZeit);
+                Stunden = int.Parse(ausgewaehlteZeit);
                 Debug.WriteLine("Ausgewählter Inhalt: " + Stunden);
             }
             else
@@ -124,7 +126,7 @@ namespace ProjektParkplatzManagement
             }
             Debug.WriteLine(translatedbookingduration);
 
-            //Funktion get Status(ausgewaelterparkplatz)
+            Form1.controller.bookParkingLot(comboBox1.SelectedIndex, dateTimePicker1.Value, Stunden, translatedbookingduration);
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
