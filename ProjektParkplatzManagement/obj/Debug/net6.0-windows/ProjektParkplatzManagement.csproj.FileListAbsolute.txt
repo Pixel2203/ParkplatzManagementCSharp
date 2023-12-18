@@ -56,4 +56,8 @@ C:\Users\marvin.kaiser\source\repos\ProjektParkplatzManagement\ProjektParkplatzM
 C:\Users\marvin.kaiser\source\repos\ProjektParkplatzManagement\ProjektParkplatzManagement\obj\Debug\net6.0-windows\ProjektParkplatzManagement.pdb
 C:\Users\marvin.kaiser\source\repos\ProjektParkplatzManagement\ProjektParkplatzManagement\obj\Debug\net6.0-windows\ProjektParkplatzManagement.genruntimeconfig.cache
 C:\Users\marvin.kaiser\source\repos\ProjektParkplatzManagement\ProjektParkplatzManagement\obj\Debug\net6.0-windows\ref\ProjektParkplatzManagement.dll
+<<<<<<< HEAD
 C:\Users\elias.liebelt\Source\Repos\ParkplatzManagementCSharp\ProjektParkplatzManagement\obj\Debug\net6.0-windows\ProjektParkplatzManagement.Buchung.resources
+=======
+C:\Users\marvin.kaiser\source\repos\ProjektParkplatzManagement\ProjektParkplatzManagement\obj\Debug\net6.0-windows\ProjektParkplatzManagement.Buchung.resources
+>>>>>>> 9f9e17b7a1bf71d577b570e29f9258131c6745d7

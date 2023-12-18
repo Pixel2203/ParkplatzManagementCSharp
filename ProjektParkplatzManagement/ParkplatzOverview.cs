@@ -95,8 +95,21 @@ namespace ProjektParkplatzManagement
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            if (comboBox1.SelectedItem != null)
+            {
+                // Abrufen und Anzeigen des ausgewählten Inhalts
+                string ausgewaehlterInhalt = comboBox1.SelectedItem.ToString();
+                Console.WriteLine("Ausgewählter Inhalt: " + ausgewaehlterInhalt);
+            }
+            else
+            {
+                Console.WriteLine("Es wurde nichts ausgewählt.");
+            }
         }
 
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
