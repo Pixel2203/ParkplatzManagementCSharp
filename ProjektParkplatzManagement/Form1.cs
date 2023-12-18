@@ -23,5 +23,10 @@ namespace ProjektParkplatzManagement
             new ParkplatzOverview().ShowDialog();
             this.Close();
         }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

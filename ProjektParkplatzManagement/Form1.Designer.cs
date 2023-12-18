@@ -105,6 +105,7 @@
             Margin = new Padding(3, 2, 3, 2);
             Name = "Form1";
             Text = "Anmelden";
+            Load += Form1_Load;
             ResumeLayout(false);
             PerformLayout();
         }
