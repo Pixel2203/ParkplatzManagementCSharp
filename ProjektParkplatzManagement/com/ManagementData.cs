@@ -4,7 +4,7 @@ using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
-using Tweetinvi.Core.Extensions;
+//using Tweetinvi.Core.Extensions;
 
 namespace ProjektParkplatzManagement.com
 {
@@ -12,6 +12,7 @@ namespace ProjektParkplatzManagement.com
     {
         private List<Benutzer> users;
         private List<Parkplatz> parkingLots;
+        public readonly float parkGebühr = 1;
 
         public ManagementData()
         {

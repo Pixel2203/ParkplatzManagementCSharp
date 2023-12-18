@@ -23,12 +23,12 @@ namespace ProjektParkplatzManagement.com
         }
         private void registerParkingLots()
         {
-            this.managementData.registerParkingLot(new Parkplatz(0, 1));
-            this.managementData.registerParkingLot(new Parkplatz(0, 2));
-            this.managementData.registerParkingLot(new Parkplatz(0, 3));
-            this.managementData.registerParkingLot(new Parkplatz(0, 4));
-            this.managementData.registerParkingLot(new Parkplatz(0, 5));
-            this.managementData.registerParkingLot(new Parkplatz(0, 6));
+            for(int i = 0; i < 5; i++)
+            {
+                this.managementData.registerParkingLot(new StandartParkplatz((byte)i, this.managementData.parkGebühr));
+            }
+            this.managementData.registerParkingLot(new EParkplatz(0, this.managementData.parkGebühr));
+
         }
         public bool isValidUser(string name, string password)
         {

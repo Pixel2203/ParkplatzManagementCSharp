@@ -20,6 +20,7 @@ namespace ProjektParkplatzManagement.com
 
         private byte[] erzeugeHashWert(string unhashed)
         {
+            
             SHA1CryptoServiceProvider sha1 = new SHA1CryptoServiceProvider();
             byte[] hashedString = sha1.ComputeHash(Encoding.ASCII.GetBytes(unhashed));
             return hashedString;

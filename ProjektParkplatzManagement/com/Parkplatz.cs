@@ -11,8 +11,8 @@ namespace ProjektParkplatzManagement.com
         protected byte status;
         protected byte id;
         protected float costs;
-        protected float parkGebühr;
-        public Parkplatz(byte status, byte id)
+        private float parkGebühr;
+        public Parkplatz(byte status, byte id, float parkGebühr)
         {
             this.status = status;
             this.id = id;
@@ -44,6 +44,9 @@ namespace ProjektParkplatzManagement.com
             return this.costs;
         }
         public abstract void calculateCosts(int parkzeitInMinuten);
-
+        protected float getParkGebühr()
+        {
+            return this.parkGebühr;
+        }
     }
 }
