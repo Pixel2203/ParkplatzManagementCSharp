@@ -51,7 +51,6 @@ namespace ProjektParkplatzManagement
         {
 
         }
-<<<<<<< HEAD
 
         private void ParkplatzOverview_Load(object sender, EventArgs e)
         {
@@ -94,7 +93,5 @@ namespace ProjektParkplatzManagement
 
         }
 
-=======
->>>>>>> 5a95dcce324566ff0fc88936f1f552a5703a39dd
     }
 }
