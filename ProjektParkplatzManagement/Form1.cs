@@ -28,6 +28,7 @@ namespace ProjektParkplatzManagement
                 openAdminPanel();
             }else
             {
+                openOverview();
                 Debug.WriteLine("Unzureichende Rechtegruppe, um das Adminpanel zu öffnen!");
             }
             // Open Admin Panel
@@ -44,6 +45,10 @@ namespace ProjektParkplatzManagement
         }
 
         private void button2_Click(object sender, EventArgs e)
+        {
+            openOverview();
+        }
+        private void openOverview()
         {
             this.Hide();
             new ParkplatzOverview().ShowDialog();
