@@ -33,7 +33,37 @@ namespace ProjektParkplatzManagement.com
         }
         public void bookParkingLot(int parkplatzIndex, DateTime selectedDate,  int time, int duration)
         {
+            Benutzer? currentUser = this.managementData.getCurrentUser();
+            if(currentUser == null)
+            {
+                return;
+            }
+            if (currentUser.isBanned())
+            {
+                return;
+            }
+            Buchung booking = new Buchung(selectedDate, time, duration, parkplatzIndex, currentUser);
+            bool isValid = isBookingValid(booking);
+            if (isValid)
+            {
+                this.managementData.addBooking(booking);
+            }
+        }
 
+        private bool isBookingValid(Buchung buchung)
+        {
+            DateTime now = DateTime.Now;
+            int compared = DateTime.Compare(now, buchung.getStartDatum());
+            if(compared < 0) { return false; }
+
+            foreach(Buchung cBuchung in managementData.getBookins())
+            {
+                if (cBuchung.interfereresWithBooking(buchung))
+                {
+                    return false;
+                }
+            }
+            return true;
         }
     }
 }

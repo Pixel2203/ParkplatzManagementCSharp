@@ -12,18 +12,14 @@ namespace ProjektParkplatzManagement.com
         public string name;
         public byte[] hashedPassword;
         private Permissions permission;
+        private bool banned;
 
         public Benutzer(string name, string password, Permissions permission)
         {
             this.name = name;
             this.hashedPassword = erzeugeHashWert(password);
-            if(permission != null)
-            {
-                this.permission = permission;
-            }else
-            {
-                this.permission = Permissions.DEFAULT;
-            }
+            this.permission = permission;
+            this.banned = false;
            
         }
 
@@ -42,6 +38,18 @@ namespace ProjektParkplatzManagement.com
         public Permissions getPermissions()
         {
             return this.permission;
+        }
+        public void ban()
+        {
+            this.banned = true;
+        }
+        public void unban()
+        {
+            this.banned = false;
+        }
+        public bool isBanned()
+        {
+            return this.banned;
         }
     }
 }

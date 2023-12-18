@@ -12,13 +12,16 @@ namespace ProjektParkplatzManagement.com
     {
         private List<Benutzer> users;
         private List<Parkplatz> parkingLots;
+        private List<Buchung> bookings;
         public readonly float parkGebühr = 1;
-        private Benutzer currentUser;
+        private Benutzer? currentUser;
 
         public ManagementData()
         {
             this.users = new List<Benutzer>();
             this.parkingLots = new List<Parkplatz>();
+            this.bookings = new List<Buchung>();
+            this.currentUser = null;
         }
 
         public Benutzer? getUserByCredentials(string name, string password)
@@ -61,9 +64,17 @@ namespace ProjektParkplatzManagement.com
         {
             this.currentUser = user;
         }
-        public Benutzer getCurrentUser()
+        public Benutzer? getCurrentUser()
         {
             return this.currentUser;
+        }
+        public void addBooking(Buchung buchung)
+        {
+            this.bookings.Add(buchung);
+        }
+        public List<Buchung> getBookins()
+        {
+            return this.bookings;
         }
     }
 }
