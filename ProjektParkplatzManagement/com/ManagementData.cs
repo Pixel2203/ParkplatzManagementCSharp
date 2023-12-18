@@ -13,6 +13,7 @@ namespace ProjektParkplatzManagement.com
         private List<Benutzer> users;
         private List<Parkplatz> parkingLots;
         public readonly float parkGebühr = 1;
+        private Benutzer currentUser;
 
         public ManagementData()
         {
@@ -20,12 +21,16 @@ namespace ProjektParkplatzManagement.com
             this.parkingLots = new List<Parkplatz>();
         }
 
-        public Benutzer? getUserByName(string name)
+        public Benutzer? getUserByCredentials(string name, string password)
         {
             foreach(Benutzer user in users)
             {
                 if(user.name.ToUpper().Equals(name.ToUpper()))
                 {
+                    if (!user.isPassword(password))
+                    {
+                        return null;
+                    }
                     return user;
                 }
             }
@@ -51,6 +56,14 @@ namespace ProjektParkplatzManagement.com
         public List<Parkplatz> getParkingLots()
         {
             return parkingLots;
+        }
+        public void setLoggedInUser(Benutzer user)
+        {
+            this.currentUser = user;
+        }
+        public Benutzer getCurrentUser()
+        {
+            return this.currentUser;
         }
     }
 }

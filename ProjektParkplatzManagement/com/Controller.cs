@@ -8,7 +8,7 @@ namespace ProjektParkplatzManagement.com
 {
     public class Controller
     {
-        private ManagementData managementData;
+        public ManagementData managementData;
         public Controller()
         {
             this.managementData = new ManagementData();
@@ -18,8 +18,9 @@ namespace ProjektParkplatzManagement.com
 
         private void registerUsers()
         {
-            this.managementData.registerUser(new Benutzer("Marvin Kaiser", "1234"));
-            this.managementData.registerUser(new Benutzer("Elias Liebelt", "56789"));
+
+            this.managementData.registerUser(new Benutzer("Marvin Kaiser", "1234", Permissions.ADMIN));
+            this.managementData.registerUser(new Benutzer("Elias Liebelt", "56789", Permissions.DEFAULT));
         }
         private void registerParkingLots()
         {
@@ -30,15 +31,9 @@ namespace ProjektParkplatzManagement.com
             this.managementData.registerParkingLot(new EParkplatz(0, this.managementData.parkGebühr));
 
         }
-        public bool isValidUser(string name, string password)
+        public void bookParkingLot(int parkplatzIndex, DateTime selectedDate,  int time, int duration)
         {
-            Benutzer loginUser = new Benutzer(name, password);
-            Benutzer? foundUser = managementData.getUserByName(name); 
-            if(foundUser == null)
-            {
-                return false;
-            }
-            return foundUser.hashedPassword.SequenceEqual(loginUser.hashedPassword);
+
         }
     }
 }

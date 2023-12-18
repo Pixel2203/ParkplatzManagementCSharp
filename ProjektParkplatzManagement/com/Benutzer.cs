@@ -11,11 +11,20 @@ namespace ProjektParkplatzManagement.com
     {
         public string name;
         public byte[] hashedPassword;
+        private Permissions permission;
 
-        public Benutzer(string name, string password)
+        public Benutzer(string name, string password, Permissions permission)
         {
             this.name = name;
             this.hashedPassword = erzeugeHashWert(password);
+            if(permission != null)
+            {
+                this.permission = permission;
+            }else
+            {
+                this.permission = Permissions.DEFAULT;
+            }
+           
         }
 
         private byte[] erzeugeHashWert(string unhashed)
@@ -28,7 +37,11 @@ namespace ProjektParkplatzManagement.com
         public bool isPassword(string password)
         {
             byte[] hashedPassword = this.erzeugeHashWert(password);
-            return this.hashedPassword == hashedPassword;
+            return this.hashedPassword.SequenceEqual(hashedPassword);
+        }
+        public Permissions getPermissions()
+        {
+            return this.permission;
         }
     }
 }

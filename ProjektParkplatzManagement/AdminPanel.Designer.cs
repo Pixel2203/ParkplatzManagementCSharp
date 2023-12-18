@@ -1,6 +1,6 @@
 ﻿namespace ProjektParkplatzManagement
 {
-    partial class Buchung
+    partial class AdminPanel
     {
         /// <summary>
         /// Required designer variable.
@@ -28,43 +28,68 @@
         /// </summary>
         private void InitializeComponent()
         {
+            button1 = new Button();
+            button2 = new Button();
             label1 = new Label();
             label2 = new Label();
             SuspendLayout();
             // 
+            // button1
+            // 
+            button1.Location = new Point(79, 149);
+            button1.Name = "button1";
+            button1.Size = new Size(277, 152);
+            button1.TabIndex = 0;
+            button1.Text = "Buchungsmanager";
+            button1.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            button2.Location = new Point(450, 149);
+            button2.Name = "button2";
+            button2.Size = new Size(277, 152);
+            button2.TabIndex = 1;
+            button2.Text = "Benutzermanager";
+            button2.UseVisualStyleBackColor = true;
+            // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(12, 35);
+            label1.Location = new Point(79, 31);
             label1.Name = "label1";
-            label1.Size = new Size(40, 20);
-            label1.TabIndex = 0;
-            label1.Text = "Preis";
+            label1.Size = new Size(92, 20);
+            label1.TabIndex = 2;
+            label1.Text = "Wilkommen,";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(58, 35);
+            label2.Location = new Point(79, 63);
             label2.Name = "label2";
-            label2.Size = new Size(40, 20);
-            label2.TabIndex = 1;
-            label2.Text = "Preis";
+            label2.Size = new Size(92, 20);
+            label2.TabIndex = 3;
+            label2.Text = "USER_NAME";
             // 
-            // Buchung
+            // AdminPanel
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(349, 450);
+            ClientSize = new Size(800, 450);
             Controls.Add(label2);
             Controls.Add(label1);
-            Name = "Buchung";
-            Text = "Buchung";
+            Controls.Add(button2);
+            Controls.Add(button1);
+            Name = "AdminPanel";
+            Text = "AdminPanel";
+            Load += AdminPanel_Load;
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
+        private Button button1;
+        private Button button2;
         private Label label1;
         private Label label2;
     }
