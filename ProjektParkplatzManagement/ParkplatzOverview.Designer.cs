@@ -71,9 +71,11 @@
             groupBox7.Controls.Add(dateTimePicker1);
             groupBox7.Controls.Add(button1);
             groupBox7.Controls.Add(label5);
-            groupBox7.Location = new Point(12, 12);
+            groupBox7.Location = new Point(12, 9);
+            groupBox7.Margin = new Padding(3, 2, 3, 2);
             groupBox7.Name = "groupBox7";
-            groupBox7.Size = new Size(787, 435);
+            groupBox7.Padding = new Padding(3, 2, 3, 2);
+            groupBox7.Size = new Size(676, 326);
             groupBox7.TabIndex = 15;
             groupBox7.TabStop = false;
             groupBox7.Text = "groupBox7";
@@ -83,7 +85,7 @@
             // 
             label8.AutoSize = true;
             label8.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            label8.Location = new Point(641, 223);
+            label8.Location = new Point(561, 167);
             label8.Name = "label8";
             label8.Size = new Size(109, 23);
             label8.TabIndex = 21;
@@ -94,7 +96,7 @@
             // 
             label7.AutoSize = true;
             label7.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            label7.Location = new Point(369, 223);
+            label7.Location = new Point(323, 167);
             label7.Name = "label7";
             label7.Size = new Size(93, 23);
             label7.TabIndex = 20;
@@ -105,7 +107,7 @@
             // 
             label6.AutoSize = true;
             label6.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            label6.Location = new Point(57, 223);
+            label6.Location = new Point(50, 167);
             label6.Name = "label6";
             label6.Size = new Size(93, 23);
             label6.TabIndex = 19;
@@ -116,7 +118,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(57, 95);
+            label1.Location = new Point(50, 71);
             label1.Name = "label1";
             label1.Size = new Size(93, 23);
             label1.TabIndex = 18;
@@ -127,7 +129,7 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            label3.Location = new Point(369, 95);
+            label3.Location = new Point(323, 71);
             label3.Name = "label3";
             label3.Size = new Size(93, 23);
             label3.TabIndex = 17;
@@ -138,7 +140,7 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            label4.Location = new Point(654, 95);
+            label4.Location = new Point(572, 71);
             label4.Name = "label4";
             label4.Size = new Size(93, 23);
             label4.TabIndex = 16;
@@ -148,9 +150,10 @@
             // radioButton6
             // 
             radioButton6.AutoSize = true;
-            radioButton6.Location = new Point(356, 135);
+            radioButton6.Location = new Point(312, 101);
+            radioButton6.Margin = new Padding(3, 2, 3, 2);
             radioButton6.Name = "radioButton6";
-            radioButton6.Size = new Size(143, 24);
+            radioButton6.Size = new Size(116, 19);
             radioButton6.TabIndex = 22;
             radioButton6.TabStop = true;
             radioButton6.Text = "Parkplatz Wählen";
@@ -159,7 +162,7 @@
             // label9
             // 
             label9.AutoSize = true;
-            label9.Location = new Point(364, 366);
+            label9.Location = new Point(318, 274);
             label9.Name = "label9";
             label9.Size = new Size(141, 20);
             label9.TabIndex = 27;
@@ -167,10 +170,11 @@
             // 
             // trackBar1
             // 
-            trackBar1.Location = new Point(295, 384);
+            trackBar1.Location = new Point(258, 288);
+            trackBar1.Margin = new Padding(3, 2, 3, 2);
             trackBar1.Minimum = 1;
             trackBar1.Name = "trackBar1";
-            trackBar1.Size = new Size(260, 56);
+            trackBar1.Size = new Size(228, 45);
             trackBar1.TabIndex = 26;
             trackBar1.Value = 1;
             trackBar1.Scroll += trackBar1_Scroll_1;
@@ -178,15 +182,17 @@
             // dateTimePicker2
             // 
             dateTimePicker2.Format = DateTimePickerFormat.Custom;
-            dateTimePicker2.Location = new Point(174, 384);
+            dateTimePicker2.Location = new Point(152, 288);
+            dateTimePicker2.Margin = new Padding(3, 2, 3, 2);
             dateTimePicker2.Name = "dateTimePicker2";
-            dateTimePicker2.Size = new Size(74, 27);
+            dateTimePicker2.Size = new Size(65, 23);
             dateTimePicker2.TabIndex = 25;
             // 
             // radioButton4
             // 
             radioButton4.AutoSize = true;
-            radioButton4.Location = new Point(42, 135);
+            radioButton4.Location = new Point(37, 101);
+            radioButton4.Margin = new Padding(3, 2, 3, 2);
             radioButton4.Name = "radioButton4";
             radioButton4.Size = new Size(143, 24);
             radioButton4.TabIndex = 25;
@@ -198,7 +204,8 @@
             // radioButton5
             // 
             radioButton5.AutoSize = true;
-            radioButton5.Location = new Point(635, 259);
+            radioButton5.Location = new Point(556, 194);
+            radioButton5.Margin = new Padding(3, 2, 3, 2);
             radioButton5.Name = "radioButton5";
             radioButton5.Size = new Size(143, 24);
             radioButton5.TabIndex = 26;
@@ -209,7 +216,8 @@
             // radioButton2
             // 
             radioButton2.AutoSize = true;
-            radioButton2.Location = new Point(635, 135);
+            radioButton2.Location = new Point(556, 101);
+            radioButton2.Margin = new Padding(3, 2, 3, 2);
             radioButton2.Name = "radioButton2";
             radioButton2.Size = new Size(143, 24);
             radioButton2.TabIndex = 27;
@@ -220,7 +228,8 @@
             // radioButton3
             // 
             radioButton3.AutoSize = true;
-            radioButton3.Location = new Point(356, 259);
+            radioButton3.Location = new Point(312, 194);
+            radioButton3.Margin = new Padding(3, 2, 3, 2);
             radioButton3.Name = "radioButton3";
             radioButton3.Size = new Size(143, 24);
             radioButton3.TabIndex = 23;
@@ -231,7 +240,8 @@
             // radioButton1
             // 
             radioButton1.AutoSize = true;
-            radioButton1.Location = new Point(42, 259);
+            radioButton1.Location = new Point(37, 194);
+            radioButton1.Margin = new Padding(3, 2, 3, 2);
             radioButton1.Name = "radioButton1";
             radioButton1.Size = new Size(143, 24);
             radioButton1.TabIndex = 24;
@@ -242,16 +252,18 @@
             // dateTimePicker1
             // 
             dateTimePicker1.Format = DateTimePickerFormat.Custom;
-            dateTimePicker1.Location = new Point(86, 384);
+            dateTimePicker1.Location = new Point(75, 288);
+            dateTimePicker1.Margin = new Padding(3, 2, 3, 2);
             dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(82, 27);
+            dateTimePicker1.Size = new Size(72, 23);
             dateTimePicker1.TabIndex = 24;
             // 
             // button1
             // 
-            button1.Location = new Point(589, 375);
+            button1.Location = new Point(515, 281);
+            button1.Margin = new Padding(3, 2, 3, 2);
             button1.Name = "button1";
-            button1.Size = new Size(162, 45);
+            button1.Size = new Size(142, 34);
             button1.TabIndex = 23;
             button1.Text = "Parkplatz + ID + buchen";
             button1.UseVisualStyleBackColor = true;
@@ -261,7 +273,7 @@
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
-            label5.Location = new Point(330, 19);
+            label5.Location = new Point(289, 14);
             label5.Name = "label5";
             label5.Size = new Size(227, 35);
             label5.TabIndex = 19;
@@ -269,10 +281,11 @@
             // 
             // ParkplatzOverview
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(700, 338);
             Controls.Add(groupBox7);
+            Margin = new Padding(3, 2, 3, 2);
             Name = "ParkplatzOverview";
             Text = "ParkplatzOverview";
             Load += ParkplatzOverview_Load;
