@@ -60,7 +60,7 @@ namespace ProjektParkplatzManagement.com
         {
             return parkingLots;
         }
-        public void setLoggedInUser(Benutzer user)
+        public void setLoggedInUser(Benutzer? user)
         {
             this.currentUser = user;
         }

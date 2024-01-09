@@ -42,7 +42,7 @@ namespace ProjektParkplatzManagement.com
             {
                 return;
             }
-            Buchung booking = new Buchung(selectedDate, time, duration, parkplatzIndex, currentUser);
+            Buchung booking = new Buchung(selectedDate.Date, time, duration, parkplatzIndex, currentUser);
             bool isValid = isBookingValid(booking);
             if (isValid)
             {
@@ -52,18 +52,50 @@ namespace ProjektParkplatzManagement.com
 
         private bool isBookingValid(Buchung buchung)
         {
-            DateTime now = DateTime.Now;
+            DateTime now = DateTime.Now.Date;
             int compared = DateTime.Compare(now, buchung.getStartDatum());
             if(compared < 0) { return false; }
 
             foreach(Buchung cBuchung in managementData.getBookins())
             {
-                if (cBuchung.interfereresWithBooking(buchung))
+                if(buchung == cBuchung)
+                {
+                    continue;
+                }
+                bool notValid = isInterfering(
+                    buchung.getUhrzeit(), 
+                    buchung.getUhrzeit() + (buchung.getDauer() / 60), 
+                    cBuchung.getUhrzeit(), 
+                    cBuchung.getUhrzeit() + (cBuchung.getDauer() / 60)
+                    );
+                if (notValid)
                 {
                     return false;
                 }
+
+
+
+
             }
             return true;
+        }
+        private bool isInterfering(int start1, float ende1, int start2, float ende2)
+        {
+            if ((start1 >= start2 && start1 <= ende2) || (ende2 >= start1 && ende2 <= ende1) || (start2 <= start1 && ende2 >= ende1))
+            {
+                return true;
+            }
+            return false;
+        }
+
+        public void loginUser(Benutzer user)
+        {
+            Form1.controller.managementData.setLoggedInUser(user);
+        }
+        public void logoutUser()
+        {
+            Form1.controller.managementData.setLoggedInUser(null);
+
         }
     }
 }

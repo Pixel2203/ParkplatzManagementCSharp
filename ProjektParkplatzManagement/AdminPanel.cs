@@ -20,8 +20,35 @@ namespace ProjektParkplatzManagement
 
         private void AdminPanel_Load(object sender, EventArgs e)
         {
-            string user_name = Form1.controller.managementData.getCurrentUser().name;
-            label2.Text = user_name;
+            Benutzer? user = Form1.controller.managementData.getCurrentUser();
+            if (user == null)
+            {
+                return;
+            }
+            label2.Text = user.name;
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void contextMenuStrip1_Opening(object sender, CancelEventArgs e)
+        {
+
+        }
+
+        private void abmeldenToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form1.controller.logoutUser();
+            this.Hide();
+            new Form1().ShowDialog();
+            this.Close();
         }
     }
 }

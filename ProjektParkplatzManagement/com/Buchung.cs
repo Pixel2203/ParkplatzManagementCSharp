@@ -38,37 +38,13 @@ namespace ProjektParkplatzManagement.com
         {
             return this.startDatum;
         }
-        public bool interfereresWithBooking(Buchung buchung)
+        public Benutzer getBenutzer()
         {
-            if (buchung.parkplatzIndex != this.parkplatzIndex)
-            {
-                return false;
-            }
-            int compared = DateTime.Compare(buchung.getStartDatum(), startDatum);
-            if(compared != 0)
-            {
-                return false;
-            }
-            int startNEU = buchung.getUhrzeit();
-            float endeNEU = buchung.getUhrzeit() + (buchung.getDauer() / 60);
-
-            int start = uhrzeit;
-            float ende = uhrzeit + (dauer / 60);
-            bool doesInterfere = isInterfering(startNEU, endeNEU, start, ende);
-            if (doesInterfere)
-            {
-                return false;
-            }
-            
-            return true;
+            return this.benutzer;
         }
-        private bool isInterfering(int start1, float ende1, int start2, float ende2)
+        public int getParkplatzIndex()
         {
-            if ((start1 >= start2 && start1 <= ende2) || (ende2 >= start1 && ende2 <= ende1) || (start2 <= start1 && ende2 >= ende1))
-            {
-                return true;
-            }
-            return false;
+            return this.parkplatzIndex;
         }
 
     }

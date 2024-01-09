@@ -28,21 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            maskedTextBox1 = new MaskedTextBox();
             button1 = new Button();
             textBox1 = new TextBox();
             label1 = new Label();
             label2 = new Label();
-            button2 = new Button();
-            label3 = new Label();
+            maskedTextBox2 = new MaskedTextBox();
+            menuStrip1 = new MenuStrip();
             SuspendLayout();
-            // 
-            // maskedTextBox1
-            // 
-            maskedTextBox1.Location = new Point(299, 229);
-            maskedTextBox1.Name = "maskedTextBox1";
-            maskedTextBox1.Size = new Size(204, 27);
-            maskedTextBox1.TabIndex = 0;
             // 
             // button1
             // 
@@ -79,38 +71,36 @@
             label2.TabIndex = 4;
             label2.Text = "Passwort";
             // 
-            // button2
+            // maskedTextBox2
             // 
-            button2.Location = new Point(0, 0);
-            button2.Margin = new Padding(3, 4, 3, 4);
-            button2.Name = "button2";
-            button2.Size = new Size(86, 31);
-            button2.TabIndex = 5;
-            button2.Text = "button2";
-            button2.UseVisualStyleBackColor = true;
-            button2.Click += button2_Click;
+            maskedTextBox2.Location = new Point(299, 230);
+            maskedTextBox2.Name = "maskedTextBox2";
+            maskedTextBox2.PasswordChar = '*';
+            maskedTextBox2.Size = new Size(204, 27);
+            maskedTextBox2.TabIndex = 5;
+            maskedTextBox2.MaskInputRejected += maskedTextBox2_MaskInputRejected;
             // 
-            // label3
+            // menuStrip1
             // 
-            label3.AutoSize = true;
-            label3.ForeColor = Color.Red;
-            label3.Location = new Point(299, 356);
-            label3.Name = "label3";
-            label3.Size = new Size(0, 20);
-            label3.TabIndex = 6;
+            menuStrip1.ImageScalingSize = new Size(20, 20);
+            menuStrip1.Location = new Point(0, 0);
+            menuStrip1.Name = "menuStrip1";
+            menuStrip1.Size = new Size(800, 24);
+            menuStrip1.TabIndex = 6;
+            menuStrip1.Text = "menuStrip1";
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 451);
-            Controls.Add(label3);
-            Controls.Add(button2);
+            Controls.Add(maskedTextBox2);
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(textBox1);
             Controls.Add(button1);
-            Controls.Add(maskedTextBox1);
+            Controls.Add(menuStrip1);
+            MainMenuStrip = menuStrip1;
             Name = "Form1";
             Text = "Anmelden";
             Load += Form1_Load;
@@ -119,13 +109,11 @@
         }
 
         #endregion
-
-        private MaskedTextBox maskedTextBox1;
         private Button button1;
         private TextBox textBox1;
         private Label label1;
         private Label label2;
-        private Button button2;
-        private Label label3;
+        private MaskedTextBox maskedTextBox2;
+        private MenuStrip menuStrip1;
     }
 }

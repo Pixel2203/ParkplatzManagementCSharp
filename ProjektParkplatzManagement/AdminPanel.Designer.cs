@@ -32,6 +32,10 @@
             button2 = new Button();
             label1 = new Label();
             label2 = new Label();
+            menuStrip1 = new MenuStrip();
+            benutzerToolStripMenuItem = new ToolStripMenuItem();
+            abmeldenToolStripMenuItem = new ToolStripMenuItem();
+            menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
             // button1
@@ -42,6 +46,7 @@
             button1.TabIndex = 0;
             button1.Text = "Buchungsmanager";
             button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
             // button2
             // 
@@ -51,6 +56,7 @@
             button2.TabIndex = 1;
             button2.Text = "Benutzermanager";
             button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
             // 
             // label1
             // 
@@ -70,6 +76,30 @@
             label2.TabIndex = 3;
             label2.Text = "USER_NAME";
             // 
+            // menuStrip1
+            // 
+            menuStrip1.ImageScalingSize = new Size(20, 20);
+            menuStrip1.Items.AddRange(new ToolStripItem[] { benutzerToolStripMenuItem });
+            menuStrip1.Location = new Point(0, 0);
+            menuStrip1.Name = "menuStrip1";
+            menuStrip1.Size = new Size(800, 28);
+            menuStrip1.TabIndex = 4;
+            menuStrip1.Text = "menuStrip1";
+            // 
+            // benutzerToolStripMenuItem
+            // 
+            benutzerToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { abmeldenToolStripMenuItem });
+            benutzerToolStripMenuItem.Name = "benutzerToolStripMenuItem";
+            benutzerToolStripMenuItem.Size = new Size(81, 24);
+            benutzerToolStripMenuItem.Text = "Benutzer";
+            // 
+            // abmeldenToolStripMenuItem
+            // 
+            abmeldenToolStripMenuItem.Name = "abmeldenToolStripMenuItem";
+            abmeldenToolStripMenuItem.Size = new Size(224, 26);
+            abmeldenToolStripMenuItem.Text = "Abmelden";
+            abmeldenToolStripMenuItem.Click += abmeldenToolStripMenuItem_Click;
+            // 
             // AdminPanel
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -79,9 +109,13 @@
             Controls.Add(label1);
             Controls.Add(button2);
             Controls.Add(button1);
+            Controls.Add(menuStrip1);
+            MainMenuStrip = menuStrip1;
             Name = "AdminPanel";
             Text = "AdminPanel";
             Load += AdminPanel_Load;
+            menuStrip1.ResumeLayout(false);
+            menuStrip1.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -92,5 +126,8 @@
         private Button button2;
         private Label label1;
         private Label label2;
+        private MenuStrip menuStrip1;
+        private ToolStripMenuItem benutzerToolStripMenuItem;
+        private ToolStripMenuItem abmeldenToolStripMenuItem;
     }
 }
