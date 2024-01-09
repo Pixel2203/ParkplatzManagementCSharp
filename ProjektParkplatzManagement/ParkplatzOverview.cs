@@ -108,25 +108,28 @@ namespace ProjektParkplatzManagement
                 // Abrufen und Anzeigen des ausgewählten Inhalts
                 string ausgewaehlterParkplatz = comboBox1.SelectedItem.ToString();
                 Debug.WriteLine("Ausgewählter Inhalt: " + ausgewaehlterParkplatz);
-            }
-            else
-            {
-                Debug.WriteLine("Es wurde nichts ausgewählt.");
-            }
-            if (comboBox1.SelectedItem != null)
-            {
-                // Abrufen und Anzeigen des ausgewählten Inhalts
-                string ausgewaehlteZeit = comboBox2.SelectedItem.ToString();
-                Stunden = int.Parse(ausgewaehlteZeit);
-                Debug.WriteLine("Ausgewählter Inhalt: " + Stunden);
-            }
-            else
-            {
-                Debug.WriteLine("Es wurde nichts ausgewählt.");
-            }
-            Debug.WriteLine(translatedbookingduration);
 
-            Form1.controller.bookParkingLot(comboBox1.SelectedIndex, dateTimePicker1.Value, Stunden, translatedbookingduration);
+                if (comboBox2.SelectedItem != null)
+                {
+                    // Abrufen und Anzeigen des ausgewählten Inhalts
+                    string ausgewaehlteZeit = comboBox2.SelectedItem.ToString();
+                    Stunden = int.Parse(ausgewaehlteZeit);
+                    Debug.WriteLine("Ausgewählter Inhalt: " + Stunden);
+
+                    Form1.controller.bookParkingLot(comboBox1.SelectedIndex, dateTimePicker1.Value.Date, Stunden, translatedbookingduration);
+
+                }
+                else
+                {
+                    Debug.WriteLine("Es wurde nichts ausgewählt.");
+                }
+                Debug.WriteLine(translatedbookingduration);
+            }
+            else
+            {
+                MessageBox.Show("Es wurde kein Parkplatz ausgewählt", "Buchung fehlgeschlagen", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                Debug.WriteLine("Es wurde nichts ausgewählt.");
+            }
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -156,10 +159,14 @@ namespace ProjektParkplatzManagement
 
         private void label1_Click(object sender, EventArgs e)
         {
-
         }
 
         private void panel1_Paint_1(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panel3_Paint(object sender, PaintEventArgs e)
         {
 
         }

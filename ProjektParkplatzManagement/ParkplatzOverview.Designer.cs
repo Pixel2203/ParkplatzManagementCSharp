@@ -77,6 +77,7 @@
             // label8
             // 
             label8.AutoSize = true;
+            label8.BackColor = Color.Transparent;
             label8.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
             label8.Location = new Point(37, 17);
             label8.Name = "label8";
@@ -88,6 +89,7 @@
             // label7
             // 
             label7.AutoSize = true;
+            label7.BackColor = Color.Transparent;
             label7.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
             label7.Location = new Point(316, 179);
             label7.Name = "label7";
@@ -100,6 +102,7 @@
             // label6
             // 
             label6.AutoSize = true;
+            label6.BackColor = Color.Transparent;
             label6.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
             label6.Location = new Point(95, 179);
             label6.Name = "label6";
@@ -111,6 +114,7 @@
             // label1
             // 
             label1.AutoSize = true;
+            label1.BackColor = Color.Transparent;
             label1.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
             label1.Location = new Point(95, 83);
             label1.Name = "label1";
@@ -123,6 +127,7 @@
             // label3
             // 
             label3.AutoSize = true;
+            label3.BackColor = Color.Transparent;
             label3.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
             label3.Location = new Point(316, 83);
             label3.Name = "label3";
@@ -134,6 +139,7 @@
             // label4
             // 
             label4.AutoSize = true;
+            label4.BackColor = Color.Transparent;
             label4.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
             label4.Location = new Point(37, 15);
             label4.Name = "label4";
@@ -213,6 +219,7 @@
             panel3.Name = "panel3";
             panel3.Size = new Size(173, 56);
             panel3.TabIndex = 32;
+            panel3.Paint += panel3_Paint;
             // 
             // panel4
             // 

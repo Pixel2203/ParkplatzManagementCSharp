@@ -26,7 +26,8 @@ namespace ProjektParkplatzManagement
             if (foundUser.getPermissions() > Permissions.DEFAULT)
             {
                 openAdminPanel();
-            }else
+            }
+            else
             {
                 openOverview();
                 Debug.WriteLine("Unzureichende Rechtegruppe, um das Adminpanel zu öffnen!");
@@ -58,6 +59,17 @@ namespace ProjektParkplatzManagement
         private void Form1_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            openBookingManager();
+        }
+        private void openBookingManager()
+        {
+            this.Hide();
+            new BookingManager().ShowDialog();
+            this.Close();
         }
     }
 }
