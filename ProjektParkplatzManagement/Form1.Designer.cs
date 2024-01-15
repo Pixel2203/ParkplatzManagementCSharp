@@ -33,7 +33,6 @@
             label1 = new Label();
             label2 = new Label();
             maskedTextBox2 = new MaskedTextBox();
-            menuStrip1 = new MenuStrip();
             SuspendLayout();
             // 
             // button1
@@ -80,15 +79,6 @@
             maskedTextBox2.TabIndex = 5;
             maskedTextBox2.MaskInputRejected += maskedTextBox2_MaskInputRejected;
             // 
-            // menuStrip1
-            // 
-            menuStrip1.ImageScalingSize = new Size(20, 20);
-            menuStrip1.Location = new Point(0, 0);
-            menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(800, 24);
-            menuStrip1.TabIndex = 6;
-            menuStrip1.Text = "menuStrip1";
-            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -99,8 +89,6 @@
             Controls.Add(label1);
             Controls.Add(textBox1);
             Controls.Add(button1);
-            Controls.Add(menuStrip1);
-            MainMenuStrip = menuStrip1;
             Name = "Form1";
             Text = "Anmelden";
             Load += Form1_Load;
@@ -114,6 +102,5 @@
         private Label label1;
         private Label label2;
         private MaskedTextBox maskedTextBox2;
-        private MenuStrip menuStrip1;
     }
 }
