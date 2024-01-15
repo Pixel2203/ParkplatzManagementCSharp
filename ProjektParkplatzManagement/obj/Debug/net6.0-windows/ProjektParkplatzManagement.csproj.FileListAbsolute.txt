@@ -58,3 +58,4 @@ C:\Users\marvin.kaiser\source\repos\ProjektParkplatzManagement\ProjektParkplatzM
 C:\Users\marvin.kaiser\source\repos\ProjektParkplatzManagement\ProjektParkplatzManagement\obj\Debug\net6.0-windows\ref\ProjektParkplatzManagement.dll
 C:\Users\marvin.kaiser\source\repos\ProjektParkplatzManagement\ProjektParkplatzManagement\obj\Debug\net6.0-windows\ProjektParkplatzManagement.AdminPanel.resources
 C:\Users\elias.liebelt\Source\Repos\ParkplatzManagementCSharp\ProjektParkplatzManagement\obj\Debug\net6.0-windows\ProjektParkplatzManagement.AdminPanel.resources
+C:\Users\marvin.kaiser\source\repos\ProjektParkplatzManagement\ProjektParkplatzManagement\obj\Debug\net6.0-windows\ProjektParkplatzManagement.Manager.resources
