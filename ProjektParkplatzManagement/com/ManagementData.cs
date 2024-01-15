@@ -30,7 +30,7 @@ namespace ProjektParkplatzManagement.com
             {
                 if(user.name.ToUpper().Equals(name.ToUpper()))
                 {
-                    if (!user.isPassword(password))
+                    if (!user.isSamePassword(password))
                     {
                         return null;
                     }

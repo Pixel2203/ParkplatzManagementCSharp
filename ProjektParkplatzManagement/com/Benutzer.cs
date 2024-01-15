@@ -19,7 +19,7 @@ namespace ProjektParkplatzManagement.com
             this.name = name;
             this.hashedPassword = erzeugeHashWert(password);
             this.permission = permission;
-            this.banned = false;
+            this.banned = false;<
            
         }
 
@@ -30,7 +30,7 @@ namespace ProjektParkplatzManagement.com
             byte[] hashedString = sha1.ComputeHash(Encoding.ASCII.GetBytes(unhashed));
             return hashedString;
         }
-        public bool isPassword(string password)
+        public bool isSamePassword(string password)
         {
             byte[] hashedPassword = this.erzeugeHashWert(password);
             return this.hashedPassword.SequenceEqual(hashedPassword);

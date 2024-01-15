@@ -1,7 +1,8 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\ProjektParkplatzManagement"
   ],
-  "SelectedNode": "\\ProjektParkplatzManagement.sln",
+  "SelectedNode": "\\ProjektParkplatzManagement\\Form1.cs",
   "PreviewInSolutionExplorer": false
 }
