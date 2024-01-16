@@ -9,6 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="MySqlConnector" Version="2.3.4" />
     <PackageReference Include="TweetinviAPI" Version="5.0.4" />
   </ItemGroup>
 

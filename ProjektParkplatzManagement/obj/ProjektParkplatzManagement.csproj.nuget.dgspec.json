@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\elias.liebelt\\Source\\Repos\\Pixel2203\\ParkplatzManagementCSharp\\ProjektParkplatzManagement\\ProjektParkplatzManagement.csproj": {}
+    "D:\\VSProjects\\ProjektParkplatzManagement\\ProjektParkplatzManagement.csproj": {}
   },
   "projects": {
-    "C:\\Users\\elias.liebelt\\Source\\Repos\\Pixel2203\\ParkplatzManagementCSharp\\ProjektParkplatzManagement\\ProjektParkplatzManagement.csproj": {
+    "D:\\VSProjects\\ProjektParkplatzManagement\\ProjektParkplatzManagement.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\elias.liebelt\\Source\\Repos\\Pixel2203\\ParkplatzManagementCSharp\\ProjektParkplatzManagement\\ProjektParkplatzManagement.csproj",
+        "projectUniqueName": "D:\\VSProjects\\ProjektParkplatzManagement\\ProjektParkplatzManagement.csproj",
         "projectName": "ProjektParkplatzManagement",
-        "projectPath": "C:\\Users\\elias.liebelt\\Source\\Repos\\Pixel2203\\ParkplatzManagementCSharp\\ProjektParkplatzManagement\\ProjektParkplatzManagement.csproj",
-        "packagesPath": "C:\\Users\\elias.liebelt\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\elias.liebelt\\Source\\Repos\\Pixel2203\\ParkplatzManagementCSharp\\ProjektParkplatzManagement\\obj\\",
+        "projectPath": "D:\\VSProjects\\ProjektParkplatzManagement\\ProjektParkplatzManagement.csproj",
+        "packagesPath": "C:\\Users\\pixel\\.nuget\\packages\\",
+        "outputPath": "D:\\VSProjects\\ProjektParkplatzManagement\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\elias.liebelt\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\pixel\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -40,6 +40,10 @@
         "net6.0-windows7.0": {
           "targetAlias": "net6.0-windows",
           "dependencies": {
+            "MySqlConnector": {
+              "target": "Package",
+              "version": "[2.3.4, )"
+            },
             "TweetinviAPI": {
               "target": "Package",
               "version": "[5.0.4, )"
@@ -56,6 +60,24 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[6.0.26, 6.0.26]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Host.win-x64",
+              "version": "[6.0.26, 6.0.26]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[6.0.26, 6.0.26]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[6.0.26, 6.0.26]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
@@ -64,7 +86,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101\\RuntimeIdentifierGraph.json"
         }
       }
     }

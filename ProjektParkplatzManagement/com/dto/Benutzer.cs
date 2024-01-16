@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Tweetinvi.Security;
 
-namespace ProjektParkplatzManagement.com
+namespace ProjektParkplatzManagement.com.dao
 {
     public class Benutzer
     {
@@ -17,39 +17,39 @@ namespace ProjektParkplatzManagement.com
         public Benutzer(string name, string password, Permissions permission)
         {
             this.name = name;
-            this.hashedPassword = erzeugeHashWert(password);
+            hashedPassword = erzeugeHashWert(password);
             this.permission = permission;
-            this.banned = false;<
-           
+            banned = false;
+
         }
 
         private byte[] erzeugeHashWert(string unhashed)
         {
-            
+
             SHA1CryptoServiceProvider sha1 = new SHA1CryptoServiceProvider();
             byte[] hashedString = sha1.ComputeHash(Encoding.ASCII.GetBytes(unhashed));
             return hashedString;
         }
         public bool isSamePassword(string password)
         {
-            byte[] hashedPassword = this.erzeugeHashWert(password);
+            byte[] hashedPassword = erzeugeHashWert(password);
             return this.hashedPassword.SequenceEqual(hashedPassword);
         }
         public Permissions getPermissions()
         {
-            return this.permission;
+            return permission;
         }
         public void ban()
         {
-            this.banned = true;
+            banned = true;
         }
         public void unban()
         {
-            this.banned = false;
+            banned = false;
         }
         public bool isBanned()
         {
-            return this.banned;
+            return banned;
         }
     }
 }

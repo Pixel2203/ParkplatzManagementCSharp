@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ProjektParkplatzManagement.com
+namespace ProjektParkplatzManagement.com.dao
 {
     public class Buchung
     {
@@ -28,23 +28,23 @@ namespace ProjektParkplatzManagement.com
         }
         public int getUhrzeit()
         {
-            return this.uhrzeit;
+            return uhrzeit;
         }
         public int getDauer()
         {
-            return this.dauer;
+            return dauer;
         }
         public DateTime getStartDatum()
         {
-            return this.startDatum;
+            return startDatum;
         }
         public Benutzer getBenutzer()
         {
-            return this.benutzer;
+            return benutzer;
         }
         public int getParkplatzIndex()
         {
-            return this.parkplatzIndex;
+            return parkplatzIndex;
         }
 
     }

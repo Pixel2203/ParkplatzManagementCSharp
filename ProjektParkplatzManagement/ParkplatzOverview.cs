@@ -125,8 +125,9 @@ namespace ProjektParkplatzManagement
                 Debug.WriteLine("Es wurde nichts ausgewählt.");
             }
             Debug.WriteLine(translatedbookingduration);
-
-            Form1.controller.bookParkingLot(comboBox1.SelectedIndex, dateTimePicker1.Value, Stunden, translatedbookingduration);
+            BookingRequest request = new BookingRequest();
+            Form1.controller.bucheParkplatz();
+            <
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
