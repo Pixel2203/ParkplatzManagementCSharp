@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace ProjektParkplatzManagement.com.dto.response
 {
-    public abstract class ResponseObject
+    public class ResponseObject
     {
         protected readonly bool worked;
         protected readonly string message;
 
-    protected ResponseObject(string message, bool worked)
+    public ResponseObject(string message, bool worked)
         {
             this.message = message;
             this.worked = worked;

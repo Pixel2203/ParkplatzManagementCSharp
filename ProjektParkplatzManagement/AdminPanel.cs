@@ -1,4 +1,5 @@
 ﻿using ProjektParkplatzManagement.com.dao;
+using ProjektParkplatzManagement.com.dto;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -20,7 +21,7 @@ namespace ProjektParkplatzManagement
 
         private void AdminPanel_Load(object sender, EventArgs e)
         {
-            Benutzer? user = Form1.controller.getBenutzer();
+            User? user = Form1.controller.getUser();
             if (user == null)
             {
                 return;

@@ -7,14 +7,14 @@ using MySqlConnector;
 using ProjektParkplatzManagement.com.dao;
 using ProjektParkplatzManagement.com.dto;
 
-namespace ProjektParkplatzManagement.com
+namespace ProjektParkplatzManagement.com.manager
 {
     public class BookingManager
     {
-        private BookingDAO bookingDAO;
+        private readonly BookingDAO bookingDAO;
         public BookingManager(MySqlConnection connection)
         {
-            this.bookingDAO = new BookingDAO(connection);
+            bookingDAO = new BookingDAO(connection);
         }
         public FullBookingResponse bookParkingLot(BookingRequest request)
         {
@@ -43,7 +43,7 @@ namespace ProjektParkplatzManagement.com
                 return new FullBookingResponse("Parklimit überschritten, " + (240 - minutesParked) + " Minuten übrig!", false, null);
             }
             ParkingTicket? ticket = bookingDAO.createBooking(request);
-            if(ticket == null)
+            if (ticket == null)
             {
                 return new FullBookingResponse("Buchung konnte nicht erstellt werden!", false, null);
             }

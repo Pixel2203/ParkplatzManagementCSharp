@@ -7,18 +7,17 @@ using System.Threading.Tasks;
 
 namespace ProjektParkplatzManagement.com.dto
 {
-    public class FullBookingResponse : ResponseObject
+    public class FullBookingResponse : ResponseObject, IValueResponse<ParkingTicket>
     {
 
-    private readonly ParkingTicket? parkingTicket;
-    public FullBookingResponse(String message, bool worked, ParkingTicket? parkingTicket): base(message,worked)
-    {
-        this.parkingTicket = parkingTicket;
+        private readonly ParkingTicket? parkingTicket;
+        public FullBookingResponse(String message, bool worked, ParkingTicket? parkingTicket): base(message,worked)
+        {
+            this.parkingTicket = parkingTicket;
+        }
+        public ParkingTicket? getValue()
+        {
+            return parkingTicket;
+        }
     }
-
-    public ParkingTicket? getParkingTicket()
-    {
-        return parkingTicket;
-    }
-}
 }

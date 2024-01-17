@@ -6,21 +6,25 @@ using System.Text;
 using System.Threading.Tasks;
 using ProjektParkplatzManagement.com.dao;
 using ProjektParkplatzManagement.com.dto;
+using ProjektParkplatzManagement.com.dto.response;
+using ProjektParkplatzManagement.com.manager;
 
 namespace ProjektParkplatzManagement.com
 {
     public class Controller
     {
-        private Benutzer? currentUser;
+        private User? currentUser;
         private DBManager dBManager;
         private BookingManager bookingManager;
-        private readonly string connectionString = "server=127.0.0.1;uid=root;pwd=Kaiser.331;database=parkingdatabase";
+        private UserManager userManager;
+        private readonly string connectionString = "server=127.0.0.1;uid=root;pwd=;database=parkingdatabase";
         public Controller()
         {
             currentUser = null;
             this.dBManager = new DBManager();
             this.dBManager.establishConnection(connectionString);
             bookingManager = new BookingManager(this.dBManager.getConnection());
+            userManager = new UserManager(this.dBManager.getConnection());
         }
 
 
@@ -28,17 +32,26 @@ namespace ProjektParkplatzManagement.com
         {
             return bookingManager.bookParkingLot(request);
         }
-        
-        public void loginUser(Benutzer user)
+        public FullUserResponse loginUserByCredentials(string email, string password)
         {
-            this.currentUser = user;
+            FullUserResponse response = userManager.getUserByCredentials(email, password);
+            if (response.getWorked())
+            {
+                this.currentUser = response.getValue();
+            }
+            return response;
         }
+
+        public ResponseObject registerUser(User user)
+        {
+            return userManager.registerUser(user);
+        }
+
         public void logoutUser()
         {
             this.currentUser = null;
-
         }
-        public Benutzer? getBenutzer()
+        public User? getUser()
         {
             return this.currentUser;
         }

@@ -91,3 +91,7 @@ D:\VSProjects\ProjektParkplatzManagement\bin\Debug\net6.0-windows\Tweetinvi.dll
 D:\VSProjects\ProjektParkplatzManagement\obj\Debug\net6.0-windows\ProjektParkplatzManagement.csproj.CopyComplete
 D:\VSProjects\ProjektParkplatzManagement\obj\Debug\net6.0-windows\ProjektParkplatzManagement.genruntimeconfig.cache
 D:\VSProjects\ProjektParkplatzManagement\obj\Debug\net6.0-windows\ref\ProjektParkplatzManagement.dll
+D:\VSProjects\ProjektParkplatzManagement\bin\Debug\net6.0-windows\Microsoft.Extensions.Logging.Abstractions.dll
+D:\VSProjects\ProjektParkplatzManagement\bin\Debug\net6.0-windows\MySqlConnector.dll
+D:\VSProjects\ProjektParkplatzManagement\bin\Debug\net6.0-windows\System.Diagnostics.DiagnosticSource.dll
+D:\VSProjects\ProjektParkplatzManagement\obj\Debug\net6.0-windows\ProjektParkplatzManagement.SignUp.resources

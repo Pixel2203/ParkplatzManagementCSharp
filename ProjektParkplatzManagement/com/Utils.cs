@@ -2,8 +2,12 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Intrinsics.Arm;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
+using Tweetinvi.Security;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace ProjektParkplatzManagement.com
 {
@@ -24,6 +28,22 @@ namespace ProjektParkplatzManagement.com
             ort.CommandText = sql;
             MySqlDataReader r = ort.ExecuteReader();
             return r;
+        }
+        public static MySqlDataReader runCommandWithReader(MySqlCommand command)
+        {
+            return command.ExecuteReader(); ;
+        }
+        public static string erzeugeHashWert(string unhashed)
+        {
+            if (String.IsNullOrEmpty(unhashed))
+                return String.Empty;
+            
+            using (var sha = SHA256.Create())
+            {
+                byte[] textData = Encoding.UTF8.GetBytes(unhashed);
+                byte[] hash = sha.ComputeHash(textData);
+                return BitConverter.ToString(hash).Replace("-", String.Empty);
+            }
         }
     }
 }

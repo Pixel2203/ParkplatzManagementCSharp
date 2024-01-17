@@ -1,5 +1,7 @@
 using ProjektParkplatzManagement.com;
 using ProjektParkplatzManagement.com.dao;
+using ProjektParkplatzManagement.com.dto;
+using ProjektParkplatzManagement.com.dto.response;
 using System.Diagnostics;
 
 namespace ProjektParkplatzManagement
@@ -16,14 +18,18 @@ namespace ProjektParkplatzManagement
         {
             string input_name = textBox1.Text;
             string input_password = maskedTextBox2.Text;
-            Benutzer? foundUser = controller.managementData.getUserByCredentials(input_name, input_password);
-            if (foundUser == null)
+            string hashed = Utils.erzeugeHashWert(input_password);
+            if (hashed == null)
             {
-                displayUserNotFoundError();
                 return;
             }
-            controller.loginUser(foundUser);
-            if (foundUser.getPermissions() > Permissions.DEFAULT)
+            FullUserResponse foundUser = controller.loginUserByCredentials(input_name, hashed.ToString());
+            if (!foundUser.getWorked())
+            {
+                MessageBox.Show(foundUser.getMessage(), "Anmeldung fehlgeschlagen", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            if (foundUser.getValue().permission > Permissions.DEFAULT)
             {
                 openAdminPanel();
             }
@@ -40,10 +46,6 @@ namespace ProjektParkplatzManagement
             new AdminPanel().ShowDialog();
             this.Close();
         }
-        private void displayUserNotFoundError()
-        {
-            MessageBox.Show("Ungültiger Benutzername oder Passwort!", "Anmeldung fehlgeschlagen", MessageBoxButtons.OK, MessageBoxIcon.Error);
-        }
         private void openOverview()
         {
             this.Hide();
@@ -59,6 +61,18 @@ namespace ProjektParkplatzManagement
         private void maskedTextBox2_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
         {
 
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            this.Hide();
+            new SignUp().ShowDialog();
+            this.Close();
         }
     }
 }
