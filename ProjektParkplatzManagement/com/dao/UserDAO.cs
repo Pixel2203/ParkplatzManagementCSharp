@@ -86,8 +86,9 @@ namespace ProjektParkplatzManagement.com.dao
             string sql = string.Format("INSERT INTO user (prename,name,email,plate,penalties, password, permission) VALUES ('{0}','{1}','{2}','{3}',{4}, '{5}', '{6}')", user.prename, user.name, user.email, user.plate, user.penalties, user.password, Enum.GetName(user.permission));
             int penalties = getPenaltiesByPlate(user.plate);
             MySqlCommand command = new MySqlCommand(sql,connection);
-            string message = command.ExecuteNonQuery() > 0 ? "Benutzer erfolgreich registriert!" : "Konnte Benutzer nicht registrieren!";
-            return new ResponseObject(message, command.ExecuteNonQuery() > 0);
+            bool worked = command.ExecuteNonQuery() > 0;
+            string message =  worked ? "Benutzer erfolgreich registriert!" : "Konnte Benutzer nicht registrieren!";
+            return new ResponseObject(message, worked);
         }
 
 
