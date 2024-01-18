@@ -18,13 +18,8 @@ namespace ProjektParkplatzManagement.com.dao
         }
         public User? authenticateUser(string email, string password)
         {
-            string sql = "SELECT * FROM user WHERE email='@email' AND password = '@password'";
-            MySqlCommand command = new MySqlCommand(sql, this.connection);
-            command.Parameters.Add("@email", MySqlDbType.VarChar);
-            command.Parameters["@email"].Value = email;
-            command.Parameters.Add("@password", MySqlDbType.VarChar);
-            command.Parameters["Password"].Value = password;    
-            return getUserBySql(command);
+            string sql = string.Format("SELECT * FROM user WHERE email='{0}' AND password = '{1}'", email, password);
+            return getUserBySql(sql);
         }
         private User? getUserBySql(MySqlCommand command)
         {

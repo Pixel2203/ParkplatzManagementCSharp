@@ -11,32 +11,30 @@ using ProjektParkplatzManagement.com.dto;
 using static System.Windows.Forms.AxHost;
 using Tweetinvi.Models;
 using MySqlConnector;
+using System.CodeDom;
 
 namespace ProjektParkplatzManagement.com.dao
 {
     public class BookingDAO : DAO
     {
+        private readonly string formatDateTime = "yyyy-MM-dd HH:mm:00";
         public BookingDAO(MySqlConnection connection) : base(connection)
         {
         }
 
         public ParkingTicket? createBooking(BookingRequest request)
         {
-            // Buchungen dürfen sich beim selben Nutzer nicht überschneiden
-            // --> Gleiches fahrzeug kann zur selben Zeit nicht auf 2 Parkplätzen stehen
-            // --> Mitarbeiter besitzt mehrere Fahrzeuge --> Dann erlaubt (nicht sicher)
             DateTime startDate = Utils.fromMilliseconds(request.startDate);
             DateTime endDate = Utils.fromMilliseconds(request.endDate);
-            int sensorId = request.sensorId;
+            int parkingLotId = request.parkingLotId;
             string plate = request.user.plate;
             if (string.IsNullOrEmpty(plate))
             {
                 return null;
             }
-            //string insertSQL = "INSERT INTO booking (start, end, plate, sensorId,removed,entered,reminded,userId) VALUES (?, ?, ?, ?,0,0,0,?)";
-            string sql = string.Format("INSERT INTO booking(start, end, plate, sensorId, removed, entered, reminded, userId) VALUES({0}, {1}, {2}, {3}, 0, 0, 0,{4})", startDate, endDate, plate, sensorId, request.user.id);
-            SensorData? sensor = getSensorDataBySensorId(request.sensorId);
-            if(sensor == null)
+            string sql = string.Format("INSERT INTO booking (start, end, plate, parkinglotId, userId) VALUES('{0}', '{1}', '{2}', '{3}','{4}'); SELECT LAST_INSERT_ID();", startDate.ToString(formatDateTime), endDate.ToString(formatDateTime), plate, parkingLotId, request.user.id);
+            ParkingLotData? parkingLotData = getParkingLotDataById(request.parkingLotId);
+            if(parkingLotData == null)
             {
                 return null;
             }
@@ -48,82 +46,22 @@ namespace ProjektParkplatzManagement.com.dao
             {
                 return null;
             }
-            int bookingId = (int)generated;
-            return new ParkingTicket(sensor.name, bookingId, Utils.toMilliseconds(startDate), Utils.toMilliseconds(endDate), plate, request.sensorId);
+            Int64 bookingId = (int)generated;
+            return new ParkingTicket(parkingLotData.name, bookingId, Utils.toMilliseconds(startDate), Utils.toMilliseconds(endDate), plate, request.parkingLotId);
         }
 
-        public List<SensorData> getSensorData()
-        {
-            String sql = "SELECT * FROM sensor";
-            MySqlDataReader reader = Utils.runCommandWithReader(connection,sql);
-            List<SensorData> foundSensors = new List<SensorData>();
-            while (reader.Read())
-            {
-                String name = reader.GetString("name");
-                int id = reader.GetInt32("id");
-                bool status = reader.GetBoolean("status");
-                DateTime timeStamp1 = DateTime.Now;
-                DateTime timeStamp2 = DateTime.Now.AddMilliseconds(1800000);
-                bool bookable = !getBookingStatusInPeriodBySensorId(id, Utils.toMilliseconds(timeStamp1), Utils.toMilliseconds(timeStamp2));
-                foundSensors.Add(new SensorData(id, name, status, bookable));
-            }
-            reader.Close();
-            return foundSensors;
-            
 
-
-        }
-       
-        private SensorData? getSensorDataBySensorId(int id)
-        {
-            String sql = "SELECT * FROM sensor WHERE id=" + id;
-            MySqlDataReader reader =Utils.runCommandWithReader(connection, sql);
-            DateTime timestamp = DateTime.Now;
-            DateTime timestamp2 = DateTime.Now.AddMilliseconds(1800000);
-            bool bookable = !getBookingStatusInPeriodBySensorId(id, Utils.toMilliseconds(timestamp), Utils.toMilliseconds(timestamp2));
-            if (reader.Read())
-            {
-                reader.Close();
-                return new SensorData(
-                    id,
-                    reader.GetString("name"),
-                    reader.GetBoolean("status"),
-                    bookable
-                    );
-            }
-            reader.Close();
-            return null;
-
-
-        }
 
         public bool getBookingStatusInPeriodBySensorId(int sensorId, long bookingStartTime, long bookingEndTime)
         {
-            string sql = string.Format("SELECT COUNT(*) FROM booking WHERE sensorId={0} AND ((start >= {1} AND start <= {2}) OR (end >= {1} AND end <= {2}) OR (start <= {1} AND end >= {2}))", sensorId, Utils.fromMilliseconds(bookingStartTime), Utils.fromMilliseconds(bookingEndTime));
-            MySqlDataReader reader = Utils.runCommandWithReader(connection, sql);
-            if (reader.Read())
-            {
-                bool found = reader.GetInt32(1) > 0;
-                reader.Close();
-                return found;
-            }
-            reader.Close();
-            return false;
+            string sql = string.Format("SELECT COUNT(*) FROM booking WHERE parkinglotId={0} AND ((start >= '{1}' AND start <= '{2}') OR (end >= '{1}' AND end <= '{2}') OR (start <= '{1}' AND end >= '{2}'))", sensorId, Utils.fromMilliseconds(bookingStartTime).ToString(formatDateTime), Utils.fromMilliseconds(bookingEndTime).ToString(formatDateTime));
+            return ((Int64)new MySqlCommand(sql, connection).ExecuteScalar()) > 0;
         }
 
         public bool checkParallelBookings(string plate, long plannedBookingStart, long plannedBookingEnd)
         {
-            string sql = string.Format("SELECT COUNT(*) FROM booking WHERE plate={0} AND ((start >= {1} AND start <= {2}) OR (end >= {1} AND end <= {2}) OR (start <= {1} AND end >= {2}))", plate, Utils.fromMilliseconds(plannedBookingStart), Utils.fromMilliseconds(plannedBookingEnd));
-            MySqlDataReader reader = Utils.runCommandWithReader(connection, sql);
-            if (reader.Read())
-            {
-
-                bool found = reader.GetInt32(1) > 0;
-                reader.Close();
-                return found;
-            }
-            reader.Close();
-            return false;
+            string sql = string.Format("SELECT COUNT(*) FROM booking WHERE plate='{0}' AND ((start >= '{1}' AND start <= '{2}') OR (end >= '{1}' AND end <= '{2}') OR (start <= '{1}' AND end >= '{2}'))", plate, Utils.fromMilliseconds(plannedBookingStart).ToString(formatDateTime), Utils.fromMilliseconds(plannedBookingEnd).ToString(formatDateTime));
+            return ((Int64)new MySqlCommand(sql, connection).ExecuteScalar()) > 0;
 
         }
 
@@ -168,7 +106,7 @@ namespace ProjektParkplatzManagement.com.dao
                                 Utils.toMilliseconds(reader.GetDateTime("start")),
                                 Utils.toMilliseconds(reader.GetDateTime("end")),
                                 reader.GetString("plate"),
-                                reader.GetInt32("sensorId"),
+                                reader.GetInt32("parkinglotId"),
                                 reader.GetBoolean("entered"),
                                 reader.GetBoolean("removed"),
                                 reader.GetInt32("userId")
@@ -177,6 +115,59 @@ namespace ProjektParkplatzManagement.com.dao
             }
             reader.Close();
             return bookings;
+        }
+
+        public List<ParkingLotData> getParkingLotData()
+        {
+            string sql = "SELECT * FROM parkinglot, parkinglottypes WHERE parkinglot.typeId = parkinglottypes.id";
+            MySqlDataReader reader = Utils.runCommandWithReader(connection, sql);
+            List<ParkingLotData> foundSensors = new List<ParkingLotData>();
+            DateTime timeStamp1 = DateTime.Now;
+            DateTime timeStamp2 = DateTime.Now.AddMilliseconds(1800000);
+            while (reader.Read())
+            {
+                ParkingLotType type = (ParkingLotType)Enum.Parse(typeof(ParkingLotType), reader.GetString("type"));
+                string name = reader.GetString("name");
+                int id = reader.GetInt32("id");
+                bool bookable = false;
+                foundSensors.Add(new ParkingLotData(id, name, type, bookable));
+                
+            }
+            reader.Close();
+
+            List<ParkingLotData> updatedSensors = new List<ParkingLotData>();
+            foundSensors.ForEach(foundSensor =>
+            {
+                bool bookable = !getBookingStatusInPeriodBySensorId(foundSensor.id, Utils.toMilliseconds(timeStamp1), Utils.toMilliseconds(timeStamp2));
+                ParkingLotData parkingLot = new ParkingLotData(foundSensor.id,foundSensor.name,foundSensor.type,bookable);
+                updatedSensors.Add(parkingLot);
+            });
+
+            return foundSensors;
+        }
+
+        private ParkingLotData? getParkingLotDataById(int parkingLotId)
+        {
+            DateTime timestamp = DateTime.Now;
+            DateTime timestamp2 = DateTime.Now.AddMilliseconds(1800000);
+            bool bookable = !getBookingStatusInPeriodBySensorId(parkingLotId, Utils.toMilliseconds(timestamp), Utils.toMilliseconds(timestamp2));
+            String sql = string.Format("SELECT * FROM parkinglot,parkinglottypes WHERE parkinglot.id={0} AND typeId=parkinglottypes.id", parkingLotId);
+            MySqlDataReader reader = Utils.runCommandWithReader(connection, sql);
+
+            if (reader.Read())
+            {
+                ParkingLotType type = (ParkingLotType)Enum.Parse(typeof(ParkingLotType), reader.GetString("type"));
+                ParkingLotData data = new ParkingLotData(
+                    parkingLotId,
+                    reader.GetString("name"),
+                    type,
+                    bookable
+                    );
+                reader.Close();
+                return data;
+            }
+            reader.Close();
+            return null;
         }
 
         /*

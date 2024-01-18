@@ -17,7 +17,7 @@ namespace ProjektParkplatzManagement.com
         private DBManager dBManager;
         private BookingManager bookingManager;
         private UserManager userManager;
-        private readonly string connectionString = "server=127.0.0.1;uid=root;pwd=;database=parkingdatabase";
+        private readonly string connectionString = "server=127.0.0.1;uid=root;pwd=Kaiser.331;database=parkingdatabase";
         public Controller()
         {
             currentUser = null;
@@ -45,6 +45,11 @@ namespace ProjektParkplatzManagement.com
         public ResponseObject registerUser(User user)
         {
             return userManager.registerUser(user);
+        }
+
+        public List<ParkingLotData> getParkingLotData()
+        {
+            return bookingManager.getParkingLotData();
         }
 
         public void logoutUser()

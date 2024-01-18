@@ -6,5 +6,5 @@ using System.Threading.Tasks;
 
 namespace ProjektParkplatzManagement.com.dto
 {
-    public record SensorData(int id, string name, bool status, bool bookable);
+    public record ParkingLotData(int id, string name, ParkingLotType type, bool bookable);
 }

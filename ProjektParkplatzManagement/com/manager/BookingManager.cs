@@ -20,7 +20,7 @@ namespace ProjektParkplatzManagement.com.manager
         {
             long bookingStartTime = request.startDate;
             long bookingEndTime = request.endDate;
-            bool booked = bookingDAO.getBookingStatusInPeriodBySensorId(request.sensorId, bookingStartTime, bookingEndTime);
+            bool booked = bookingDAO.getBookingStatusInPeriodBySensorId(request.parkingLotId, bookingStartTime, bookingEndTime);
             if (booked)
             {
                 return new FullBookingResponse("Buchung überschneidet sich!", false, null);
@@ -48,6 +48,10 @@ namespace ProjektParkplatzManagement.com.manager
                 return new FullBookingResponse("Buchung konnte nicht erstellt werden!", false, null);
             }
             return new FullBookingResponse("Buchung wurde erstellt", true, ticket);
+        }
+        public List<ParkingLotData> getParkingLotData()
+        {
+            return bookingDAO.getParkingLotData();
         }
     }
 }

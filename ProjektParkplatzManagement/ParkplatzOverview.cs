@@ -1,4 +1,5 @@
 ﻿using ProjektParkplatzManagement.com;
+using ProjektParkplatzManagement.com.dto;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -17,7 +18,7 @@ namespace ProjektParkplatzManagement
     public partial class ParkplatzOverview : Form
     {
         int translatedbookingduration = 0;
-
+        List<ParkingLotData> parkingLotDatas = new List<ParkingLotData>();
         public ParkplatzOverview()
         {
             InitializeComponent();
@@ -28,9 +29,16 @@ namespace ProjektParkplatzManagement
         }
         private void ParkplatzOverview_Load(object sender, EventArgs e)
         {
-            /* dateTimePicker2.CustomFormat = "hh:mm";
-             dateTimePicker2.Format = DateTimePickerFormat.Custom;
-             dateTimePicker2.ShowUpDown = true;*/
+            parkingLotDatas = Form1.controller.getParkingLotData();
+            parkingLotDatas.ForEach(parkdata => addParkingLotItemToListView(parkdata));
+
+        }
+        private void addParkingLotItemToListView(ParkingLotData lotData)
+        {
+            ListViewItem item = new ListViewItem(lotData.name);
+            item.SubItems.Add(Enum.GetName(lotData.type));
+            item.SubItems.Add(lotData.bookable.ToString());
+            listView1.Items.Add(item);
         }
         private void trackBar1_Scroll_1(object sender, EventArgs e)
         {
@@ -39,6 +47,7 @@ namespace ProjektParkplatzManagement
         }
         private void button1_Click(object sender, EventArgs e)
         {
+            /*
             int Stunden = 0;
             UpdateSliderValue();
             if (comboBox1.SelectedItem != null)
@@ -64,8 +73,13 @@ namespace ProjektParkplatzManagement
             }
             Debug.WriteLine(translatedbookingduration);
             BookingRequest request = new BookingRequest(0,0, null, 0);
-            Form1.controller.bucheParkplatz(request);
-            
+            */
+            //FullBookingResponse res = Form1.controller.bucheParkplatz(new BookingRequest(Utils.toMilliseconds(DateTime.Now), Utils.toMilliseconds(DateTime.Now) + 1000*60*60, Form1.controller.getUser(), 1));
+            //Debug.WriteLine(res);
+            ListViewItem item = new ListViewItem("Parkplatz 1");
+            item.SubItems.Add("EPARKING");
+            item.SubItems.Add("BELEGT");
+            listView1.Items.Add(item);
         }
         private void UpdateSliderValue()
         {

@@ -24,7 +24,7 @@ namespace ProjektParkplatzManagement
             {
                 return;
             }
-            FullUserResponse foundUser = controller.loginUserByCredentials(input_name, hashed.ToString());
+            FullUserResponse foundUser = controller.loginUserByCredentials(input_name, hashed);
             if (!foundUser.getWorked())
             {
                 MessageBox.Show(foundUser.getMessage(), "Anmeldung fehlgeschlagen", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -84,9 +84,7 @@ namespace ProjektParkplatzManagement
 
         private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            this.Hide();
             new SignUp().ShowDialog();
-            this.Close();
         }
     }
 }
