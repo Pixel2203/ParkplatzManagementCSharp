@@ -23,13 +23,18 @@ namespace ProjektParkplatzManagement
 
         private void button2_Click(object sender, EventArgs e)
         {
+            //To-Do:
+
+            //Authorized Key > Datenbank
+            //> Anfrage zur Nutzung bereits verwendetem Kennzeichen > Ehefrau...
+
             string prename = textBox3.Text;
             string name = textBox2.Text;
             string email = textBox1.Text;
             string password = textBox6.Text;
             string passwordRepeated = textBox5.Text;
             string plate = textBox4.Text;
-            if (validData(prename,name,email,password,passwordRepeated,plate))
+            if (validData(prename, name, email, password, passwordRepeated, plate))
             {
                 Debug.WriteLine("HASHED PASSWORD: " + Utils.erzeugeHashWert(password));
                 User user = new User(0, prename, name, plate, email, 0, com.Permissions.DEFAULT, Utils.erzeugeHashWert(password));
@@ -42,7 +47,7 @@ namespace ProjektParkplatzManagement
         }
         private bool validData(string prename, string name, string email, string password, string passwordRepeated, string plate)
         {
-            if(password.Equals(passwordRepeated))
+            if (password.Equals(passwordRepeated))
             {
                 return true;
             }

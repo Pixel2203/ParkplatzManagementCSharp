@@ -66,7 +66,6 @@
             comboBox2.Size = new Size(73, 28);
             comboBox2.TabIndex = 29;
             comboBox2.Text = "Uhrzeit";
-            comboBox2.SelectedIndexChanged += comboBox2_SelectedIndexChanged;
             // 
             // comboBox1
             // 
@@ -78,7 +77,6 @@
             comboBox1.Size = new Size(162, 28);
             comboBox1.TabIndex = 28;
             comboBox1.Text = "Parkplatz Wählen";
-            comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
             // 
             // label8
             // 
@@ -101,7 +99,6 @@
             label7.TabIndex = 20;
             label7.Text = "Parkplatz 5";
             label7.TextAlign = ContentAlignment.TopCenter;
-            label7.Click += label7_Click;
             // 
             // label6
             // 
@@ -124,7 +121,6 @@
             label1.TabIndex = 18;
             label1.Text = "Parkplatz 1";
             label1.TextAlign = ContentAlignment.TopCenter;
-            label1.Click += label1_Click;
             // 
             // label3
             // 
@@ -202,7 +198,6 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(198, 75);
             panel1.TabIndex = 30;
-            panel1.Paint += panel1_Paint_1;
             // 
             // panel2
             // 

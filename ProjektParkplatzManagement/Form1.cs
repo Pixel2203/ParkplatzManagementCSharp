@@ -3,6 +3,7 @@ using ProjektParkplatzManagement.com.dao;
 using ProjektParkplatzManagement.com.dto;
 using ProjektParkplatzManagement.com.dto.response;
 using System.Diagnostics;
+using System.Drawing;
 
 namespace ProjektParkplatzManagement
 {
@@ -55,20 +56,33 @@ namespace ProjektParkplatzManagement
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
-        }
-
-        private void maskedTextBox2_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
+            maskedTextBox2.UseSystemPasswordChar = true;
+            //pictureBox2.Controls.Add(pictureBox3);
+            //pictureBox3.Location = new Point(0, 0);
+            //pictureBox3.BackColor = Color.Transparent;
+            label3.Parent = pictureBox2;
+            label3.BackColor = Color.Transparent;
+            linkLabel1.Parent = pictureBox2;
+            linkLabel1.BackColor = Color.Transparent;
 
         }
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            /*this.Hide();
+            new SignUp().ShowDialog();
+            this.Close();*/
+        }
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            maskedTextBox2.UseSystemPasswordChar = !maskedTextBox2.UseSystemPasswordChar;
+            //pictureBox1.BackgroundImage = maskedTextBox2.UseSystemPasswordChar ? eye_hidden : eye_shown;
+            pictureBox1.BackgroundImage.Dispose();
+            pictureBox1.BackgroundImage = maskedTextBox2.UseSystemPasswordChar ? Properties.Resources.eye_hidden : Properties.Resources.eye_shown;
+
+        }
+
+        private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             this.Hide();
             new SignUp().ShowDialog();
