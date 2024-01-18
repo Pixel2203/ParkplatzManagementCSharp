@@ -85,5 +85,10 @@ namespace ProjektParkplatzManagement
         {
             translatedbookingduration = trackBar1.Value * 30;
         }
+
+        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
