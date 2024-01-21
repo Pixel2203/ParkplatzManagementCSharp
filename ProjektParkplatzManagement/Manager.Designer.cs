@@ -37,11 +37,13 @@
             // 
             // listBox1
             // 
+            listBox1.BackColor = Color.FromArgb(255, 240, 230);
             listBox1.FormattingEnabled = true;
-            listBox1.ItemHeight = 20;
-            listBox1.Location = new Point(12, 48);
+            listBox1.ItemHeight = 15;
+            listBox1.Location = new Point(10, 36);
+            listBox1.Margin = new Padding(3, 2, 3, 2);
             listBox1.Name = "listBox1";
-            listBox1.Size = new Size(150, 384);
+            listBox1.Size = new Size(132, 289);
             listBox1.TabIndex = 0;
             // 
             // menuStrip1
@@ -50,7 +52,8 @@
             menuStrip1.Items.AddRange(new ToolStripItem[] { benutzerToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(800, 28);
+            menuStrip1.Padding = new Padding(5, 2, 0, 2);
+            menuStrip1.Size = new Size(700, 24);
             menuStrip1.TabIndex = 1;
             menuStrip1.Text = "menuStrip1";
             // 
@@ -58,25 +61,29 @@
             // 
             benutzerToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { abmeldenToolStripMenuItem });
             benutzerToolStripMenuItem.Name = "benutzerToolStripMenuItem";
-            benutzerToolStripMenuItem.Size = new Size(81, 24);
+            benutzerToolStripMenuItem.Size = new Size(65, 20);
             benutzerToolStripMenuItem.Text = "Benutzer";
             // 
             // abmeldenToolStripMenuItem
             // 
             abmeldenToolStripMenuItem.Name = "abmeldenToolStripMenuItem";
-            abmeldenToolStripMenuItem.Size = new Size(224, 26);
+            abmeldenToolStripMenuItem.Size = new Size(129, 22);
             abmeldenToolStripMenuItem.Text = "Abmelden";
             // 
             // Manager
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            BackColor = Color.FromArgb(255, 224, 192);
+            ClientSize = new Size(700, 338);
             Controls.Add(listBox1);
             Controls.Add(menuStrip1);
             MainMenuStrip = menuStrip1;
+            Margin = new Padding(3, 2, 3, 2);
             Name = "Manager";
-            Text = "Manager";
+            ShowIcon = false;
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "Verwaltung";
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
             ResumeLayout(false);

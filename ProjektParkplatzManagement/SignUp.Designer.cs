@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SignUp));
             textBox1 = new TextBox();
             textBox3 = new TextBox();
             textBox4 = new TextBox();
@@ -49,20 +50,23 @@
             // 
             // textBox1
             // 
+            textBox1.BackColor = Color.FromArgb(255, 240, 230);
             textBox1.Location = new Point(51, 169);
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(187, 23);
-            textBox1.TabIndex = 0;
+            textBox1.TabIndex = 4;
             // 
             // textBox3
             // 
+            textBox3.BackColor = Color.FromArgb(255, 240, 230);
             textBox3.Location = new Point(51, 112);
             textBox3.Name = "textBox3";
             textBox3.Size = new Size(187, 23);
-            textBox3.TabIndex = 2;
+            textBox3.TabIndex = 1;
             // 
             // textBox4
             // 
+            textBox4.BackColor = Color.FromArgb(255, 240, 230);
             textBox4.Location = new Point(490, 112);
             textBox4.Name = "textBox4";
             textBox4.Size = new Size(189, 23);
@@ -70,13 +74,15 @@
             // 
             // textBox5
             // 
+            textBox5.BackColor = Color.FromArgb(255, 240, 230);
             textBox5.Location = new Point(51, 311);
             textBox5.Name = "textBox5";
             textBox5.Size = new Size(189, 23);
-            textBox5.TabIndex = 4;
+            textBox5.TabIndex = 6;
             // 
             // textBox6
             // 
+            textBox6.BackColor = Color.FromArgb(255, 240, 230);
             textBox6.Location = new Point(51, 259);
             textBox6.Name = "textBox6";
             textBox6.Size = new Size(187, 23);
@@ -166,10 +172,11 @@
             // 
             // textBox2
             // 
+            textBox2.BackColor = Color.FromArgb(255, 240, 230);
             textBox2.Location = new Point(253, 112);
             textBox2.Name = "textBox2";
             textBox2.Size = new Size(187, 23);
-            textBox2.TabIndex = 13;
+            textBox2.TabIndex = 2;
             // 
             // button1
             // 
@@ -224,10 +231,11 @@
             Controls.Add(textBox3);
             Controls.Add(textBox1);
             FormBorderStyle = FormBorderStyle.FixedSingle;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             MaximizeBox = false;
             Name = "SignUp";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "SignUp";
+            Text = "Registrieren";
             Load += SignUp_Load;
             ResumeLayout(false);
             PerformLayout();
