@@ -25,7 +25,6 @@ namespace ProjektParkplatzManagement
 
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
-            this.trackBar1.Value = 1;
         }
         private void ParkplatzOverview_Load(object sender, EventArgs e)
         {
@@ -38,12 +37,9 @@ namespace ProjektParkplatzManagement
             ListViewItem item = new ListViewItem(lotData.name);
             item.SubItems.Add(Enum.GetName(lotData.type));
             item.SubItems.Add(lotData.bookable.ToString());
+            item.SubItems.Add(lotData.id.ToString());
             listView1.Items.Add(item);
-        }
-        private void trackBar1_Scroll_1(object sender, EventArgs e)
-        {
-            UpdateSliderValue();
-            label9.Text = translatedbookingduration.ToString() + " Minuten gebucht";
+          
         }
         private void button1_Click(object sender, EventArgs e)
         {
@@ -76,19 +72,25 @@ namespace ProjektParkplatzManagement
             */
             //FullBookingResponse res = Form1.controller.bucheParkplatz(new BookingRequest(Utils.toMilliseconds(DateTime.Now), Utils.toMilliseconds(DateTime.Now) + 1000*60*60, Form1.controller.getUser(), 1));
             //Debug.WriteLine(res);
-            ListViewItem item = new ListViewItem("Parkplatz 1");
-            item.SubItems.Add("EPARKING");
-            item.SubItems.Add("BELEGT");
-            listView1.Items.Add(item);
         }
-        private void UpdateSliderValue()
-        {
-            translatedbookingduration = trackBar1.Value * 30;
-        }
-
         private void listView1_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+           if(listView1.SelectedItems.Count > 0)
+            {
+                ListViewItem selectedItem = listView1.SelectedItems[0];
+                if(selectedItem.SubItems.Count == 4)
+                {
+                    int id = int.Parse(selectedItem.SubItems[3].Text);
+                    foreach (ParkingLotData parkingLotData in parkingLotDatas)
+                    {
+                        if(parkingLotData.id == id)
+                        {
+                            new ParkplatzView(parkingLotData).ShowDialog();
+                            break;
+                        }
+                    }
+                }
+            }
         }
     }
 }
