@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             button1 = new Button();
             textBox1 = new TextBox();
             label1 = new Label();
@@ -46,9 +47,10 @@
             // 
             // button1
             // 
-            button1.Location = new Point(600, 377);
+            button1.Location = new Point(525, 283);
+            button1.Margin = new Padding(3, 2, 3, 2);
             button1.Name = "button1";
-            button1.Size = new Size(119, 34);
+            button1.Size = new Size(104, 26);
             button1.TabIndex = 1;
             button1.Text = "Anmelden";
             button1.UseVisualStyleBackColor = true;
@@ -56,34 +58,38 @@
             // 
             // textBox1
             // 
-            textBox1.Location = new Point(434, 206);
+            textBox1.BackColor = Color.FromArgb(255, 240, 230);
+            textBox1.Location = new Point(380, 154);
+            textBox1.Margin = new Padding(3, 2, 3, 2);
             textBox1.Name = "textBox1";
-            textBox1.Size = new Size(288, 27);
+            textBox1.Size = new Size(252, 23);
             textBox1.TabIndex = 2;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(431, 174);
+            label1.Location = new Point(377, 130);
             label1.Name = "label1";
-            label1.Size = new Size(67, 20);
+            label1.Size = new Size(53, 15);
             label1.TabIndex = 3;
             label1.Text = "Benutzer";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(431, 265);
+            label2.Location = new Point(377, 199);
             label2.Name = "label2";
-            label2.Size = new Size(66, 20);
+            label2.Size = new Size(54, 15);
             label2.TabIndex = 4;
             label2.Text = "Passwort";
             // 
             // maskedTextBox2
             // 
-            maskedTextBox2.Location = new Point(431, 297);
+            maskedTextBox2.BackColor = Color.FromArgb(255, 240, 230);
+            maskedTextBox2.Location = new Point(377, 223);
+            maskedTextBox2.Margin = new Padding(3, 2, 3, 2);
             maskedTextBox2.Name = "maskedTextBox2";
-            maskedTextBox2.Size = new Size(288, 27);
+            maskedTextBox2.Size = new Size(252, 23);
             maskedTextBox2.TabIndex = 5;
             // 
             // linkLabel1
@@ -91,9 +97,9 @@
             linkLabel1.AutoSize = true;
             linkLabel1.BackColor = Color.Transparent;
             linkLabel1.LinkColor = Color.FromArgb(255, 224, 192);
-            linkLabel1.Location = new Point(116, 384);
+            linkLabel1.Location = new Point(111, 288);
             linkLabel1.Name = "linkLabel1";
-            linkLabel1.Size = new Size(95, 20);
+            linkLabel1.Size = new Size(77, 15);
             linkLabel1.TabIndex = 6;
             linkLabel1.TabStop = true;
             linkLabel1.Text = "Zurücksetzen";
@@ -104,9 +110,9 @@
             label3.AutoSize = true;
             label3.BackColor = Color.Transparent;
             label3.ForeColor = Color.FromArgb(128, 255, 128);
-            label3.Location = new Point(91, 353);
+            label3.Location = new Point(89, 265);
             label3.Name = "label3";
-            label3.Size = new Size(146, 20);
+            label3.Size = new Size(117, 15);
             label3.TabIndex = 7;
             label3.Text = "Password vergessen?";
             // 
@@ -115,9 +121,10 @@
             pictureBox1.BackColor = Color.Transparent;
             pictureBox1.BackgroundImage = Properties.Resources.eye_hidden;
             pictureBox1.BackgroundImageLayout = ImageLayout.Stretch;
-            pictureBox1.Location = new Point(734, 297);
+            pictureBox1.Location = new Point(642, 223);
+            pictureBox1.Margin = new Padding(3, 2, 3, 2);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(27, 27);
+            pictureBox1.Size = new Size(24, 20);
             pictureBox1.TabIndex = 9;
             pictureBox1.TabStop = false;
             pictureBox1.Click += pictureBox1_Click;
@@ -125,9 +132,10 @@
             // pictureBox2
             // 
             pictureBox2.BackgroundImage = Properties.Resources.color_baner;
-            pictureBox2.Location = new Point(-5, -2);
+            pictureBox2.Location = new Point(-4, -2);
+            pictureBox2.Margin = new Padding(3, 2, 3, 2);
             pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(349, 456);
+            pictureBox2.Size = new Size(305, 342);
             pictureBox2.TabIndex = 10;
             pictureBox2.TabStop = false;
             // 
@@ -136,9 +144,10 @@
             pictureBox3.BackColor = Color.Transparent;
             pictureBox3.BackgroundImage = Properties.Resources.Banner;
             pictureBox3.BackgroundImageLayout = ImageLayout.Stretch;
-            pictureBox3.Location = new Point(404, 12);
+            pictureBox3.Location = new Point(354, 9);
+            pictureBox3.Margin = new Padding(3, 2, 3, 2);
             pictureBox3.Name = "pictureBox3";
-            pictureBox3.Size = new Size(332, 124);
+            pictureBox3.Size = new Size(290, 106);
             pictureBox3.TabIndex = 11;
             pictureBox3.TabStop = false;
             // 
@@ -147,9 +156,9 @@
             linkLabel2.AutoSize = true;
             linkLabel2.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold, GraphicsUnit.Point);
             linkLabel2.LinkColor = Color.FromArgb(66, 129, 31);
-            linkLabel2.Location = new Point(434, 382);
+            linkLabel2.Location = new Point(380, 286);
             linkLabel2.Name = "linkLabel2";
-            linkLabel2.Size = new Size(125, 23);
+            linkLabel2.Size = new Size(104, 19);
             linkLabel2.TabIndex = 12;
             linkLabel2.TabStop = true;
             linkLabel2.Text = "Konto erstellen";
@@ -157,10 +166,10 @@
             // 
             // Form1
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(255, 224, 192);
-            ClientSize = new Size(800, 451);
+            ClientSize = new Size(700, 338);
             Controls.Add(linkLabel2);
             Controls.Add(linkLabel1);
             Controls.Add(label3);
@@ -173,6 +182,8 @@
             Controls.Add(textBox1);
             Controls.Add(button1);
             FormBorderStyle = FormBorderStyle.FixedSingle;
+            Icon = (Icon)resources.GetObject("$this.Icon");
+            Margin = new Padding(3, 2, 3, 2);
             MaximizeBox = false;
             Name = "Form1";
             StartPosition = FormStartPosition.CenterScreen;
