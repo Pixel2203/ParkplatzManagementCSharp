@@ -46,8 +46,8 @@ namespace ProjektParkplatzManagement.com.dao
             {
                 return null;
             }
-            Int64 bookingId = (Int64) generated;
-            return new ParkingTicket(parkingLotData.name, bookingId, Utils.toMilliseconds(startDate), Utils.toMilliseconds(endDate), plate, request.parkingLotId);
+            UInt64 bookingId = (UInt64) generated;
+            return new ParkingTicket(parkingLotData.name, (int)bookingId, Utils.toMilliseconds(startDate), Utils.toMilliseconds(endDate), plate, request.parkingLotId);
         }
 
 

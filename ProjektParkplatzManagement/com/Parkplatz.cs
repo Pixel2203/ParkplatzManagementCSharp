@@ -9,14 +9,16 @@ namespace ProjektParkplatzManagement.com
     public abstract class Parkplatz
     {
         protected byte status;
-        protected byte id;
-        protected float costs;
-        private float parkGebühr;
-        public Parkplatz(byte status, byte id, float parkGebühr)
+        public byte id { get; }
+        public float costs { get; }
+        protected float grundGebühr { get; }
+        public ParkingLotType type { get; }
+        public Parkplatz(byte status, byte id, float grundGebühr)
         {
             this.status = status;
             this.id = id;
             this.costs = 0;
+            this.grundGebühr = grundGebühr;
         }
 
         public string getStatusInfo()
@@ -34,19 +36,6 @@ namespace ProjektParkplatzManagement.com
                 return "blockiert";
             }
             return "fehler";
-        }
-        public byte getId()
-        {
-            return id;
-        }
-        public float getCosts()
-        {
-            return this.costs;
-        }
-        public abstract void calculateCosts(int parkzeitInMinuten);
-        protected float getParkGebühr()
-        {
-            return this.parkGebühr;
         }
     }
 }

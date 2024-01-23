@@ -22,7 +22,7 @@ namespace ProjektParkplatzManagement.com
         public override void calculateCosts(int parkzeitInMinuten)
         {
             calculateUsedEnergy(parkzeitInMinuten, this.enegryFlowPerMinute);
-            this.costs = this.getParkGebühr() * parkzeitInMinuten;
+            this.costs = this.grundGebühr * parkzeitInMinuten;
             this.costs += this.verbrauchterStrom * strompreisProMinute;
         }
         private void calculateUsedEnergy(float parkzeitInMinuten, float energyFlowPerMinute )

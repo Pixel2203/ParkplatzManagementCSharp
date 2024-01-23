@@ -31,37 +31,28 @@ namespace ProjektParkplatzManagement
 
         private void bookButton_Click(object sender, EventArgs e)
         {
-            DateTime selectedTime = timepicker.Value;
+            DateTime selectedTimeFromPicker = timepicker.Value;
             DateTime selectedDate = datepicker.Value;
             DateTime now = DateTime.Now;
 
+            DateTime selectedTime = new DateTime(
+                selectedDate.Year,
+                selectedDate.Month,
+                selectedDate.Day,
+                selectedTimeFromPicker.Hour,
+                selectedTimeFromPicker.Minute,
+                0);
+
             int durationInMinutes = trackBar1.Value * 30;
 
-            bool isSameDay = selectedDate.Date == now.Date;
-            bool isPastDay = selectedDate.Date < now.Date;
 
-            if (isPastDay)
+            if (selectedTime < now)
             {
                 MessageBox.Show("Du darfst keinen Zeitpunkt in der Vergangenheit als Start festlegen!", "Falsche Eingabe!", MessageBoxButtons.OK);
                 return;
             }
 
-            if (isSameDay)
-            {
-                if (selectedTime < now)
-                {
-                    MessageBox.Show("Du darfst keinen Zeitpunkt in der Vergangenheit als Start festlegen!", "Falsche Eingabe!", MessageBoxButtons.OK);
-                    return;
-                }
-            }
-            DateTime combinedDateTime = new DateTime(
-                selectedDate.Year,
-                selectedDate.Month,
-                selectedDate.Day,
-                selectedTime.Hour,
-                selectedTime.Minute,
-                0);
-            long startDateInMilliseconds = Utils.toMilliseconds(combinedDateTime);
+            long startDateInMilliseconds = Utils.toMilliseconds(selectedTime);
             BookingRequest request = new BookingRequest(startDateInMilliseconds, startDateInMilliseconds + durationInMinutes * 60 * 1000, Form1.controller.getUser(), this.parkingLotData.id);
 
             
