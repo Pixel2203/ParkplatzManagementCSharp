@@ -17,7 +17,7 @@ namespace ProjektParkplatzManagement.com.dao
 {
     public class BookingDAO : DAO
     {
-        private readonly string formatDateTime = "yyyy-MM-dd HH:mm:00";
+        
         public BookingDAO(MySqlConnection connection) : base(connection)
         {
         }
@@ -32,7 +32,7 @@ namespace ProjektParkplatzManagement.com.dao
             {
                 return null;
             }
-            string sql = string.Format("INSERT INTO booking (start, end, plate, parkinglotId, userId) VALUES('{0}', '{1}', '{2}', '{3}','{4}'); SELECT LAST_INSERT_ID();", startDate.ToString(formatDateTime), endDate.ToString(formatDateTime), plate, parkingLotId, request.user.id);
+            string sql = string.Format("INSERT INTO booking (start, end, plate, parkinglotId, userId) VALUES('{0}', '{1}', '{2}', '{3}','{4}'); SELECT LAST_INSERT_ID();", startDate.ToString(Utils.formatDateWithYearMonthDayHoursMinutes), endDate.ToString(Utils.formatDateWithYearMonthDayHoursMinutes), plate, parkingLotId, request.user.id);
             ParkingLotData? parkingLotData = getParkingLotDataById(request.parkingLotId);
             if(parkingLotData == null)
             {
@@ -47,20 +47,20 @@ namespace ProjektParkplatzManagement.com.dao
                 return null;
             }
             UInt64 bookingId = (UInt64) generated;
-            return new ParkingTicket(parkingLotData.name, (int)bookingId, Utils.toMilliseconds(startDate), Utils.toMilliseconds(endDate), plate, request.parkingLotId);
+            return new ParkingTicket(parkingLotData.name, (int)bookingId, Utils.toMilliseconds(startDate), Utils.toMilliseconds(endDate), plate, request.parkingLotId, request.type);
         }
 
 
 
         public bool getBookingStatusInPeriodBySensorId(int sensorId, long bookingStartTime, long bookingEndTime)
         {
-            string sql = string.Format("SELECT COUNT(*) FROM booking WHERE parkinglotId={0} AND ((start >= '{1}' AND start <= '{2}') OR (end >= '{1}' AND end <= '{2}') OR (start <= '{1}' AND end >= '{2}'))", sensorId, Utils.fromMilliseconds(bookingStartTime).ToString(formatDateTime), Utils.fromMilliseconds(bookingEndTime).ToString(formatDateTime));
+            string sql = string.Format("SELECT COUNT(*) FROM booking WHERE parkinglotId={0} AND ((start >= '{1}' AND start <= '{2}') OR (end >= '{1}' AND end <= '{2}') OR (start <= '{1}' AND end >= '{2}'))", sensorId, Utils.fromMilliseconds(bookingStartTime).ToString(Utils.formatDateWithYearMonthDayHoursMinutes), Utils.fromMilliseconds(bookingEndTime).ToString(Utils.formatDateWithYearMonthDayHoursMinutes));
             return ((Int64)new MySqlCommand(sql, connection).ExecuteScalar()) > 0;
         }
 
         public bool checkParallelBookings(string plate, long plannedBookingStart, long plannedBookingEnd)
         {
-            string sql = string.Format("SELECT COUNT(*) FROM booking WHERE plate='{0}' AND ((start >= '{1}' AND start <= '{2}') OR (end >= '{1}' AND end <= '{2}') OR (start <= '{1}' AND end >= '{2}'))", plate, Utils.fromMilliseconds(plannedBookingStart).ToString(formatDateTime), Utils.fromMilliseconds(plannedBookingEnd).ToString(formatDateTime));
+            string sql = string.Format("SELECT COUNT(*) FROM booking WHERE plate='{0}' AND ((start >= '{1}' AND start <= '{2}') OR (end >= '{1}' AND end <= '{2}') OR (start <= '{1}' AND end >= '{2}'))", plate, Utils.fromMilliseconds(plannedBookingStart).ToString(Utils.formatDateWithYearMonthDayHoursMinutes), Utils.fromMilliseconds(plannedBookingEnd).ToString(Utils.formatDateWithYearMonthDayHoursMinutes));
             return ((Int64)new MySqlCommand(sql, connection).ExecuteScalar()) > 0;
 
         }
@@ -107,8 +107,6 @@ namespace ProjektParkplatzManagement.com.dao
                                 Utils.toMilliseconds(reader.GetDateTime("end")),
                                 reader.GetString("plate"),
                                 reader.GetInt32("parkinglotId"),
-                                reader.GetBoolean("entered"),
-                                reader.GetBoolean("removed"),
                                 reader.GetInt32("userId")
                         )
                 );
@@ -170,6 +168,31 @@ namespace ProjektParkplatzManagement.com.dao
             return null;
         }
 
+        public List<ParkingTicket>? getBookingHistoryByUser(User user)
+        {
+            DateTime now = DateTime.Now;
+            List<ParkingTicket> result = new List<ParkingTicket>(); 
+            String sql = string.Format("SELECT parkinglot.name,booking.id,booking.start,booking.end,booking.plate,booking.parkinglotId,parkinglottypes.type FROM booking,user, parkinglot,parkinglottypes WHERE booking.start < '{0}' AND booking.end < '{0}' AND user.id = booking.userId AND user.id = '{1}' AND parkinglottypes.id = parkinglot.typeId", now.ToString(Utils.formatDateWithYearMonthDayHoursMinutes), user.id);
+            MySqlDataReader reader = Utils.runCommandWithReader(connection, sql);
+            if(reader.Read())
+            {
+                ParkingLotType type = (ParkingLotType)Enum.Parse(typeof(ParkingLotType), reader.GetString("type"));
+                ParkingTicket ticket = new ParkingTicket(
+                        reader.GetString("name"),
+                        (int)reader.GetUInt64("id"),
+                        Utils.toMilliseconds(reader.GetDateTime("start")),
+                        Utils.toMilliseconds(reader.GetDateTime("end")),
+                        reader.GetString("plate"),
+                        reader.GetInt32("parkinglotId"),
+                        type);
+
+                result.Add(ticket);
+
+            }
+            reader.Close();
+            return result;
+        }
+
         /*
        public Optional<List<Booking>> findBookingsByDateAndSensor(int sensorId, long dateInMilliseconds)
        {
@@ -203,12 +226,7 @@ namespace ProjektParkplatzManagement.com.dao
        
 
 
-       public Optional<List<Booking>> getBookingHistoryByPlate(String plate)
-       {
-           Timestamp now = Timestamp.from(Instant.now());
-           String sql = "SELECT * FROM booking WHERE start < '" + now + "' AND end < '" + now + "' AND plate LIKE '" + plate + "'";
-           return getBookingsBySql(sql);
-       }
+
        public Optional<Map<Integer, List<ParkingTicket>>> getAvailableTimesFromStartDate(long startDate, int duration)
        {
 

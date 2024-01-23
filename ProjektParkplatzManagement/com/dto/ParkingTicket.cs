@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ProjektParkplatzManagement.com.dto
 {
-    public record ParkingTicket(string name, Int64 bookingId, long startDate, long endDate, string plate, int sensorId)
+    public record ParkingTicket(string name, Int64 bookingId, long startDate, long endDate, string plate, int parkingLotId, ParkingLotType type)
     {
         public long getParkingDuration()
         {

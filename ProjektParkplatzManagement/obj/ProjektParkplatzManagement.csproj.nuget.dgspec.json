@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\marvin.kaiser\\source\\repos\\ProjektParkplatzManagement\\ProjektParkplatzManagement\\ProjektParkplatzManagement.csproj": {}
+    "D:\\VSProjects\\ProjektParkplatzManagement\\ProjektParkplatzManagement.csproj": {}
   },
   "projects": {
-    "C:\\Users\\marvin.kaiser\\source\\repos\\ProjektParkplatzManagement\\ProjektParkplatzManagement\\ProjektParkplatzManagement.csproj": {
+    "D:\\VSProjects\\ProjektParkplatzManagement\\ProjektParkplatzManagement.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\marvin.kaiser\\source\\repos\\ProjektParkplatzManagement\\ProjektParkplatzManagement\\ProjektParkplatzManagement.csproj",
+        "projectUniqueName": "D:\\VSProjects\\ProjektParkplatzManagement\\ProjektParkplatzManagement.csproj",
         "projectName": "ProjektParkplatzManagement",
-        "projectPath": "C:\\Users\\marvin.kaiser\\source\\repos\\ProjektParkplatzManagement\\ProjektParkplatzManagement\\ProjektParkplatzManagement.csproj",
-        "packagesPath": "C:\\Users\\marvin.kaiser\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\marvin.kaiser\\source\\repos\\ProjektParkplatzManagement\\ProjektParkplatzManagement\\obj\\",
+        "projectPath": "D:\\VSProjects\\ProjektParkplatzManagement\\ProjektParkplatzManagement.csproj",
+        "packagesPath": "C:\\Users\\pixel\\.nuget\\packages\\",
+        "outputPath": "D:\\VSProjects\\ProjektParkplatzManagement\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\marvin.kaiser\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\pixel\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -60,6 +60,24 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[6.0.26, 6.0.26]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Host.win-x64",
+              "version": "[6.0.26, 6.0.26]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[6.0.26, 6.0.26]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[6.0.26, 6.0.26]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
@@ -68,7 +86,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101\\RuntimeIdentifierGraph.json"
         }
       }
     }

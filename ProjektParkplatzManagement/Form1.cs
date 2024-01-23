@@ -25,9 +25,9 @@ namespace ProjektParkplatzManagement
                 return;
             }
             FullUserResponse foundUser = controller.loginUserByCredentials(input_name, hashed);
-            if (!foundUser.getWorked())
+            if (!foundUser.worked)
             {
-                MessageBox.Show(foundUser.getMessage(), "Anmeldung fehlgeschlagen", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(foundUser.message, "Anmeldung fehlgeschlagen", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             if (foundUser.getValue().permission > Permissions.DEFAULT)

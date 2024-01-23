@@ -53,12 +53,12 @@ namespace ProjektParkplatzManagement
             }
 
             long startDateInMilliseconds = Utils.toMilliseconds(selectedTime);
-            BookingRequest request = new BookingRequest(startDateInMilliseconds, startDateInMilliseconds + durationInMinutes * 60 * 1000, Form1.controller.getUser(), this.parkingLotData.id);
+            BookingRequest request = new BookingRequest(startDateInMilliseconds, startDateInMilliseconds + durationInMinutes * 60 * 1000, Form1.controller.getUser(), this.parkingLotData.id, parkingLotData.type);
 
             
             FullBookingResponse response = Form1.controller.bucheParkplatz(request);
-            string title = response.getWorked() ? "Erfolgreich gebucht!" : "Buchung Fehlgeschlagen!";
-            MessageBox.Show(response.getMessage(), title, MessageBoxButtons.OK);
+            string title = response.worked ? "Erfolgreich gebucht!" : "Buchung Fehlgeschlagen!";
+            MessageBox.Show(response.message, title, MessageBoxButtons.OK);
         }
 
         private void trackBar1_Scroll(object sender, EventArgs e)

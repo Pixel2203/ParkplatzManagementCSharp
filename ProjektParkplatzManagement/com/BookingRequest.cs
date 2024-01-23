@@ -7,5 +7,5 @@ using ProjektParkplatzManagement.com.dto;
 
 namespace ProjektParkplatzManagement.com
 {
-    public record BookingRequest(long startDate, long endDate, User user, int parkingLotId);
+    public record BookingRequest(long startDate, long endDate, User user, int parkingLotId, ParkingLotType type);
 }
