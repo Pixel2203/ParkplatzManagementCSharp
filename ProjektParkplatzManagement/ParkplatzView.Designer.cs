@@ -34,11 +34,14 @@
             label4 = new Label();
             label5 = new Label();
             label6 = new Label();
-            comboBox2 = new ComboBox();
             bookButton = new Button();
-            dateTimePicker1 = new DateTimePicker();
+            datepicker = new DateTimePicker();
             trackBar1 = new TrackBar();
             label9 = new Label();
+            timepicker = new DateTimePicker();
+            label7 = new Label();
+            label8 = new Label();
+            label10 = new Label();
             ((System.ComponentModel.ISupportInitialize)trackBar1).BeginInit();
             SuspendLayout();
             // 
@@ -96,16 +99,6 @@
             label6.TabIndex = 5;
             label6.Text = "Parkplatznummer:";
             // 
-            // comboBox2
-            // 
-            comboBox2.FormattingEnabled = true;
-            comboBox2.Items.AddRange(new object[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24" });
-            comboBox2.Location = new Point(227, 283);
-            comboBox2.Name = "comboBox2";
-            comboBox2.Size = new Size(100, 23);
-            comboBox2.TabIndex = 35;
-            comboBox2.Text = "Uhrzeit";
-            // 
             // bookButton
             // 
             bookButton.Location = new Point(134, 410);
@@ -117,42 +110,84 @@
             bookButton.UseVisualStyleBackColor = true;
             bookButton.Click += bookButton_Click;
             // 
-            // dateTimePicker1
+            // datepicker
             // 
-            dateTimePicker1.Format = DateTimePickerFormat.Custom;
-            dateTimePicker1.Location = new Point(99, 283);
-            dateTimePicker1.Margin = new Padding(3, 2, 3, 2);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(100, 23);
-            dateTimePicker1.TabIndex = 31;
+            datepicker.Format = DateTimePickerFormat.Custom;
+            datepicker.Location = new Point(255, 232);
+            datepicker.Margin = new Padding(3, 2, 3, 2);
+            datepicker.Name = "datepicker";
+            datepicker.Size = new Size(100, 23);
+            datepicker.TabIndex = 31;
             // 
             // trackBar1
             // 
-            trackBar1.Location = new Point(99, 351);
+            trackBar1.Location = new Point(175, 334);
             trackBar1.Margin = new Padding(3, 2, 3, 2);
             trackBar1.Minimum = 1;
             trackBar1.Name = "trackBar1";
             trackBar1.Size = new Size(228, 45);
             trackBar1.TabIndex = 32;
             trackBar1.Value = 1;
+            trackBar1.Scroll += trackBar1_Scroll;
             // 
             // label9
             // 
             label9.AutoSize = true;
-            label9.Location = new Point(162, 334);
+            label9.Location = new Point(248, 317);
             label9.Name = "label9";
             label9.Size = new Size(114, 15);
             label9.TabIndex = 33;
             label9.Text = "30 Minuten gebucht";
+            // 
+            // timepicker
+            // 
+            timepicker.CustomFormat = "HH:mm";
+            timepicker.Format = DateTimePickerFormat.Custom;
+            timepicker.Location = new Point(255, 271);
+            timepicker.Margin = new Padding(3, 2, 3, 2);
+            timepicker.Name = "timepicker";
+            timepicker.Size = new Size(100, 23);
+            timepicker.TabIndex = 36;
+            timepicker.Value = new DateTime(2024, 1, 21, 22, 29, 0, 0);
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Location = new Point(48, 238);
+            label7.Name = "label7";
+            label7.Size = new Size(95, 15);
+            label7.TabIndex = 37;
+            label7.Text = "Buchungsdatum";
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Location = new Point(48, 277);
+            label8.Name = "label8";
+            label8.Size = new Size(44, 15);
+            label8.TabIndex = 38;
+            label8.Text = "Beginn";
+            // 
+            // label10
+            // 
+            label10.AutoSize = true;
+            label10.Location = new Point(48, 334);
+            label10.Name = "label10";
+            label10.Size = new Size(38, 15);
+            label10.TabIndex = 39;
+            label10.Text = "Dauer";
             // 
             // ParkplatzView
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(440, 455);
-            Controls.Add(comboBox2);
+            Controls.Add(label10);
+            Controls.Add(label8);
+            Controls.Add(label7);
+            Controls.Add(timepicker);
             Controls.Add(bookButton);
-            Controls.Add(dateTimePicker1);
+            Controls.Add(datepicker);
             Controls.Add(trackBar1);
             Controls.Add(label9);
             Controls.Add(label6);
@@ -180,10 +215,13 @@
         private Label label4;
         private Label label5;
         private Label label6;
-        private ComboBox comboBox2;
         private Button bookButton;
-        private DateTimePicker dateTimePicker1;
+        private DateTimePicker datepicker;
         private TrackBar trackBar1;
         private Label label9;
+        private DateTimePicker timepicker;
+        private Label label7;
+        private Label label8;
+        private Label label10;
     }
 }

@@ -14,6 +14,6 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = ProjektParkplatzManagement
-build_property.ProjectDir = C:\Users\PlayTics\Source\Repos\Pixel2203\ParkplatzManagementCSharp\ProjektParkplatzManagement\
+build_property.ProjectDir = D:\VSProjects\ProjektParkplatzManagement\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
