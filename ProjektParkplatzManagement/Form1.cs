@@ -4,6 +4,7 @@ using ProjektParkplatzManagement.com.dto;
 using ProjektParkplatzManagement.com.dto.response;
 using System.Diagnostics;
 using System.Drawing;
+using Autofac.Features.GeneratedFactories;
 
 namespace ProjektParkplatzManagement
 {
@@ -17,30 +18,42 @@ namespace ProjektParkplatzManagement
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string input_name = textBox1.Text;
-            string input_password = maskedTextBox2.Text;
-            string hashed = Utils.erzeugeHashWert(input_password);
-            if (hashed == null)
-            {
-                return;
-            }
-            FullUserResponse foundUser = controller.loginUserByCredentials(input_name, hashed);
-            if (!foundUser.getWorked())
-            {
-                MessageBox.Show(foundUser.getMessage(), "Anmeldung fehlgeschlagen", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-            if (foundUser.getValue().permission > Permissions.DEFAULT)
-            {
-                openAdminPanel();
+            if (Form1.controller.isValidConnection() == true )6 {
+
+
+                string input_name = textBox1.Text;
+                string input_password = maskedTextBox2.Text;
+                string hashed = Utils.erzeugeHashWert(input_password);
+                if (hashed == null)
+                {
+                    return;
+                }
+
+                FullUserResponse foundUser = controller.loginUserByCredentials(input_name, hashed);
+                if (!foundUser.getWorked())
+                {
+                    MessageBox.Show(foundUser.getMessage(), "Anmeldung fehlgeschlagen", MessageBoxButtons.OK,
+                        MessageBoxIcon.Error);
+                    return;
+                }
+
+                if (foundUser.getValue().permission > Permissions.DEFAULT)
+                {
+                    openAdminPanel();
+                }
+                else
+                {
+                    openOverview();
+                    Debug.WriteLine("Unzureichende Rechtegruppe, um das Adminpanel zu öffnen!");
+                }
+                // Open Admin Panel
             }
             else
             {
-                openOverview();
-                Debug.WriteLine("Unzureichende Rechtegruppe, um das Adminpanel zu öffnen!");
+                showError();
             }
-            // Open Admin Panel
         }
+
         private void openAdminPanel()
         {
             this.Hide();
@@ -64,7 +77,14 @@ namespace ProjektParkplatzManagement
             label3.BackColor = Color.Transparent;
             linkLabel1.Parent = pictureBox2;
             linkLabel1.BackColor = Color.Transparent;
+            label4.Parent = pictureBox2;
+            label4.BackColor = Color.Transparent;
+            label4.Visible = false;
 
+        }
+        private void showError()
+        {
+            label4.Visible = true;
         }
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

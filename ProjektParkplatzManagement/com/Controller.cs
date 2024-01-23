@@ -14,9 +14,9 @@ namespace ProjektParkplatzManagement.com
     public class Controller
     {
         private User? currentUser;
-        private DBManager dBManager;
-        private BookingManager bookingManager;
-        private UserManager userManager;
+        private readonly DBManager dBManager;
+        private readonly BookingManager bookingManager;
+        private readonly UserManager userManager;
         private readonly string connectionString = "server=127.0.0.1;uid=root;pwd=Kaiser.331;database=parkingdatabase";
         public Controller()
         {
@@ -59,6 +59,11 @@ namespace ProjektParkplatzManagement.com
         public User? getUser()
         {
             return this.currentUser;
+        }
+
+        public Boolean isValidConnection()
+        {
+            return dBManager.isConnected();
         }
     }
 }

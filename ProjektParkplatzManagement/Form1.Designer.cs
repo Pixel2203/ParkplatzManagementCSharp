@@ -40,6 +40,7 @@
             pictureBox2 = new PictureBox();
             pictureBox3 = new PictureBox();
             linkLabel2 = new LinkLabel();
+            label4 = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
@@ -164,12 +165,25 @@
             linkLabel2.Text = "Konto erstellen";
             linkLabel2.LinkClicked += linkLabel2_LinkClicked;
             // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.BackColor = Color.Transparent;
+            label4.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label4.ForeColor = Color.Red;
+            label4.Location = new Point(51, 152);
+            label4.Name = "label4";
+            label4.Size = new Size(210, 21);
+            label4.TabIndex = 13;
+            label4.Text = "Verbindung fehlgeschlagen";
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(255, 224, 192);
             ClientSize = new Size(700, 338);
+            Controls.Add(label4);
             Controls.Add(linkLabel2);
             Controls.Add(linkLabel1);
             Controls.Add(label3);
@@ -208,5 +222,6 @@
         private PictureBox pictureBox2;
         private PictureBox pictureBox3;
         private LinkLabel linkLabel2;
+        private Label label4;
     }
 }
