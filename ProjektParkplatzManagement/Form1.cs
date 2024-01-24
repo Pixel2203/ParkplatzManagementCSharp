@@ -18,42 +18,30 @@ namespace ProjektParkplatzManagement
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (Form1.controller.isValidConnection() == true )6 {
-
-
-                string input_name = textBox1.Text;
-                string input_password = maskedTextBox2.Text;
-                string hashed = Utils.erzeugeHashWert(input_password);
-                if (hashed == null)
-                {
-                    return;
-                }
-
-                FullUserResponse foundUser = controller.loginUserByCredentials(input_name, hashed);
-                if (!foundUser.getWorked())
-                {
-                    MessageBox.Show(foundUser.getMessage(), "Anmeldung fehlgeschlagen", MessageBoxButtons.OK,
-                        MessageBoxIcon.Error);
-                    return;
-                }
-
-                if (foundUser.getValue().permission > Permissions.DEFAULT)
-                {
-                    openAdminPanel();
-                }
-                else
-                {
-                    openOverview();
-                    Debug.WriteLine("Unzureichende Rechtegruppe, um das Adminpanel zu öffnen!");
-                }
-                // Open Admin Panel
+            string input_name = textBox1.Text;
+            string input_password = maskedTextBox2.Text;
+            string hashed = Utils.erzeugeHashWert(input_password);
+            if (hashed == null)
+            {
+                return;
+            }
+            FullUserResponse foundUser = controller.loginUserByCredentials(input_name, hashed);
+            if (!foundUser.worked)
+            {
+                MessageBox.Show(foundUser.message, "Anmeldung fehlgeschlagen", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            if (foundUser.getValue().permission > Permissions.DEFAULT)
+            {
+                openAdminPanel();
             }
             else
             {
-                showError();
+                openOverview();
+                Debug.WriteLine("Unzureichende Rechtegruppe, um das Adminpanel zu öffnen!");
             }
+            // Open Admin Panel
         }
-
         private void openAdminPanel()
         {
             this.Hide();

@@ -41,9 +41,9 @@ namespace ProjektParkplatzManagement
                 User user = new User(0, prename, name, plate, email, 0, Permissions.DEFAULT, password);
                 ResponseObject response = Form1.controller.registerUser(user);
 
-                string title = response.getWorked() ? "Erfolgreich Registriert!" : "Registrierung Fehlgeschlagen!";
+                string title = response.worked ? "Erfolgreich Registriert!" : "Registrierung Fehlgeschlagen!";
                 label9.Text = title;
-                MessageBox.Show(response.getMessage(), title, MessageBoxButtons.OK, response.getWorked() ? MessageBoxIcon.Information : MessageBoxIcon.Error);
+                MessageBox.Show(response.message, title, MessageBoxButtons.OK, response.worked ? MessageBoxIcon.Information : MessageBoxIcon.Error);
             }else
             {
                 MessageBox.Show("Daten ungültig oder unvollständig!", "Ungültige Angaben", MessageBoxButtons.OK, MessageBoxIcon.Error);

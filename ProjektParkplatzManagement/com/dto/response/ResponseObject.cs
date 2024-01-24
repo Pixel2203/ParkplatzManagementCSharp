@@ -8,22 +8,13 @@ namespace ProjektParkplatzManagement.com.dto.response
 {
     public class ResponseObject
     {
-        protected readonly bool worked;
-        protected readonly string message;
+        public bool worked { get; }
+        public string message { get; }
 
     public ResponseObject(string message, bool worked)
         {
             this.message = message;
             this.worked = worked;
-        }
-
-        public string getMessage()
-        {
-            return this.message;
-        }
-        public bool getWorked()
-        {
-            return this.worked;
         }
     }
 }

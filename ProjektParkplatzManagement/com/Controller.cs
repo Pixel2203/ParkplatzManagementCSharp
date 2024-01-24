@@ -35,7 +35,7 @@ namespace ProjektParkplatzManagement.com
         public FullUserResponse loginUserByCredentials(string email, string password)
         {
             FullUserResponse response = userManager.getUserByCredentials(email, password);
-            if (response.getWorked())
+            if (response.worked)
             {
                 this.currentUser = response.getValue();
             }
@@ -50,6 +50,14 @@ namespace ProjektParkplatzManagement.com
         public List<ParkingLotData> getParkingLotData()
         {
             return bookingManager.getParkingLotData();
+        }
+        public FullParkingTicketListResponse getRecentBookingsByLoggedInUser()
+        {
+            if(currentUser == null)
+            {
+                return new FullParkingTicketListResponse("Es ist kein Benutzer angemeldet!", false, null);
+            }
+            return bookingManager.getRecentBookingsByUser(this.currentUser);
         }
 
         public void logoutUser()

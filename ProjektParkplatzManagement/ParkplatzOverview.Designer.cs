@@ -28,12 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            comboBox2 = new ComboBox();
-            comboBox1 = new ComboBox();
-            label9 = new Label();
-            trackBar1 = new TrackBar();
-            dateTimePicker1 = new DateTimePicker();
-            button1 = new Button();
             label5 = new Label();
             menuStrip1 = new MenuStrip();
             benutzerToolStripMenuItem = new ToolStripMenuItem();
@@ -42,78 +36,29 @@
             columnHeader1 = new ColumnHeader();
             columnHeader2 = new ColumnHeader();
             columnHeader3 = new ColumnHeader();
-            ((System.ComponentModel.ISupportInitialize)trackBar1).BeginInit();
+            tabControl1 = new TabControl();
+            tabPage1 = new TabPage();
+            tabPage2 = new TabPage();
+            button2 = new Button();
+            listView2 = new ListView();
+            columnHeader7 = new ColumnHeader();
+            columnHeader8 = new ColumnHeader();
+            columnHeader4 = new ColumnHeader();
+            columnHeader5 = new ColumnHeader();
+            columnHeader9 = new ColumnHeader();
+            columnHeader6 = new ColumnHeader();
+            label1 = new Label();
             menuStrip1.SuspendLayout();
+            tabControl1.SuspendLayout();
+            tabPage1.SuspendLayout();
+            tabPage2.SuspendLayout();
             SuspendLayout();
-            // 
-            // comboBox2
-            // 
-            comboBox2.BackColor = Color.FromArgb(255, 240, 230);
-            comboBox2.FormattingEnabled = true;
-            comboBox2.Items.AddRange(new object[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24" });
-            comboBox2.Location = new Point(146, 322);
-            comboBox2.Name = "comboBox2";
-            comboBox2.Size = new Size(64, 23);
-            comboBox2.TabIndex = 4;
-            comboBox2.Text = "Uhrzeit";
-            // 
-            // comboBox1
-            // 
-            comboBox1.BackColor = Color.FromArgb(255, 240, 230);
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Items.AddRange(new object[] { "PP 1", "PP 2", "PP 3", "PP 4", "PP 5", "E-PP 1 " });
-            comboBox1.Location = new Point(68, 289);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(142, 23);
-            comboBox1.TabIndex = 2;
-            comboBox1.Text = "Parkplatz Wählen";
-            // 
-            // label9
-            // 
-            label9.AutoSize = true;
-            label9.Location = new Point(311, 289);
-            label9.Name = "label9";
-            label9.Size = new Size(114, 15);
-            label9.TabIndex = 27;
-            label9.Text = "30 Minuten gebucht";
-            // 
-            // trackBar1
-            // 
-            trackBar1.Location = new Point(258, 318);
-            trackBar1.Margin = new Padding(3, 2, 3, 2);
-            trackBar1.Minimum = 1;
-            trackBar1.Name = "trackBar1";
-            trackBar1.Size = new Size(228, 45);
-            trackBar1.TabIndex = 5;
-            trackBar1.Value = 1;
-            trackBar1.Scroll += trackBar1_Scroll_1;
-            // 
-            // dateTimePicker1
-            // 
-            dateTimePicker1.CalendarMonthBackground = Color.FromArgb(255, 240, 230);
-            dateTimePicker1.Format = DateTimePickerFormat.Custom;
-            dateTimePicker1.Location = new Point(68, 322);
-            dateTimePicker1.Margin = new Padding(3, 2, 3, 2);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(72, 23);
-            dateTimePicker1.TabIndex = 3;
-            // 
-            // button1
-            // 
-            button1.Location = new Point(564, 311);
-            button1.Margin = new Padding(3, 2, 3, 2);
-            button1.Name = "button1";
-            button1.Size = new Size(142, 34);
-            button1.TabIndex = 6;
-            button1.Text = "Buchen";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
             // 
             // label5
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
-            label5.Location = new Point(271, 24);
+            label5.Location = new Point(274, 3);
             label5.Name = "label5";
             label5.Size = new Size(180, 28);
             label5.TabIndex = 19;
@@ -147,9 +92,9 @@
             // 
             listView1.BackColor = Color.FromArgb(255, 240, 230);
             listView1.Columns.AddRange(new ColumnHeader[] { columnHeader1, columnHeader2, columnHeader3 });
-            listView1.Location = new Point(12, 63);
+            listView1.Location = new Point(10, 46);
             listView1.Name = "listView1";
-            listView1.Size = new Size(694, 203);
+            listView1.Size = new Size(694, 208);
             listView1.TabIndex = 34;
             listView1.UseCompatibleStateImageBehavior = false;
             listView1.View = View.Details;
@@ -170,20 +115,108 @@
             columnHeader3.Text = "Status";
             columnHeader3.Width = 100;
             // 
+            // tabControl1
+            // 
+            tabControl1.Controls.Add(tabPage1);
+            tabControl1.Controls.Add(tabPage2);
+            tabControl1.Location = new Point(0, 27);
+            tabControl1.Name = "tabControl1";
+            tabControl1.SelectedIndex = 0;
+            tabControl1.Size = new Size(718, 351);
+            tabControl1.TabIndex = 35;
+            // 
+            // tabPage1
+            // 
+            tabPage1.BackColor = Color.FromArgb(255, 224, 192);
+            tabPage1.Controls.Add(listView1);
+            tabPage1.Controls.Add(label5);
+            tabPage1.Location = new Point(4, 24);
+            tabPage1.Name = "tabPage1";
+            tabPage1.Padding = new Padding(3);
+            tabPage1.Size = new Size(710, 323);
+            tabPage1.TabIndex = 0;
+            tabPage1.Text = "tabPage1";
+            // 
+            // tabPage2
+            // 
+            tabPage2.BackColor = Color.FromArgb(255, 224, 192);
+            tabPage2.Controls.Add(button2);
+            tabPage2.Controls.Add(listView2);
+            tabPage2.Controls.Add(label1);
+            tabPage2.Location = new Point(4, 24);
+            tabPage2.Name = "tabPage2";
+            tabPage2.Padding = new Padding(3);
+            tabPage2.Size = new Size(710, 323);
+            tabPage2.TabIndex = 1;
+            tabPage2.Text = "tabPage2";
+            // 
+            // button2
+            // 
+            button2.Location = new Point(8, 275);
+            button2.Name = "button2";
+            button2.Size = new Size(75, 23);
+            button2.TabIndex = 36;
+            button2.Text = "Refresh";
+            button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
+            // 
+            // listView2
+            // 
+            listView2.BackColor = Color.FromArgb(255, 240, 230);
+            listView2.Columns.AddRange(new ColumnHeader[] { columnHeader7, columnHeader8, columnHeader4, columnHeader5, columnHeader6, columnHeader9 });
+            listView2.Location = new Point(8, 51);
+            listView2.Name = "listView2";
+            listView2.Size = new Size(694, 208);
+            listView2.TabIndex = 35;
+            listView2.UseCompatibleStateImageBehavior = false;
+            listView2.View = View.Details;
+            // 
+            // columnHeader7
+            // 
+            columnHeader7.Text = "Datum";
+            columnHeader7.Width = 150;
+            // 
+            // columnHeader8
+            // 
+            columnHeader8.Text = "Dauer";
+            columnHeader8.Width = 120;
+            // 
+            // columnHeader4
+            // 
+            columnHeader4.Text = "Parkplatz";
+            columnHeader4.Width = 120;
+            // 
+            // columnHeader5
+            // 
+            columnHeader5.Text = "Typ";
+            columnHeader5.Width = 100;
+            // 
+            // columnHeader9
+            // 
+            columnHeader9.Text = "Kosten";
+            columnHeader9.Width = 100;
+            // 
+            // columnHeader6
+            // 
+            columnHeader6.Text = "Kennzeichen";
+            columnHeader6.Width = 120;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(8, 23);
+            label1.Name = "label1";
+            label1.Size = new Size(66, 15);
+            label1.TabIndex = 0;
+            label1.Text = "Dein Konto";
+            // 
             // ParkplatzOverview
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(255, 224, 192);
             ClientSize = new Size(718, 374);
-            Controls.Add(listView1);
-            Controls.Add(comboBox2);
-            Controls.Add(comboBox1);
-            Controls.Add(label5);
-            Controls.Add(button1);
-            Controls.Add(dateTimePicker1);
-            Controls.Add(trackBar1);
-            Controls.Add(label9);
+            Controls.Add(tabControl1);
             Controls.Add(menuStrip1);
             MainMenuStrip = menuStrip1;
             Margin = new Padding(3, 2, 3, 2);
@@ -192,9 +225,13 @@
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Parkplatz Übersicht";
             Load += ParkplatzOverview_Load;
-            ((System.ComponentModel.ISupportInitialize)trackBar1).EndInit();
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
+            tabControl1.ResumeLayout(false);
+            tabPage1.ResumeLayout(false);
+            tabPage1.PerformLayout();
+            tabPage2.ResumeLayout(false);
+            tabPage2.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -214,5 +251,17 @@
         private ColumnHeader columnHeader1;
         private ColumnHeader columnHeader2;
         private ColumnHeader columnHeader3;
+        private TabControl tabControl1;
+        private TabPage tabPage1;
+        private TabPage tabPage2;
+        private ListView listView2;
+        private ColumnHeader columnHeader5;
+        private Label label1;
+        private ColumnHeader columnHeader9;
+        private ColumnHeader columnHeader7;
+        private ColumnHeader columnHeader8;
+        private ColumnHeader columnHeader4;
+        private Button button2;
+        private ColumnHeader columnHeader6;
     }
 }
