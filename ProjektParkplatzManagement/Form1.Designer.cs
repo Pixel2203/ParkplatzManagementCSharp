@@ -48,13 +48,14 @@
             // 
             // button1
             // 
+            button1.BackColor = Color.FromArgb(255, 240, 230);
             button1.Location = new Point(525, 283);
             button1.Margin = new Padding(3, 2, 3, 2);
             button1.Name = "button1";
             button1.Size = new Size(104, 26);
             button1.TabIndex = 1;
             button1.Text = "Anmelden";
-            button1.UseVisualStyleBackColor = true;
+            button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click;
             // 
             // textBox1

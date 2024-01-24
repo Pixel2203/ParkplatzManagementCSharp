@@ -22,7 +22,7 @@ namespace ProjektParkplatzManagement
             this.Focus();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void button1_Click_1(object sender, EventArgs e)
         {
             //To-Do:
 
@@ -44,7 +44,8 @@ namespace ProjektParkplatzManagement
                 string title = response.worked ? "Erfolgreich Registriert!" : "Registrierung Fehlgeschlagen!";
                 label9.Text = title;
                 MessageBox.Show(response.message, title, MessageBoxButtons.OK, response.worked ? MessageBoxIcon.Information : MessageBoxIcon.Error);
-            }else
+            }
+            else
             {
                 MessageBox.Show("Daten ungültig oder unvollständig!", "Ungültige Angaben", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -136,6 +137,16 @@ namespace ProjektParkplatzManagement
         {
             textBox5.UseSystemPasswordChar = true;
             textBox6.UseSystemPasswordChar = true;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

@@ -43,9 +43,9 @@
             label7 = new Label();
             label8 = new Label();
             textBox2 = new TextBox();
-            button1 = new Button();
-            button2 = new Button();
             label9 = new Label();
+            button3 = new Button();
+            button1 = new Button();
             SuspendLayout();
             // 
             // textBox1
@@ -135,9 +135,9 @@
             label5.ForeColor = Color.FromArgb(66, 129, 31);
             label5.Location = new Point(51, 30);
             label5.Name = "label5";
-            label5.Size = new Size(189, 30);
+            label5.Size = new Size(167, 30);
             label5.TabIndex = 10;
-            label5.Text = "Persönliche Daten";
+            label5.Text = "Personen Daten";
             // 
             // label6
             // 
@@ -178,25 +178,6 @@
             textBox2.Size = new Size(187, 23);
             textBox2.TabIndex = 2;
             // 
-            // button1
-            // 
-            button1.Location = new Point(713, 415);
-            button1.Name = "button1";
-            button1.Size = new Size(75, 23);
-            button1.TabIndex = 15;
-            button1.Text = "Abbrechen";
-            button1.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            button2.Location = new Point(600, 415);
-            button2.Name = "button2";
-            button2.Size = new Size(94, 23);
-            button2.TabIndex = 16;
-            button2.Text = "Registrieren";
-            button2.UseVisualStyleBackColor = true;
-            button2.Click += button2_Click;
-            // 
             // label9
             // 
             label9.AutoSize = true;
@@ -207,15 +188,39 @@
             label9.Size = new Size(0, 17);
             label9.TabIndex = 17;
             // 
+            // button3
+            // 
+            button3.BackColor = Color.FromArgb(255, 240, 230);
+            button3.Location = new Point(51, 404);
+            button3.Margin = new Padding(3, 2, 3, 2);
+            button3.Name = "button3";
+            button3.Size = new Size(142, 34);
+            button3.TabIndex = 45;
+            button3.Text = "Abbrechen";
+            button3.UseVisualStyleBackColor = false;
+            button3.Click += button3_Click;
+            // 
+            // button1
+            // 
+            button1.BackColor = Color.FromArgb(255, 240, 230);
+            button1.Location = new Point(537, 404);
+            button1.Margin = new Padding(3, 2, 3, 2);
+            button1.Name = "button1";
+            button1.Size = new Size(142, 34);
+            button1.TabIndex = 46;
+            button1.Text = "Registrieren";
+            button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click_1;
+            // 
             // SignUp
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(255, 224, 192);
-            ClientSize = new Size(800, 450);
-            Controls.Add(label9);
-            Controls.Add(button2);
+            ClientSize = new Size(740, 450);
             Controls.Add(button1);
+            Controls.Add(button3);
+            Controls.Add(label9);
             Controls.Add(label8);
             Controls.Add(textBox2);
             Controls.Add(label7);
@@ -257,8 +262,8 @@
         private Label label7;
         private Label label8;
         private TextBox textBox2;
-        private Button button1;
-        private Button button2;
         private Label label9;
+        private Button button3;
+        private Button button1;
     }
 }
