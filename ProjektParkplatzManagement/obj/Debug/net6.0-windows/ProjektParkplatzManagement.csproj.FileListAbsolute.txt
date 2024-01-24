@@ -140,3 +140,4 @@ C:\Users\marvin.kaiser\source\repos\ProjektParkplatzManagement\ProjektParkplatzM
 C:\Users\marvin.kaiser\source\repos\ProjektParkplatzManagement\ProjektParkplatzManagement\obj\Debug\net6.0-windows\ProjektParkplatzManagement.ParkplatzView.resources
 C:\Users\marvin.kaiser\source\repos\ProjektParkplatzManagement\ProjektParkplatzManagement\obj\Debug\net6.0-windows\ProjektParkplatzManagement.Properties.Resources.resources
 C:\Users\marvin.kaiser\source\repos\ProjektParkplatzManagement\ProjektParkplatzManagement\obj\Debug\net6.0-windows\ProjektParkplatzManagement.SignUp.resources
+C:\Users\elias.liebelt\Source\Repos\Pixel2203\ParkplatzManagementCSharp\ProjektParkplatzManagement\obj\Debug\net6.0-windows\ProjektParkplatzManagement.ParkplatzView.resources

@@ -45,8 +45,8 @@
             columnHeader8 = new ColumnHeader();
             columnHeader4 = new ColumnHeader();
             columnHeader5 = new ColumnHeader();
-            columnHeader9 = new ColumnHeader();
             columnHeader6 = new ColumnHeader();
+            columnHeader9 = new ColumnHeader();
             label1 = new Label();
             menuStrip1.SuspendLayout();
             tabControl1.SuspendLayout();
@@ -85,14 +85,15 @@
             // abmeldenToolStripMenuItem
             // 
             abmeldenToolStripMenuItem.Name = "abmeldenToolStripMenuItem";
-            abmeldenToolStripMenuItem.Size = new Size(129, 22);
+            abmeldenToolStripMenuItem.Size = new Size(180, 22);
             abmeldenToolStripMenuItem.Text = "Abmelden";
+            abmeldenToolStripMenuItem.Click += abmeldenToolStripMenuItem_Click;
             // 
             // listView1
             // 
             listView1.BackColor = Color.FromArgb(255, 240, 230);
             listView1.Columns.AddRange(new ColumnHeader[] { columnHeader1, columnHeader2, columnHeader3 });
-            listView1.Location = new Point(10, 46);
+            listView1.Location = new Point(8, 51);
             listView1.Name = "listView1";
             listView1.Size = new Size(694, 208);
             listView1.TabIndex = 34;
@@ -152,12 +153,13 @@
             // 
             // button2
             // 
-            button2.Location = new Point(8, 275);
+            button2.BackColor = Color.FromArgb(255, 240, 230);
+            button2.Location = new Point(8, 265);
             button2.Name = "button2";
             button2.Size = new Size(75, 23);
             button2.TabIndex = 36;
             button2.Text = "Refresh";
-            button2.UseVisualStyleBackColor = true;
+            button2.UseVisualStyleBackColor = false;
             button2.Click += button2_Click;
             // 
             // listView2
@@ -191,15 +193,15 @@
             columnHeader5.Text = "Typ";
             columnHeader5.Width = 100;
             // 
-            // columnHeader9
-            // 
-            columnHeader9.Text = "Kosten";
-            columnHeader9.Width = 100;
-            // 
             // columnHeader6
             // 
             columnHeader6.Text = "Kennzeichen";
             columnHeader6.Width = 120;
+            // 
+            // columnHeader9
+            // 
+            columnHeader9.Text = "Kosten";
+            columnHeader9.Width = 100;
             // 
             // label1
             // 
@@ -240,7 +242,6 @@
         private Label label9;
         private TrackBar trackBar1;
         private DateTimePicker dateTimePicker1;
-        private Button button1;
         private Label label5;
         private ComboBox comboBox1;
         private ComboBox comboBox2;

@@ -55,7 +55,7 @@ namespace ProjektParkplatzManagement
             long startDateInMilliseconds = Utils.toMilliseconds(selectedTime);
             BookingRequest request = new BookingRequest(startDateInMilliseconds, startDateInMilliseconds + durationInMinutes * 60 * 1000, Form1.controller.getUser(), this.parkingLotData.id, parkingLotData.type);
 
-            
+
             FullBookingResponse response = Form1.controller.bucheParkplatz(request);
             string title = response.worked ? "Erfolgreich gebucht!" : "Buchung Fehlgeschlagen!";
             MessageBox.Show(response.message, title, MessageBoxButtons.OK);
@@ -64,6 +64,11 @@ namespace ProjektParkplatzManagement
         private void trackBar1_Scroll(object sender, EventArgs e)
         {
             label9.Text = trackBar1.Value * 30 + " Minuten";
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

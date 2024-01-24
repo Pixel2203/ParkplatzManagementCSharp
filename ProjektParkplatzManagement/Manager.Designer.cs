@@ -32,6 +32,7 @@
             menuStrip1 = new MenuStrip();
             benutzerToolStripMenuItem = new ToolStripMenuItem();
             abmeldenToolStripMenuItem = new ToolStripMenuItem();
+            button1 = new Button();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
@@ -70,12 +71,24 @@
             abmeldenToolStripMenuItem.Size = new Size(129, 22);
             abmeldenToolStripMenuItem.Text = "Abmelden";
             // 
+            // button1
+            // 
+            button1.BackColor = Color.FromArgb(255, 240, 230);
+            button1.Location = new Point(546, 291);
+            button1.Margin = new Padding(3, 2, 3, 2);
+            button1.Name = "button1";
+            button1.Size = new Size(142, 34);
+            button1.TabIndex = 45;
+            button1.Text = "Zurück";
+            button1.UseVisualStyleBackColor = false;
+            // 
             // Manager
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(255, 224, 192);
             ClientSize = new Size(700, 338);
+            Controls.Add(button1);
             Controls.Add(listBox1);
             Controls.Add(menuStrip1);
             MainMenuStrip = menuStrip1;
@@ -96,5 +109,6 @@
         private MenuStrip menuStrip1;
         private ToolStripMenuItem benutzerToolStripMenuItem;
         private ToolStripMenuItem abmeldenToolStripMenuItem;
+        private Button button1;
     }
 }
