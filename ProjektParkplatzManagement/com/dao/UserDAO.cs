@@ -108,6 +108,28 @@ namespace ProjektParkplatzManagement.com.dao
             string sql = string.Format("SELECT * FROM user WHERE email LIKE '{0}'",email);
             return getUserBySql(sql);
         }
+        public List<User> getAllUsers()
+        {
+            string sql = string.Format("SELECT * FROM user");
+            MySqlDataReader reader = Utils.runCommandWithReader(connection, sql);
+            List<User> users = new List<User>();
+            while(reader.Read())
+            {
+                Permissions permission = (Permissions)Enum.Parse(typeof(Permissions), reader.GetString("permission"));
+                User user = new User(
+                        reader.GetInt32("id"),
+                        reader.GetString("prename"),
+                        reader.GetString("name"),
+                        reader.GetString("plate"),
+                        reader.GetString("email"),
+                        reader.GetInt32("penalties"),
+                        permission,
+                        reader.GetString("password"));
+                users.Add(user);
+            }
+            reader.Close();
+            return users;
+        }
 
         /*
 

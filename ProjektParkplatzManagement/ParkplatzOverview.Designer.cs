@@ -45,8 +45,8 @@
             columnHeader8 = new ColumnHeader();
             columnHeader4 = new ColumnHeader();
             columnHeader5 = new ColumnHeader();
-            columnHeader9 = new ColumnHeader();
             columnHeader6 = new ColumnHeader();
+            columnHeader9 = new ColumnHeader();
             label1 = new Label();
             menuStrip1.SuspendLayout();
             tabControl1.SuspendLayout();
@@ -85,8 +85,9 @@
             // abmeldenToolStripMenuItem
             // 
             abmeldenToolStripMenuItem.Name = "abmeldenToolStripMenuItem";
-            abmeldenToolStripMenuItem.Size = new Size(129, 22);
+            abmeldenToolStripMenuItem.Size = new Size(180, 22);
             abmeldenToolStripMenuItem.Text = "Abmelden";
+            abmeldenToolStripMenuItem.Click += abmeldenToolStripMenuItem_Click;
             // 
             // listView1
             // 
@@ -135,7 +136,7 @@
             tabPage1.Padding = new Padding(3);
             tabPage1.Size = new Size(710, 323);
             tabPage1.TabIndex = 0;
-            tabPage1.Text = "tabPage1";
+            tabPage1.Text = "Parkplätze";
             // 
             // tabPage2
             // 
@@ -148,7 +149,7 @@
             tabPage2.Padding = new Padding(3);
             tabPage2.Size = new Size(710, 323);
             tabPage2.TabIndex = 1;
-            tabPage2.Text = "tabPage2";
+            tabPage2.Text = "Konto";
             // 
             // button2
             // 
@@ -191,15 +192,15 @@
             columnHeader5.Text = "Typ";
             columnHeader5.Width = 100;
             // 
-            // columnHeader9
-            // 
-            columnHeader9.Text = "Kosten";
-            columnHeader9.Width = 100;
-            // 
             // columnHeader6
             // 
             columnHeader6.Text = "Kennzeichen";
             columnHeader6.Width = 120;
+            // 
+            // columnHeader9
+            // 
+            columnHeader9.Text = "Kosten";
+            columnHeader9.Width = 100;
             // 
             // label1
             // 

@@ -32,5 +32,18 @@ namespace ProjektParkplatzManagement.com.manager
             }
             return new FullUserResponse("Erfolgreich angemeldet!", true, foundUser);
         }
+        public FullUserListResponse getAllUsers()
+        {
+            List<User> users = agent.getAllUsers();
+            if(users == null)
+            {
+                return new FullUserListResponse("Fehler bei der Auswertung", false, null);
+            }
+            if(users.Count == 0)
+            {
+                return new FullUserListResponse("Es konnten keine Benutzer gefunden werden!", true, users);
+            }
+            return new FullUserListResponse("User gefunden!", true, users);
+        }
     }   
 }

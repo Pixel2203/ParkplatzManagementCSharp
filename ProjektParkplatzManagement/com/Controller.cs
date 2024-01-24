@@ -59,10 +59,25 @@ namespace ProjektParkplatzManagement.com
             }
             return bookingManager.getRecentBookingsByUser(this.currentUser);
         }
-
-        public void logoutUser()
+        public FullParkingTicketListResponse getRecentBookingsByUser(User user)
         {
+            if (user == null)
+            {
+                return new FullParkingTicketListResponse("Ungültiger Benutzer!", false, null);
+            }
+            return bookingManager.getRecentBookingsByUser(user);
+        }
+        public FullUserListResponse getAllUsers()
+        {
+            return userManager.getAllUsers();
+        }
+
+        public void logoutUser(Form form)
+        {
+            form.Hide();
             this.currentUser = null;
+            new Form1().ShowDialog();
+            form.Close();
         }
         public User? getUser()
         {

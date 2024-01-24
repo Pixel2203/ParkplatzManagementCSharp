@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\elias.liebelt\\Source\\Repos\\Pixel2203\\ParkplatzManagementCSharp\\ProjektParkplatzManagement\\ProjektParkplatzManagement.csproj": {}
+    "D:\\VSProjects\\ProjektParkplatzManagement\\ProjektParkplatzManagement.csproj": {}
   },
   "projects": {
-    "C:\\Users\\elias.liebelt\\Source\\Repos\\Pixel2203\\ParkplatzManagementCSharp\\ProjektParkplatzManagement\\ProjektParkplatzManagement.csproj": {
+    "D:\\VSProjects\\ProjektParkplatzManagement\\ProjektParkplatzManagement.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\elias.liebelt\\Source\\Repos\\Pixel2203\\ParkplatzManagementCSharp\\ProjektParkplatzManagement\\ProjektParkplatzManagement.csproj",
+        "projectUniqueName": "D:\\VSProjects\\ProjektParkplatzManagement\\ProjektParkplatzManagement.csproj",
         "projectName": "ProjektParkplatzManagement",
-        "projectPath": "C:\\Users\\elias.liebelt\\Source\\Repos\\Pixel2203\\ParkplatzManagementCSharp\\ProjektParkplatzManagement\\ProjektParkplatzManagement.csproj",
-        "packagesPath": "C:\\Users\\elias.liebelt\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\elias.liebelt\\Source\\Repos\\Pixel2203\\ParkplatzManagementCSharp\\ProjektParkplatzManagement\\obj\\",
+        "projectPath": "D:\\VSProjects\\ProjektParkplatzManagement\\ProjektParkplatzManagement.csproj",
+        "packagesPath": "C:\\Users\\pixel\\.nuget\\packages\\",
+        "outputPath": "D:\\VSProjects\\ProjektParkplatzManagement\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\elias.liebelt\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\pixel\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

@@ -62,16 +62,11 @@ namespace ProjektParkplatzManagement
                 }
             }
         }
-
-        private void tab(object sender, EventArgs e)
-        {
-            
-        }
         private void addBookingItemToListView(ParkingTicket ticket)
         {
             ListViewItem item = new ListViewItem(Utils.fromMilliseconds(ticket.startDate).ToString(Utils.formatDateWithYearMonthDay));
 
-            item.SubItems.Add((ticket.getParkingDuration()/1000/60).ToString() + " Minuten");
+            item.SubItems.Add((ticket.getParkingDuration() / 1000 / 60).ToString() + " Minuten");
             item.SubItems.Add(ticket.name);
             item.SubItems.Add(Enum.GetName(ticket.type));
             item.SubItems.Add(ticket.plate);
@@ -94,6 +89,11 @@ namespace ProjektParkplatzManagement
             }
             response.getValue().ForEach(booking => addBookingItemToListView(booking));
 
+        }
+
+        private void abmeldenToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form1.controller.logoutUser(this);
         }
     }
 }
