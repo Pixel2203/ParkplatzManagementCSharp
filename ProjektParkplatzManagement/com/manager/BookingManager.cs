@@ -62,6 +62,14 @@ namespace ProjektParkplatzManagement.com.manager
         {
             return bookingDAO.getParkingLotData();
         }
+        public FullBookingListResponse getAllBookingsByUserId(int userId)
+        {
+            List<Booking>? foundBookings = bookingDAO.getAllBookingsByUserId(userId);
+            string message = foundBookings == null ?
+                "Fehler beim Aufrufen vorheriger Buchungen!" : foundBookings.Count == 0 ?
+                "Konnte keine vorherigen Buchungen finden!" : "Buchungen erfolgreich abgerufen!";
+            return new FullBookingListResponse(message, foundBookings != null, foundBookings);
+        }
 
 
     }

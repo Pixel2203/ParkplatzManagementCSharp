@@ -192,6 +192,11 @@ namespace ProjektParkplatzManagement.com.dao
             reader.Close();
             return result;
         }
+        public List<Booking>? getAllBookingsByUserId(int userId)
+        {
+            string sql = string.Format("SELECT * FROM booking WHERE userId = {0}", userId.ToString());
+            return getBookingsBySql(sql);
+        }
 
         /*
        public Optional<List<Booking>> findBookingsByDateAndSensor(int sensorId, long dateInMilliseconds)

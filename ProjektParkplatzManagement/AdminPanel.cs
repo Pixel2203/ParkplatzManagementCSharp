@@ -31,7 +31,9 @@ namespace ProjektParkplatzManagement
 
         private void button2_Click(object sender, EventArgs e)
         {
-
+            this.Hide();
+            new Manager().ShowDialog();
+            this.Close();
         }
 
         private void button1_Click(object sender, EventArgs e)
