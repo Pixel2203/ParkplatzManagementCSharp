@@ -67,6 +67,18 @@ namespace ProjektParkplatzManagement.com
         {
             return userManager.getAllUsers();
         }
+        public ResponseObject deleteBookingById(int id)
+        {
+            return bookingManager.deleteBookingById(id);
+        }
+        public ResponseObject changePasswordOfUserById(int userId, String password)
+        {
+            return userManager.changePasswordOfUser(userId, password);
+        }
+        public ResponseObject blockUserById(int userId)
+        {
+            return userManager.blockuserById(userId);
+        }
 
         public void logoutUser(Form form)
         {

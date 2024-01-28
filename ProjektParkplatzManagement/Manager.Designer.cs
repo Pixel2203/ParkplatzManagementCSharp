@@ -31,16 +31,18 @@
             menuStrip1 = new MenuStrip();
             benutzerToolStripMenuItem = new ToolStripMenuItem();
             abmeldenToolStripMenuItem = new ToolStripMenuItem();
-            checkBox1 = new CheckBox();
-            button1 = new Button();
+            blockUser = new CheckBox();
+            changePassword = new Button();
             listView2 = new ListView();
             columnHeader7 = new ColumnHeader();
             columnHeader6 = new ColumnHeader();
-            button2 = new Button();
-            button3 = new Button();
+            saveChanges = new Button();
+            discardChanges = new Button();
             deleteBooking = new Button();
             loadBookings = new Button();
             listBox1 = new ListBox();
+            label1 = new Label();
+            selectedUserLabel = new Label();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
@@ -69,30 +71,34 @@
             abmeldenToolStripMenuItem.Text = "Abmelden";
             abmeldenToolStripMenuItem.Click += abmeldenToolStripMenuItem_Click;
             // 
-            // checkBox1
+            // blockUser
             // 
-            checkBox1.AutoSize = true;
-            checkBox1.Location = new Point(565, 191);
-            checkBox1.Name = "checkBox1";
-            checkBox1.Size = new Size(70, 19);
-            checkBox1.TabIndex = 2;
-            checkBox1.Text = "Gesperrt";
-            checkBox1.UseVisualStyleBackColor = true;
+            blockUser.AutoSize = true;
+            blockUser.Enabled = false;
+            blockUser.Location = new Point(545, 191);
+            blockUser.Name = "blockUser";
+            blockUser.Size = new Size(70, 19);
+            blockUser.TabIndex = 2;
+            blockUser.Text = "Gesperrt";
+            blockUser.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // changePassword
             // 
-            button1.Location = new Point(565, 216);
-            button1.Name = "button1";
-            button1.Size = new Size(104, 23);
-            button1.TabIndex = 36;
-            button1.Text = "Passwort ändern";
-            button1.UseVisualStyleBackColor = true;
+            changePassword.Enabled = false;
+            changePassword.Location = new Point(545, 216);
+            changePassword.Name = "changePassword";
+            changePassword.Size = new Size(104, 23);
+            changePassword.TabIndex = 36;
+            changePassword.Text = "Passwort ändern";
+            changePassword.UseVisualStyleBackColor = true;
             // 
             // listView2
             // 
             listView2.BackColor = Color.FromArgb(255, 240, 230);
             listView2.Columns.AddRange(new ColumnHeader[] { columnHeader7, columnHeader6 });
+            listView2.Enabled = false;
             listView2.Location = new Point(236, 31);
+            listView2.MultiSelect = false;
             listView2.Name = "listView2";
             listView2.Size = new Size(275, 208);
             listView2.TabIndex = 37;
@@ -106,31 +112,33 @@
             // 
             // columnHeader6
             // 
-            columnHeader6.Text = "Kennzeichen";
+            columnHeader6.Text = "Buchungsnummer";
             columnHeader6.Width = 120;
             // 
-            // button2
+            // saveChanges
             // 
-            button2.BackColor = Color.FromArgb(128, 255, 128);
-            button2.Location = new Point(408, 297);
-            button2.Name = "button2";
-            button2.Size = new Size(140, 34);
-            button2.TabIndex = 38;
-            button2.Text = "Änderungen Speichern";
-            button2.UseVisualStyleBackColor = false;
+            saveChanges.BackColor = Color.FromArgb(128, 255, 128);
+            saveChanges.Enabled = false;
+            saveChanges.Location = new Point(408, 297);
+            saveChanges.Name = "saveChanges";
+            saveChanges.Size = new Size(140, 34);
+            saveChanges.TabIndex = 38;
+            saveChanges.Text = "Änderungen Speichern";
+            saveChanges.UseVisualStyleBackColor = false;
             // 
-            // button3
+            // discardChanges
             // 
-            button3.BackColor = Color.Red;
-            button3.Location = new Point(554, 297);
-            button3.Name = "button3";
-            button3.Size = new Size(140, 34);
-            button3.TabIndex = 39;
-            button3.Text = "Änderungen verwerfen";
-            button3.UseVisualStyleBackColor = false;
+            discardChanges.BackColor = Color.Red;
+            discardChanges.Location = new Point(554, 297);
+            discardChanges.Name = "discardChanges";
+            discardChanges.Size = new Size(140, 34);
+            discardChanges.TabIndex = 39;
+            discardChanges.Text = "Änderungen verwerfen";
+            discardChanges.UseVisualStyleBackColor = false;
             // 
             // deleteBooking
             // 
+            deleteBooking.Enabled = false;
             deleteBooking.Location = new Point(545, 84);
             deleteBooking.Name = "deleteBooking";
             deleteBooking.Size = new Size(142, 23);
@@ -141,6 +149,7 @@
             // 
             // loadBookings
             // 
+            loadBookings.Enabled = false;
             loadBookings.Location = new Point(545, 35);
             loadBookings.Name = "loadBookings";
             loadBookings.Size = new Size(142, 23);
@@ -157,6 +166,26 @@
             listBox1.Name = "listBox1";
             listBox1.Size = new Size(202, 199);
             listBox1.TabIndex = 42;
+            listBox1.SelectedIndexChanged += listBox1_SelectedIndexChanged;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.Location = new Point(12, 256);
+            label1.Name = "label1";
+            label1.Size = new Size(67, 17);
+            label1.TabIndex = 43;
+            label1.Text = "Benutzer:";
+            // 
+            // selectedUserLabel
+            // 
+            selectedUserLabel.AutoSize = true;
+            selectedUserLabel.Location = new Point(83, 258);
+            selectedUserLabel.Name = "selectedUserLabel";
+            selectedUserLabel.Size = new Size(145, 15);
+            selectedUserLabel.TabIndex = 44;
+            selectedUserLabel.Text = "Kein Benutzer ausgewählt!";
             // 
             // Manager
             // 
@@ -164,14 +193,16 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(255, 224, 192);
             ClientSize = new Size(700, 338);
+            Controls.Add(selectedUserLabel);
+            Controls.Add(label1);
             Controls.Add(listBox1);
             Controls.Add(loadBookings);
             Controls.Add(deleteBooking);
-            Controls.Add(button3);
-            Controls.Add(button2);
+            Controls.Add(discardChanges);
+            Controls.Add(saveChanges);
             Controls.Add(listView2);
-            Controls.Add(button1);
-            Controls.Add(checkBox1);
+            Controls.Add(changePassword);
+            Controls.Add(blockUser);
             Controls.Add(menuStrip1);
             MainMenuStrip = menuStrip1;
             Margin = new Padding(3, 2, 3, 2);
@@ -190,15 +221,17 @@
         private MenuStrip menuStrip1;
         private ToolStripMenuItem benutzerToolStripMenuItem;
         private ToolStripMenuItem abmeldenToolStripMenuItem;
-        private CheckBox checkBox1;
-        private Button button1;
+        private CheckBox blockUser;
+        private Button changePassword;
         private ListView listView2;
         private ColumnHeader columnHeader7;
         private ColumnHeader columnHeader6;
-        private Button button2;
-        private Button button3;
+        private Button saveChanges;
+        private Button discardChanges;
         private Button deleteBooking;
         private Button loadBookings;
         private ListBox listBox1;
+        private Label label1;
+        private Label selectedUserLabel;
     }
 }

@@ -36,22 +36,22 @@ namespace ProjektParkplatzManagement
                 return;
             }
             ListViewItem item = listView2.SelectedItems[0];
-
-
+            int bookingId = int.Parse(item.SubItems[1].Text);
+            ResponseObject response = Form1.controller.deleteBookingById(bookingId);
         }
 
         private void loadBookings_Click(object sender, EventArgs e)
         {
             listView2.Items.Clear();
-            if(users == null)
+            if (users == null)
             {
                 return;
             }
             foreach (User user in users)
             {
-                if(user.email == listBox1.Text)
+                if (user.email == listBox1.Text)
                 {
-                    FullBookingListResponse response= Form1.controller.getAllBookingsByUserId(user.id);
+                    FullBookingListResponse response = Form1.controller.getAllBookingsByUserId(user.id);
                     if (!response.worked)
                     {
                         MessageBox.Show(response.message, "Fehler!", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -61,9 +61,14 @@ namespace ProjektParkplatzManagement
                 }
             }
 
-            if(recentBookings == null)
+            if (recentBookings == null)
             {
                 return;
+            }
+            if (recentBookings.Count > 0)
+            {
+                deleteBooking.Enabled = true;
+                listView2.Enabled = true;
             }
             recentBookings.ForEach(booking => addBookingItemToListView(booking));
             // 
@@ -71,7 +76,7 @@ namespace ProjektParkplatzManagement
         private void addBookingItemToListView(Booking booking)
         {
             ListViewItem item = new ListViewItem(Utils.fromMilliseconds(booking.startDate).ToString(Utils.formatDateWithYearMonthDayHoursMinutes));
-            item.SubItems.Add(booking.plate);
+            item.SubItems.Add(booking.id.ToString());
             listView2.Items.Add(item);
 
         }
@@ -90,11 +95,22 @@ namespace ProjektParkplatzManagement
 
         private void updateUserList()
         {
-            if(this.users == null)
+            if (this.users == null)
             {
                 return;
             }
             this.users.ForEach(user => listBox1.Items.Add(user.email));
+        }
+
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            selectedUserLabel.Text = listBox1.Text;
+            loadBookings.Enabled = true;
+            deleteBooking.Enabled = false;
+            changePassword.Enabled = false;
+            blockUser.Enabled = false;
+            discardChanges.Enabled = false;
+            listView2.Enabled = false;
         }
     }
 }

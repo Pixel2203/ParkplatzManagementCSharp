@@ -70,6 +70,12 @@ namespace ProjektParkplatzManagement.com.manager
                 "Konnte keine vorherigen Buchungen finden!" : "Buchungen erfolgreich abgerufen!";
             return new FullBookingListResponse(message, foundBookings != null, foundBookings);
         }
+        public ResponseObject deleteBookingById(int id)
+        {
+            bool worked = bookingDAO.deleteBooking(id);
+            string message = worked ? "Buchung erfolgreich gelöscht!" : "Konnte Buchung nicht löschen!";
+            return new ResponseObject(message, worked);
+        }
 
 
     }

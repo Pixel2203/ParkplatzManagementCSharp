@@ -45,5 +45,17 @@ namespace ProjektParkplatzManagement.com.manager
             }
             return new FullUserListResponse("User gefunden!", true, users);
         }
+        public ResponseObject changePasswordOfUser(int userId, string password)
+        {
+            bool worked = agent.changePasswordByUserId(userId, password);
+            string message = worked ? string.Format("Password von id='{0}' erfolgreich geändert", userId) : "Konnte Password nicht ändern!";
+            return new ResponseObject(message, worked);
+        }
+        public ResponseObject blockuserById(int userId)
+        {
+            bool worked = agent.blockUserById(userId);
+            string message = worked ? "Benutzer erfolgreich gesperrt!" : "Konnte Benutzer nicht sperren";
+            return new ResponseObject(message, worked);
+        }
     }   
 }

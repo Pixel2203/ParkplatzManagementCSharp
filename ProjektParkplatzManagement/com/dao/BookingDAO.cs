@@ -198,6 +198,14 @@ namespace ProjektParkplatzManagement.com.dao
             return getBookingsBySql(sql);
         }
 
+        public bool deleteBooking(int bookingId)
+        {
+            string sql = string.Format("DELETE FROM booking WHERE id={0}", bookingId);
+            MySqlCommand command = connection.CreateCommand();
+            command.CommandText = sql;
+            return command.ExecuteNonQuery() == 1;
+        }
+
         /*
        public Optional<List<Booking>> findBookingsByDateAndSensor(int sensorId, long dateInMilliseconds)
        {

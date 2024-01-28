@@ -130,6 +130,18 @@ namespace ProjektParkplatzManagement.com.dao
             reader.Close();
             return users;
         }
+        public bool changePasswordByUserId(int id, string password)
+        {
+            string sql = string.Format("UPDATE user SET password='{0}' WHERE id = {1}",id ,password);
+            MySqlCommand command = new MySqlCommand(sql,connection);
+            return command.ExecuteNonQuery() == 1;
+        }
+        public bool blockUserById(int id)
+        {
+            string sql = string.Format("UPDATE user SET penalties=1 WHERE id = {0}", id);
+            MySqlCommand command = new MySqlCommand(sql, connection);
+            return command.ExecuteNonQuery() == 1;
+        }
 
         /*
 
