@@ -145,7 +145,7 @@ namespace ProjektParkplatzManagement.com.dao
 
         public bool updateUser(User user)
         {
-            string sql = string.Format("UPDATE user SET prename={0},name={1},email={2},plate={3},penalties={4},password={5},permission={6} WHERE id={7}", user.prename, user.name, user.email, user.plate, user.penalties, user.password, Enum.GetName(user.permission), user.id);
+            string sql = string.Format("UPDATE user SET prename='{0}',name='{1}',email='{2}',plate='{3}',penalties={4},password='{5}',permission='{6}' WHERE id={7}", user.prename, user.name, user.email, user.plate, user.penalties, user.password, Enum.GetName(user.permission), user.id);
             MySqlCommand command = new MySqlCommand(sql, connection);
             return command.ExecuteNonQuery() == 1;
         }

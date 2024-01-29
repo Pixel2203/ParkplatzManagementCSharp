@@ -41,19 +41,35 @@ namespace ProjektParkplatzManagement
             string password = Utils.erzeugeHashWert(textBox6.Text);
             string passwordRepeated = Utils.erzeugeHashWert(textBox5.Text);
             string plate = textBox4.Text;
+            int uid = userInfoOptional == null ? 0 : userInfoOptional.id;
+            int penalties = blockUser.Checked ? 1 : 0;
+            Permissions uPermission = isAdminMode ? (Permissions)Enum.Parse(typeof(Permissions), comboBox1.Text) : Permissions.DEFAULT;
+            User user;
+
+
+            if (isAdminMode)
+            {
+                string fallback = string.IsNullOrEmpty(password) ? userInfoOptional.password : password;
+                user = new User(uid, prename, name, plate, email, penalties, uPermission, fallback);
+            }else
+            {
+                user = new User(0, prename, name, plate, email, 0, Permissions.DEFAULT, password);
+            }
+
+
+
+
             if (ValidateFormData(prename, name, email, plate, password, passwordRepeated))
             {
-                Debug.WriteLine("HASHED PASSWORD: " + password);
-                int uid = userInfoOptional == null ? 0 : userInfoOptional.id;
-                int penalties = blockUser.Checked ? 1 : 0;
-                Permissions uPermission = isAdminMode ? (Permissions) Enum.Parse(typeof(Permissions),comboBox1.Text) : Permissions.DEFAULT;
 
-                User user = new User(uid, prename, name, plate, email, penalties, uPermission, password);
+                
 
+                
+                
                 if (isAdminMode)
                 {
                     ResponseObject response = Form1.controller.updateUser(user);
-                    string title = response.worked ? "Erfolgreich Registriert!" : "Registrierung Fehlgeschlagen!";
+                    string title = response.worked ? "Erfolgreich geändert!" : "Änderung fehlgeschlagen!";
                     label9.Text = title;
                     MessageBox.Show(response.message, title, MessageBoxButtons.OK, response.worked ? MessageBoxIcon.Information : MessageBoxIcon.Error);
 
@@ -68,6 +84,15 @@ namespace ProjektParkplatzManagement
             }
             else
             {
+                if (isAdminMode)
+                {
+                    ResponseObject response = Form1.controller.updateUser(user);
+                    string title = response.worked ? "Erfolgreich Registriert!" : "Registrierung Fehlgeschlagen!";
+                    label9.Text = title;
+                    MessageBox.Show(response.message, title, MessageBoxButtons.OK, response.worked ? MessageBoxIcon.Information : MessageBoxIcon.Error);
+                    return;
+
+                }
                 MessageBox.Show("Daten ungültig oder unvollständig!", "Ungültige Angaben", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }

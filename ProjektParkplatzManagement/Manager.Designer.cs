@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.Button configureUser;
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.benutzerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.abmeldenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -37,11 +38,13 @@
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.label1 = new System.Windows.Forms.Label();
             this.selectedUserLabel = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
             this.loadBookings = new System.Windows.Forms.Button();
             this.deleteBooking = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            configureUser = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
+ 
             // 
             // menuStrip1
             // 
@@ -110,7 +113,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(12, 256);
+            this.label1.Location = new System.Drawing.Point(14, 196);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(67, 17);
             this.label1.TabIndex = 43;
@@ -119,22 +122,11 @@
             // selectedUserLabel
             // 
             this.selectedUserLabel.AutoSize = true;
-            this.selectedUserLabel.Location = new System.Drawing.Point(83, 258);
+            this.selectedUserLabel.Location = new System.Drawing.Point(85, 198);
             this.selectedUserLabel.Name = "selectedUserLabel";
             this.selectedUserLabel.Size = new System.Drawing.Size(145, 15);
             this.selectedUserLabel.TabIndex = 44;
             this.selectedUserLabel.Text = "Kein Benutzer ausgewählt!";
-            // 
-            // button3
-            // 
-            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(240)))), ((int)(((byte)(230)))));
-            this.button3.Location = new System.Drawing.Point(10, 223);
-            this.button3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(124, 26);
-            this.button3.TabIndex = 46;
-            this.button3.Text = "Zurück";
-            this.button3.UseVisualStyleBackColor = false;
             // 
             // loadBookings
             // 
@@ -143,7 +135,7 @@
             this.loadBookings.Location = new System.Drawing.Point(430, 220);
             this.loadBookings.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.loadBookings.Name = "loadBookings";
-            this.loadBookings.Size = new System.Drawing.Size(124, 26);
+            this.loadBookings.Size = new System.Drawing.Size(124, 23);
             this.loadBookings.TabIndex = 47;
             this.loadBookings.Text = "Buchungen laden";
             this.loadBookings.UseVisualStyleBackColor = false;
@@ -163,15 +155,27 @@
             this.deleteBooking.UseVisualStyleBackColor = false;
             this.deleteBooking.Click += new System.EventHandler(this.deleteBooking_Click);
             // 
+            // button1
+            // 
+            this.button1.Enabled = false;
+            this.button1.Location = new System.Drawing.Point(234, 220);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(172, 22);
+            this.button1.TabIndex = 49;
+            this.button1.Text = "Benutzer konfigurieren";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Manager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.ClientSize = new System.Drawing.Size(612, 254);
+            this.ClientSize = new System.Drawing.Size(612, 299);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.deleteBooking);
             this.Controls.Add(this.loadBookings);
-            this.Controls.Add(this.button3);
+            this.Controls.Add(configureUser);
             this.Controls.Add(this.selectedUserLabel);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.listBox1);
@@ -204,8 +208,9 @@
         private ListBox listBox1;
         private Label label1;
         private Label selectedUserLabel;
-        private Button button3;
+        private Button configureUser;
         private Button loadBookings;
         private Button deleteBooking;
+        private Button button1;
     }
 }
