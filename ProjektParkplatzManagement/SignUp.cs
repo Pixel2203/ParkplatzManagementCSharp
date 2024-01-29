@@ -179,7 +179,7 @@ namespace ProjektParkplatzManagement
             return !string.IsNullOrEmpty(email);
         }
 
-        private void SignUp_Load(object sender, EventArgs e)
+        private void SignUp_Load_1(object sender, EventArgs e)
         {
             textBox5.UseSystemPasswordChar = true;
             textBox6.UseSystemPasswordChar = true;
@@ -187,6 +187,7 @@ namespace ProjektParkplatzManagement
             {
                 label10.Visible = true;
                 comboBox1.Visible = true;
+                comboBox1.SelectedIndex = 0;
                 blockUser.Visible = true;
                 label3.Text = "Neues Password";
                 label4.Text = "Neues Password wiederholen";
@@ -218,5 +219,6 @@ namespace ProjektParkplatzManagement
         {
             this.Close();
         }
+
     }
 }
