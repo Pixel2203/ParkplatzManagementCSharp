@@ -19,7 +19,7 @@ namespace ProjektParkplatzManagement
             InitializeComponent();
         }
 
-        private void AdminPanel_Load(object sender, EventArgs e)
+        private void AdminPanel_Load_1(object sender, EventArgs e)
         {
             User? user = Form1.controller.getUser();
             if (user == null)
@@ -29,7 +29,7 @@ namespace ProjektParkplatzManagement
             label2.Text = user.name;
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void button2_Click_1(object sender, EventArgs e)
         {
             this.Hide();
             new Manager().ShowDialog();

@@ -21,6 +21,10 @@ namespace ProjektParkplatzManagement
             string input_name = textBox1.Text;
             string input_password = maskedTextBox2.Text;
             string hashed = Utils.erzeugeHashWert(input_password);
+            if (!controller.isValidConnection())
+            {
+                return;
+            }
             if (hashed == null)
             {
                 return;
@@ -95,5 +99,9 @@ namespace ProjektParkplatzManagement
             new SignUp(false,null).ShowDialog();
         }
 
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

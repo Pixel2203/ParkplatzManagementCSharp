@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "H:\\Documents\\Herr Zimmer\\Projekt2\\ParkplatzManagementCSharp\\ProjektParkplatzManagement\\ProjektParkplatzManagement.csproj": {}
+    "C:\\Users\\elias.liebelt\\Source\\Repos\\Pixel2203\\ParkplatzManagementCSharp\\ProjektParkplatzManagement\\ProjektParkplatzManagement.csproj": {}
   },
   "projects": {
-    "H:\\Documents\\Herr Zimmer\\Projekt2\\ParkplatzManagementCSharp\\ProjektParkplatzManagement\\ProjektParkplatzManagement.csproj": {
+    "C:\\Users\\elias.liebelt\\Source\\Repos\\Pixel2203\\ParkplatzManagementCSharp\\ProjektParkplatzManagement\\ProjektParkplatzManagement.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "H:\\Documents\\Herr Zimmer\\Projekt2\\ParkplatzManagementCSharp\\ProjektParkplatzManagement\\ProjektParkplatzManagement.csproj",
+        "projectUniqueName": "C:\\Users\\elias.liebelt\\Source\\Repos\\Pixel2203\\ParkplatzManagementCSharp\\ProjektParkplatzManagement\\ProjektParkplatzManagement.csproj",
         "projectName": "ProjektParkplatzManagement",
-        "projectPath": "H:\\Documents\\Herr Zimmer\\Projekt2\\ParkplatzManagementCSharp\\ProjektParkplatzManagement\\ProjektParkplatzManagement.csproj",
-        "packagesPath": "C:\\Users\\marvin.kaiser\\.nuget\\packages\\",
-        "outputPath": "H:\\Documents\\Herr Zimmer\\Projekt2\\ParkplatzManagementCSharp\\ProjektParkplatzManagement\\obj\\",
+        "projectPath": "C:\\Users\\elias.liebelt\\Source\\Repos\\Pixel2203\\ParkplatzManagementCSharp\\ProjektParkplatzManagement\\ProjektParkplatzManagement.csproj",
+        "packagesPath": "C:\\Users\\elias.liebelt\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\elias.liebelt\\Source\\Repos\\Pixel2203\\ParkplatzManagementCSharp\\ProjektParkplatzManagement\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\marvin.kaiser\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\elias.liebelt\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],

@@ -142,5 +142,10 @@ namespace ProjektParkplatzManagement
             new AdminPanel().ShowDialog();
             this.Close();
         }
+
+        private void abmeldenToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            Form1.controller.logoutUser(this);
+        }
     }
 }

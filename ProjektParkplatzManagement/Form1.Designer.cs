@@ -177,6 +177,7 @@
             this.label4.Size = new System.Drawing.Size(210, 21);
             this.label4.TabIndex = 13;
             this.label4.Text = "Verbindung fehlgeschlagen";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // Form1
             // 

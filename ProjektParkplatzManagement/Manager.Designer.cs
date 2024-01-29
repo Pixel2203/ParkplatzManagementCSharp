@@ -68,8 +68,9 @@
             // abmeldenToolStripMenuItem
             // 
             this.abmeldenToolStripMenuItem.Name = "abmeldenToolStripMenuItem";
-            this.abmeldenToolStripMenuItem.Size = new System.Drawing.Size(129, 22);
+            this.abmeldenToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.abmeldenToolStripMenuItem.Text = "Abmelden";
+            this.abmeldenToolStripMenuItem.Click += new System.EventHandler(this.abmeldenToolStripMenuItem_Click_1);
             // 
             // listView2
             // 
@@ -207,7 +208,7 @@
             this.Name = "Manager";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "z";
+            this.Text = "Nutzer Verwaltung";
             this.Load += new System.EventHandler(this.Manager_Load_1);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();

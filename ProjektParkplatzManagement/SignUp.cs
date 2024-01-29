@@ -187,7 +187,7 @@ namespace ProjektParkplatzManagement
             {
                 label10.Visible = true;
                 comboBox1.Visible = true;
-                comboBox1.SelectedIndex = 0;
+                comboBox1.SelectedIndex = userInfoOptional.permission==Permissions.ADMIN?1: 0;
                 blockUser.Visible = true;
                 label3.Text = "Neues Password";
                 label4.Text = "Neues Password wiederholen";
