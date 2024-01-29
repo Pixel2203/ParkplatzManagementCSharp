@@ -16,7 +16,7 @@ namespace ProjektParkplatzManagement
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void button1_Click_1(object sender, EventArgs e)
         {
             string input_name = textBox1.Text;
             string input_password = maskedTextBox2.Text;
@@ -94,5 +94,6 @@ namespace ProjektParkplatzManagement
         {
             new SignUp(false,null).ShowDialog();
         }
+
     }
 }

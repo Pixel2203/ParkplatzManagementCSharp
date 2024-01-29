@@ -211,7 +211,7 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(142, 34);
             this.button1.TabIndex = 46;
-            this.button1.Text = "Registrieren";
+            this.button1.Text = " ";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click_2);
             // 
@@ -284,6 +284,7 @@
             this.Name = "SignUp";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Registrieren";
+            this.Load += new System.EventHandler(this.SignUp_Load_1);
             this.ResumeLayout(false);
             this.PerformLayout();
 

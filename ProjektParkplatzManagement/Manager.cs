@@ -122,7 +122,8 @@ namespace ProjektParkplatzManagement
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+
+        private void button3_Click(object sender, EventArgs e)
         {
             string selectedEmail = listBox1.Text;
             foreach (User user in users)
@@ -133,6 +134,13 @@ namespace ProjektParkplatzManagement
                     break;
                 }
             }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new AdminPanel().ShowDialog();
+            this.Close();
         }
     }
 }
