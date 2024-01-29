@@ -31,18 +31,15 @@
             menuStrip1 = new MenuStrip();
             benutzerToolStripMenuItem = new ToolStripMenuItem();
             abmeldenToolStripMenuItem = new ToolStripMenuItem();
-            blockUser = new CheckBox();
-            changePassword = new Button();
             listView2 = new ListView();
             columnHeader7 = new ColumnHeader();
             columnHeader6 = new ColumnHeader();
-            saveChanges = new Button();
-            discardChanges = new Button();
-            deleteBooking = new Button();
-            loadBookings = new Button();
             listBox1 = new ListBox();
             label1 = new Label();
             selectedUserLabel = new Label();
+            button3 = new Button();
+            loadBookings = new Button();
+            deleteBooking = new Button();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
@@ -71,36 +68,15 @@
             abmeldenToolStripMenuItem.Text = "Abmelden";
             abmeldenToolStripMenuItem.Click += abmeldenToolStripMenuItem_Click;
             // 
-            // blockUser
-            // 
-            blockUser.AutoSize = true;
-            blockUser.Enabled = false;
-            blockUser.Location = new Point(545, 191);
-            blockUser.Name = "blockUser";
-            blockUser.Size = new Size(70, 19);
-            blockUser.TabIndex = 2;
-            blockUser.Text = "Gesperrt";
-            blockUser.UseVisualStyleBackColor = true;
-            // 
-            // changePassword
-            // 
-            changePassword.Enabled = false;
-            changePassword.Location = new Point(545, 216);
-            changePassword.Name = "changePassword";
-            changePassword.Size = new Size(104, 23);
-            changePassword.TabIndex = 36;
-            changePassword.Text = "Passwort ändern";
-            changePassword.UseVisualStyleBackColor = true;
-            // 
             // listView2
             // 
             listView2.BackColor = Color.FromArgb(255, 240, 230);
             listView2.Columns.AddRange(new ColumnHeader[] { columnHeader7, columnHeader6 });
             listView2.Enabled = false;
-            listView2.Location = new Point(236, 31);
+            listView2.Location = new Point(268, 31);
             listView2.MultiSelect = false;
             listView2.Name = "listView2";
-            listView2.Size = new Size(275, 208);
+            listView2.Size = new Size(419, 214);
             listView2.TabIndex = 37;
             listView2.UseCompatibleStateImageBehavior = false;
             listView2.View = View.Details;
@@ -115,56 +91,14 @@
             columnHeader6.Text = "Buchungsnummer";
             columnHeader6.Width = 120;
             // 
-            // saveChanges
-            // 
-            saveChanges.BackColor = Color.FromArgb(128, 255, 128);
-            saveChanges.Enabled = false;
-            saveChanges.Location = new Point(408, 297);
-            saveChanges.Name = "saveChanges";
-            saveChanges.Size = new Size(140, 34);
-            saveChanges.TabIndex = 38;
-            saveChanges.Text = "Änderungen Speichern";
-            saveChanges.UseVisualStyleBackColor = false;
-            // 
-            // discardChanges
-            // 
-            discardChanges.BackColor = Color.Red;
-            discardChanges.Location = new Point(554, 297);
-            discardChanges.Name = "discardChanges";
-            discardChanges.Size = new Size(140, 34);
-            discardChanges.TabIndex = 39;
-            discardChanges.Text = "Änderungen verwerfen";
-            discardChanges.UseVisualStyleBackColor = false;
-            // 
-            // deleteBooking
-            // 
-            deleteBooking.Enabled = false;
-            deleteBooking.Location = new Point(545, 84);
-            deleteBooking.Name = "deleteBooking";
-            deleteBooking.Size = new Size(142, 23);
-            deleteBooking.TabIndex = 40;
-            deleteBooking.Text = "Buchung löschen";
-            deleteBooking.UseVisualStyleBackColor = true;
-            deleteBooking.Click += button4_Click;
-            // 
-            // loadBookings
-            // 
-            loadBookings.Enabled = false;
-            loadBookings.Location = new Point(545, 35);
-            loadBookings.Name = "loadBookings";
-            loadBookings.Size = new Size(142, 23);
-            loadBookings.TabIndex = 41;
-            loadBookings.Text = "Buchungen laden";
-            loadBookings.UseVisualStyleBackColor = true;
-            loadBookings.Click += loadBookings_Click;
-            // 
             // listBox1
             // 
+            listBox1.BackColor = Color.FromArgb(255, 240, 230);
             listBox1.FormattingEnabled = true;
             listBox1.ItemHeight = 15;
             listBox1.Location = new Point(12, 31);
             listBox1.Name = "listBox1";
-            listBox1.Size = new Size(202, 199);
+            listBox1.Size = new Size(237, 214);
             listBox1.TabIndex = 42;
             listBox1.SelectedIndexChanged += listBox1_SelectedIndexChanged;
             // 
@@ -187,22 +121,53 @@
             selectedUserLabel.TabIndex = 44;
             selectedUserLabel.Text = "Kein Benutzer ausgewählt!";
             // 
+            // button3
+            // 
+            button3.BackColor = Color.FromArgb(255, 240, 230);
+            button3.Location = new Point(12, 297);
+            button3.Margin = new Padding(3, 2, 3, 2);
+            button3.Name = "button3";
+            button3.Size = new Size(142, 34);
+            button3.TabIndex = 46;
+            button3.Text = "Zurück";
+            button3.UseVisualStyleBackColor = false;
+            // 
+            // loadBookings
+            // 
+            loadBookings.BackColor = Color.FromArgb(255, 240, 230);
+            loadBookings.Location = new Point(492, 293);
+            loadBookings.Margin = new Padding(3, 2, 3, 2);
+            loadBookings.Name = "loadBookings";
+            loadBookings.Size = new Size(142, 34);
+            loadBookings.TabIndex = 47;
+            loadBookings.Text = "Buchungen laden";
+            loadBookings.UseVisualStyleBackColor = false;
+            // 
+            // deleteBooking
+            // 
+            deleteBooking.BackColor = Color.FromArgb(255, 240, 230);
+            deleteBooking.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            deleteBooking.Location = new Point(640, 293);
+            deleteBooking.Margin = new Padding(3, 2, 3, 2);
+            deleteBooking.Name = "deleteBooking";
+            deleteBooking.Size = new Size(47, 34);
+            deleteBooking.TabIndex = 48;
+            deleteBooking.Text = "🗑";
+            deleteBooking.UseVisualStyleBackColor = false;
+            // 
             // Manager
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(255, 224, 192);
             ClientSize = new Size(700, 338);
+            Controls.Add(deleteBooking);
+            Controls.Add(loadBookings);
+            Controls.Add(button3);
             Controls.Add(selectedUserLabel);
             Controls.Add(label1);
             Controls.Add(listBox1);
-            Controls.Add(loadBookings);
-            Controls.Add(deleteBooking);
-            Controls.Add(discardChanges);
-            Controls.Add(saveChanges);
             Controls.Add(listView2);
-            Controls.Add(changePassword);
-            Controls.Add(blockUser);
             Controls.Add(menuStrip1);
             MainMenuStrip = menuStrip1;
             Margin = new Padding(3, 2, 3, 2);
@@ -221,17 +186,14 @@
         private MenuStrip menuStrip1;
         private ToolStripMenuItem benutzerToolStripMenuItem;
         private ToolStripMenuItem abmeldenToolStripMenuItem;
-        private CheckBox blockUser;
-        private Button changePassword;
         private ListView listView2;
         private ColumnHeader columnHeader7;
         private ColumnHeader columnHeader6;
-        private Button saveChanges;
-        private Button discardChanges;
-        private Button deleteBooking;
-        private Button loadBookings;
         private ListBox listBox1;
         private Label label1;
         private Label selectedUserLabel;
+        private Button button3;
+        private Button loadBookings;
+        private Button deleteBooking;
     }
 }

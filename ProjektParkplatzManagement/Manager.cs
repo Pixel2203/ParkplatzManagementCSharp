@@ -107,10 +107,8 @@ namespace ProjektParkplatzManagement
             selectedUserLabel.Text = listBox1.Text;
             loadBookings.Enabled = true;
             deleteBooking.Enabled = false;
-            changePassword.Enabled = false;
-            blockUser.Enabled = false;
-            discardChanges.Enabled = false;
             listView2.Enabled = false;
         }
+
     }
 }
