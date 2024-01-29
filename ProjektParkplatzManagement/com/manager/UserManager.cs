@@ -57,5 +57,12 @@ namespace ProjektParkplatzManagement.com.manager
             string message = worked ? "Benutzer erfolgreich gesperrt!" : "Konnte Benutzer nicht sperren";
             return new ResponseObject(message, worked);
         }
+
+        public ResponseObject updateUser(User user)
+        {
+            bool worked = agent.updateUser(user);
+            string message = worked ? "Benutzerdaten geändert!" : "Konnte Benutzerdaten nicht ändern!";
+            return new ResponseObject(message, worked); 
+        }
     }   
 }

@@ -96,5 +96,10 @@ namespace ProjektParkplatzManagement.com
         {
             return dBManager.isConnected();
         }
+
+        internal ResponseObject updateUser(User user)
+        {
+            return userManager.updateUser(user);
+        }
     }
 }

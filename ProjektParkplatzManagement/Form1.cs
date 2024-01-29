@@ -92,7 +92,7 @@ namespace ProjektParkplatzManagement
 
         private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            new SignUp().ShowDialog();
+            new SignUp(false,null).ShowDialog();
         }
     }
 }
