@@ -5,27 +5,19 @@
       "Autofac/4.9.4": {
         "type": "package",
         "compile": {
-          "lib/netstandard2.0/Autofac.dll": {
-            "related": ".pdb;.xml"
-          }
+          "lib/netstandard2.0/Autofac.dll": {}
         },
         "runtime": {
-          "lib/netstandard2.0/Autofac.dll": {
-            "related": ".pdb;.xml"
-          }
+          "lib/netstandard2.0/Autofac.dll": {}
         }
       },
       "Microsoft.Extensions.Logging.Abstractions/7.0.1": {
         "type": "package",
         "compile": {
-          "lib/net6.0/Microsoft.Extensions.Logging.Abstractions.dll": {
-            "related": ".xml"
-          }
+          "lib/net6.0/Microsoft.Extensions.Logging.Abstractions.dll": {}
         },
         "runtime": {
-          "lib/net6.0/Microsoft.Extensions.Logging.Abstractions.dll": {
-            "related": ".xml"
-          }
+          "lib/net6.0/Microsoft.Extensions.Logging.Abstractions.dll": {}
         },
         "build": {
           "buildTransitive/net6.0/Microsoft.Extensions.Logging.Abstractions.targets": {}
@@ -56,27 +48,19 @@
           "System.Diagnostics.DiagnosticSource": "7.0.2"
         },
         "compile": {
-          "lib/net6.0/MySqlConnector.dll": {
-            "related": ".xml"
-          }
+          "lib/net6.0/MySqlConnector.dll": {}
         },
         "runtime": {
-          "lib/net6.0/MySqlConnector.dll": {
-            "related": ".xml"
-          }
+          "lib/net6.0/MySqlConnector.dll": {}
         }
       },
       "Newtonsoft.Json/12.0.3": {
         "type": "package",
         "compile": {
-          "lib/netstandard2.0/Newtonsoft.Json.dll": {
-            "related": ".xml"
-          }
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {}
         },
         "runtime": {
-          "lib/netstandard2.0/Newtonsoft.Json.dll": {
-            "related": ".xml"
-          }
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {}
         }
       },
       "runtime.debian.8-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.2": {
@@ -245,9 +229,7 @@
           "System.Runtime": "4.3.0"
         },
         "compile": {
-          "ref/netstandard1.3/System.Collections.dll": {
-            "related": ".xml"
-          }
+          "ref/netstandard1.3/System.Collections.dll": {}
         }
       },
       "System.Collections.Concurrent/4.3.0": {
@@ -265,9 +247,7 @@
           "System.Threading.Tasks": "4.3.0"
         },
         "compile": {
-          "ref/netstandard1.3/_._": {
-            "related": ".xml"
-          }
+          "ref/netstandard1.3/_._": {}
         },
         "runtime": {
           "lib/netstandard1.3/System.Collections.Concurrent.dll": {}
@@ -281,9 +261,7 @@
           "System.Runtime": "4.3.0"
         },
         "compile": {
-          "ref/netstandard1.3/_._": {
-            "related": ".xml"
-          }
+          "ref/netstandard1.3/_._": {}
         }
       },
       "System.Diagnostics.DiagnosticSource/7.0.2": {
@@ -292,14 +270,10 @@
           "System.Runtime.CompilerServices.Unsafe": "6.0.0"
         },
         "compile": {
-          "lib/net6.0/System.Diagnostics.DiagnosticSource.dll": {
-            "related": ".xml"
-          }
+          "lib/net6.0/System.Diagnostics.DiagnosticSource.dll": {}
         },
         "runtime": {
-          "lib/net6.0/System.Diagnostics.DiagnosticSource.dll": {
-            "related": ".xml"
-          }
+          "lib/net6.0/System.Diagnostics.DiagnosticSource.dll": {}
         },
         "build": {
           "buildTransitive/net6.0/_._": {}
@@ -313,9 +287,7 @@
           "System.Runtime": "4.3.0"
         },
         "compile": {
-          "ref/netstandard1.5/_._": {
-            "related": ".xml"
-          }
+          "ref/netstandard1.5/_._": {}
         }
       },
       "System.Globalization/4.3.0": {
@@ -326,9 +298,7 @@
           "System.Runtime": "4.3.0"
         },
         "compile": {
-          "ref/netstandard1.3/_._": {
-            "related": ".xml"
-          }
+          "ref/netstandard1.3/_._": {}
         }
       },
       "System.Globalization.Calendars/4.3.0": {
@@ -340,9 +310,7 @@
           "System.Runtime": "4.3.0"
         },
         "compile": {
-          "ref/netstandard1.3/_._": {
-            "related": ".xml"
-          }
+          "ref/netstandard1.3/_._": {}
         }
       },
       "System.Globalization.Extensions/4.3.0": {
@@ -356,9 +324,7 @@
           "System.Runtime.InteropServices": "4.3.0"
         },
         "compile": {
-          "ref/netstandard1.3/_._": {
-            "related": ".xml"
-          }
+          "ref/netstandard1.3/_._": {}
         },
         "runtimeTargets": {
           "runtimes/unix/lib/netstandard1.3/System.Globalization.Extensions.dll": {
@@ -381,9 +347,7 @@
           "System.Threading.Tasks": "4.3.0"
         },
         "compile": {
-          "ref/netstandard1.5/System.IO.dll": {
-            "related": ".xml"
-          }
+          "ref/netstandard1.5/System.IO.dll": {}
         }
       },
       "System.IO.FileSystem/4.3.0": {
@@ -399,9 +363,7 @@
           "System.Threading.Tasks": "4.3.0"
         },
         "compile": {
-          "ref/netstandard1.3/_._": {
-            "related": ".xml"
-          }
+          "ref/netstandard1.3/_._": {}
         }
       },
       "System.IO.FileSystem.Primitives/4.3.0": {
@@ -410,9 +372,7 @@
           "System.Runtime": "4.3.0"
         },
         "compile": {
-          "ref/netstandard1.3/_._": {
-            "related": ".xml"
-          }
+          "ref/netstandard1.3/_._": {}
         },
         "runtime": {
           "lib/netstandard1.3/System.IO.FileSystem.Primitives.dll": {}
@@ -428,9 +388,7 @@
           "System.Runtime.Extensions": "4.3.0"
         },
         "compile": {
-          "ref/netstandard1.6/_._": {
-            "related": ".xml"
-          }
+          "ref/netstandard1.6/_._": {}
         },
         "runtime": {
           "lib/netstandard1.6/System.Linq.dll": {}
@@ -489,9 +447,7 @@
           "System.Runtime.Handles": "4.3.0"
         },
         "compile": {
-          "ref/netstandard1.3/System.Net.Primitives.dll": {
-            "related": ".xml"
-          }
+          "ref/netstandard1.3/System.Net.Primitives.dll": {}
         }
       },
       "System.Reflection/4.3.0": {
@@ -504,9 +460,7 @@
           "System.Runtime": "4.3.0"
         },
         "compile": {
-          "ref/netstandard1.5/_._": {
-            "related": ".xml"
-          }
+          "ref/netstandard1.5/_._": {}
         }
       },
       "System.Reflection.Primitives/4.3.0": {
@@ -517,9 +471,7 @@
           "System.Runtime": "4.3.0"
         },
         "compile": {
-          "ref/netstandard1.0/_._": {
-            "related": ".xml"
-          }
+          "ref/netstandard1.0/_._": {}
         }
       },
       "System.Reflection.TypeExtensions/4.5.1": {
@@ -541,9 +493,7 @@
           "System.Runtime": "4.3.0"
         },
         "compile": {
-          "ref/netstandard1.0/_._": {
-            "related": ".xml"
-          }
+          "ref/netstandard1.0/_._": {}
         }
       },
       "System.Runtime/4.3.0": {
@@ -553,22 +503,16 @@
           "Microsoft.NETCore.Targets": "1.1.0"
         },
         "compile": {
-          "ref/netstandard1.5/System.Runtime.dll": {
-            "related": ".xml"
-          }
+          "ref/netstandard1.5/System.Runtime.dll": {}
         }
       },
       "System.Runtime.CompilerServices.Unsafe/6.0.0": {
         "type": "package",
         "compile": {
-          "lib/net6.0/System.Runtime.CompilerServices.Unsafe.dll": {
-            "related": ".xml"
-          }
+          "lib/net6.0/System.Runtime.CompilerServices.Unsafe.dll": {}
         },
         "runtime": {
-          "lib/net6.0/System.Runtime.CompilerServices.Unsafe.dll": {
-            "related": ".xml"
-          }
+          "lib/net6.0/System.Runtime.CompilerServices.Unsafe.dll": {}
         },
         "build": {
           "buildTransitive/netcoreapp3.1/_._": {}
@@ -582,9 +526,7 @@
           "System.Runtime": "4.3.0"
         },
         "compile": {
-          "ref/netstandard1.5/_._": {
-            "related": ".xml"
-          }
+          "ref/netstandard1.5/_._": {}
         }
       },
       "System.Runtime.Handles/4.3.0": {
@@ -595,9 +537,7 @@
           "System.Runtime": "4.3.0"
         },
         "compile": {
-          "ref/netstandard1.3/System.Runtime.Handles.dll": {
-            "related": ".xml"
-          }
+          "ref/netstandard1.3/System.Runtime.Handles.dll": {}
         }
       },
       "System.Runtime.InteropServices/4.3.0": {
@@ -623,9 +563,7 @@
           "System.Runtime.Extensions": "4.3.0"
         },
         "compile": {
-          "ref/netstandard1.1/_._": {
-            "related": ".xml"
-          }
+          "ref/netstandard1.1/_._": {}
         },
         "runtime": {
           "lib/netstandard1.3/System.Runtime.Numerics.dll": {}
@@ -744,9 +682,7 @@
           "runtime.native.System.Security.Cryptography.OpenSsl": "4.3.0"
         },
         "compile": {
-          "ref/netstandard1.3/System.Security.Cryptography.Encoding.dll": {
-            "related": ".xml"
-          }
+          "ref/netstandard1.3/System.Security.Cryptography.Encoding.dll": {}
         },
         "runtimeTargets": {
           "runtimes/unix/lib/netstandard1.3/System.Security.Cryptography.Encoding.dll": {
@@ -837,9 +773,7 @@
           "runtime.native.System.Security.Cryptography.OpenSsl": "4.3.0"
         },
         "compile": {
-          "ref/netstandard1.4/System.Security.Cryptography.X509Certificates.dll": {
-            "related": ".xml"
-          }
+          "ref/netstandard1.4/System.Security.Cryptography.X509Certificates.dll": {}
         },
         "runtimeTargets": {
           "runtimes/unix/lib/netstandard1.6/System.Security.Cryptography.X509Certificates.dll": {
@@ -860,9 +794,7 @@
           "System.Runtime": "4.3.0"
         },
         "compile": {
-          "ref/netstandard1.3/System.Text.Encoding.dll": {
-            "related": ".xml"
-          }
+          "ref/netstandard1.3/System.Text.Encoding.dll": {}
         }
       },
       "System.Threading/4.3.0": {
@@ -872,9 +804,7 @@
           "System.Threading.Tasks": "4.3.0"
         },
         "compile": {
-          "ref/netstandard1.3/_._": {
-            "related": ".xml"
-          }
+          "ref/netstandard1.3/_._": {}
         },
         "runtime": {
           "lib/netstandard1.3/System.Threading.dll": {}
@@ -888,9 +818,7 @@
           "System.Runtime": "4.3.0"
         },
         "compile": {
-          "ref/netstandard1.3/System.Threading.Tasks.dll": {
-            "related": ".xml"
-          }
+          "ref/netstandard1.3/System.Threading.Tasks.dll": {}
         }
       },
       "TweetinviAPI/5.0.4": {
@@ -903,52 +831,24 @@
           "System.Reflection.TypeExtensions": "4.5.1"
         },
         "compile": {
-          "lib/netstandard2.0/Tweetinvi.Controllers.dll": {
-            "related": ".xml"
-          },
-          "lib/netstandard2.0/Tweetinvi.Core.dll": {
-            "related": ".xml"
-          },
-          "lib/netstandard2.0/Tweetinvi.Credentials.dll": {
-            "related": ".xml"
-          },
-          "lib/netstandard2.0/Tweetinvi.Logic.dll": {
-            "related": ".xml"
-          },
+          "lib/netstandard2.0/Tweetinvi.Controllers.dll": {},
+          "lib/netstandard2.0/Tweetinvi.Core.dll": {},
+          "lib/netstandard2.0/Tweetinvi.Credentials.dll": {},
+          "lib/netstandard2.0/Tweetinvi.Logic.dll": {},
           "lib/netstandard2.0/Tweetinvi.Security.dll": {},
-          "lib/netstandard2.0/Tweetinvi.Streams.dll": {
-            "related": ".xml"
-          },
-          "lib/netstandard2.0/Tweetinvi.WebLogic.dll": {
-            "related": ".xml"
-          },
-          "lib/netstandard2.0/Tweetinvi.dll": {
-            "related": ".Controllers.xml;.Core.xml;.Credentials.xml;.Logic.xml;.Streams.xml;.WebLogic.xml;.xml"
-          }
+          "lib/netstandard2.0/Tweetinvi.Streams.dll": {},
+          "lib/netstandard2.0/Tweetinvi.WebLogic.dll": {},
+          "lib/netstandard2.0/Tweetinvi.dll": {}
         },
         "runtime": {
-          "lib/netstandard2.0/Tweetinvi.Controllers.dll": {
-            "related": ".xml"
-          },
-          "lib/netstandard2.0/Tweetinvi.Core.dll": {
-            "related": ".xml"
-          },
-          "lib/netstandard2.0/Tweetinvi.Credentials.dll": {
-            "related": ".xml"
-          },
-          "lib/netstandard2.0/Tweetinvi.Logic.dll": {
-            "related": ".xml"
-          },
+          "lib/netstandard2.0/Tweetinvi.Controllers.dll": {},
+          "lib/netstandard2.0/Tweetinvi.Core.dll": {},
+          "lib/netstandard2.0/Tweetinvi.Credentials.dll": {},
+          "lib/netstandard2.0/Tweetinvi.Logic.dll": {},
           "lib/netstandard2.0/Tweetinvi.Security.dll": {},
-          "lib/netstandard2.0/Tweetinvi.Streams.dll": {
-            "related": ".xml"
-          },
-          "lib/netstandard2.0/Tweetinvi.WebLogic.dll": {
-            "related": ".xml"
-          },
-          "lib/netstandard2.0/Tweetinvi.dll": {
-            "related": ".Controllers.xml;.Core.xml;.Credentials.xml;.Logic.xml;.Streams.xml;.WebLogic.xml;.xml"
-          }
+          "lib/netstandard2.0/Tweetinvi.Streams.dll": {},
+          "lib/netstandard2.0/Tweetinvi.WebLogic.dll": {},
+          "lib/netstandard2.0/Tweetinvi.dll": {}
         }
       }
     }
@@ -3312,23 +3212,28 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\marvin.kaiser\\.nuget\\packages\\": {}
+    "C:\\Users\\marvin.kaiser\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\marvin.kaiser\\source\\repos\\ProjektParkplatzManagement\\ProjektParkplatzManagement\\ProjektParkplatzManagement.csproj",
+      "projectUniqueName": "H:\\Documents\\Herr Zimmer\\Projekt2\\ParkplatzManagementCSharp\\ProjektParkplatzManagement\\ProjektParkplatzManagement.csproj",
       "projectName": "ProjektParkplatzManagement",
-      "projectPath": "C:\\Users\\marvin.kaiser\\source\\repos\\ProjektParkplatzManagement\\ProjektParkplatzManagement\\ProjektParkplatzManagement.csproj",
+      "projectPath": "H:\\Documents\\Herr Zimmer\\Projekt2\\ParkplatzManagementCSharp\\ProjektParkplatzManagement\\ProjektParkplatzManagement.csproj",
       "packagesPath": "C:\\Users\\marvin.kaiser\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\marvin.kaiser\\source\\repos\\ProjektParkplatzManagement\\ProjektParkplatzManagement\\obj\\",
+      "outputPath": "H:\\Documents\\Herr Zimmer\\Projekt2\\ParkplatzManagementCSharp\\ProjektParkplatzManagement\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
         "C:\\Users\\marvin.kaiser\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
-        "net6.0-windows"
+        "net6.0-windows7.0"
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
@@ -3365,8 +3270,7 @@
           "net47",
           "net471",
           "net472",
-          "net48",
-          "net481"
+          "net48"
         ],
         "assetTargetFallback": true,
         "warn": true,
@@ -3378,7 +3282,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.201\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.113\\RuntimeIdentifierGraph.json"
       }
     }
   }

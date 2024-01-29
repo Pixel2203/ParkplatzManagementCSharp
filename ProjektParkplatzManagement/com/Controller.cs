@@ -17,7 +17,7 @@ namespace ProjektParkplatzManagement.com
         private readonly DBManager dBManager;
         private readonly BookingManager bookingManager;
         private readonly UserManager userManager;
-        private readonly string connectionString = "server=127.0.0.1;uid=root;pwd=Kaiser.331;database=parkingdatabase";
+        private readonly string connectionString = "server=127.0.0.1;uid=root;pwd=;database=parkingdatabase";
         public Controller()
         {
             currentUser = null;

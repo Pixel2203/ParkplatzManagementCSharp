@@ -141,3 +141,40 @@ C:\Users\marvin.kaiser\source\repos\ProjektParkplatzManagement\ProjektParkplatzM
 C:\Users\marvin.kaiser\source\repos\ProjektParkplatzManagement\ProjektParkplatzManagement\obj\Debug\net6.0-windows\ProjektParkplatzManagement.Properties.Resources.resources
 C:\Users\marvin.kaiser\source\repos\ProjektParkplatzManagement\ProjektParkplatzManagement\obj\Debug\net6.0-windows\ProjektParkplatzManagement.SignUp.resources
 C:\Users\elias.liebelt\Source\Repos\Pixel2203\ParkplatzManagementCSharp\ProjektParkplatzManagement\obj\Debug\net6.0-windows\ProjektParkplatzManagement.ParkplatzView.resources
+H:\Documents\Herr Zimmer\Projekt2\ParkplatzManagementCSharp\ProjektParkplatzManagement\bin\Debug\net6.0-windows\ProjektParkplatzManagement.exe
+H:\Documents\Herr Zimmer\Projekt2\ParkplatzManagementCSharp\ProjektParkplatzManagement\bin\Debug\net6.0-windows\ProjektParkplatzManagement.deps.json
+H:\Documents\Herr Zimmer\Projekt2\ParkplatzManagementCSharp\ProjektParkplatzManagement\bin\Debug\net6.0-windows\ProjektParkplatzManagement.runtimeconfig.json
+H:\Documents\Herr Zimmer\Projekt2\ParkplatzManagementCSharp\ProjektParkplatzManagement\bin\Debug\net6.0-windows\ProjektParkplatzManagement.dll
+H:\Documents\Herr Zimmer\Projekt2\ParkplatzManagementCSharp\ProjektParkplatzManagement\bin\Debug\net6.0-windows\ref\ProjektParkplatzManagement.dll
+H:\Documents\Herr Zimmer\Projekt2\ParkplatzManagementCSharp\ProjektParkplatzManagement\bin\Debug\net6.0-windows\ProjektParkplatzManagement.pdb
+H:\Documents\Herr Zimmer\Projekt2\ParkplatzManagementCSharp\ProjektParkplatzManagement\bin\Debug\net6.0-windows\Autofac.dll
+H:\Documents\Herr Zimmer\Projekt2\ParkplatzManagementCSharp\ProjektParkplatzManagement\bin\Debug\net6.0-windows\Microsoft.Extensions.Logging.Abstractions.dll
+H:\Documents\Herr Zimmer\Projekt2\ParkplatzManagementCSharp\ProjektParkplatzManagement\bin\Debug\net6.0-windows\MySqlConnector.dll
+H:\Documents\Herr Zimmer\Projekt2\ParkplatzManagementCSharp\ProjektParkplatzManagement\bin\Debug\net6.0-windows\Newtonsoft.Json.dll
+H:\Documents\Herr Zimmer\Projekt2\ParkplatzManagementCSharp\ProjektParkplatzManagement\bin\Debug\net6.0-windows\System.Diagnostics.DiagnosticSource.dll
+H:\Documents\Herr Zimmer\Projekt2\ParkplatzManagementCSharp\ProjektParkplatzManagement\bin\Debug\net6.0-windows\Tweetinvi.Controllers.dll
+H:\Documents\Herr Zimmer\Projekt2\ParkplatzManagementCSharp\ProjektParkplatzManagement\bin\Debug\net6.0-windows\Tweetinvi.Core.dll
+H:\Documents\Herr Zimmer\Projekt2\ParkplatzManagementCSharp\ProjektParkplatzManagement\bin\Debug\net6.0-windows\Tweetinvi.Credentials.dll
+H:\Documents\Herr Zimmer\Projekt2\ParkplatzManagementCSharp\ProjektParkplatzManagement\bin\Debug\net6.0-windows\Tweetinvi.Logic.dll
+H:\Documents\Herr Zimmer\Projekt2\ParkplatzManagementCSharp\ProjektParkplatzManagement\bin\Debug\net6.0-windows\Tweetinvi.Security.dll
+H:\Documents\Herr Zimmer\Projekt2\ParkplatzManagementCSharp\ProjektParkplatzManagement\bin\Debug\net6.0-windows\Tweetinvi.Streams.dll
+H:\Documents\Herr Zimmer\Projekt2\ParkplatzManagementCSharp\ProjektParkplatzManagement\bin\Debug\net6.0-windows\Tweetinvi.WebLogic.dll
+H:\Documents\Herr Zimmer\Projekt2\ParkplatzManagementCSharp\ProjektParkplatzManagement\bin\Debug\net6.0-windows\Tweetinvi.dll
+H:\Documents\Herr Zimmer\Projekt2\ParkplatzManagementCSharp\ProjektParkplatzManagement\obj\Debug\net6.0-windows\ProjektParkplatzManagement.csproj.AssemblyReference.cache
+H:\Documents\Herr Zimmer\Projekt2\ParkplatzManagementCSharp\ProjektParkplatzManagement\obj\Debug\net6.0-windows\ProjektParkplatzManagement.AdminPanel.resources
+H:\Documents\Herr Zimmer\Projekt2\ParkplatzManagementCSharp\ProjektParkplatzManagement\obj\Debug\net6.0-windows\ProjektParkplatzManagement.Form1.resources
+H:\Documents\Herr Zimmer\Projekt2\ParkplatzManagementCSharp\ProjektParkplatzManagement\obj\Debug\net6.0-windows\ProjektParkplatzManagement.Manager.resources
+H:\Documents\Herr Zimmer\Projekt2\ParkplatzManagementCSharp\ProjektParkplatzManagement\obj\Debug\net6.0-windows\ProjektParkplatzManagement.ParkplatzOverview.resources
+H:\Documents\Herr Zimmer\Projekt2\ParkplatzManagementCSharp\ProjektParkplatzManagement\obj\Debug\net6.0-windows\ProjektParkplatzManagement.ParkplatzView.resources
+H:\Documents\Herr Zimmer\Projekt2\ParkplatzManagementCSharp\ProjektParkplatzManagement\obj\Debug\net6.0-windows\ProjektParkplatzManagement.Properties.Resources.resources
+H:\Documents\Herr Zimmer\Projekt2\ParkplatzManagementCSharp\ProjektParkplatzManagement\obj\Debug\net6.0-windows\ProjektParkplatzManagement.SignUp.resources
+H:\Documents\Herr Zimmer\Projekt2\ParkplatzManagementCSharp\ProjektParkplatzManagement\obj\Debug\net6.0-windows\ProjektParkplatzManagement.csproj.GenerateResource.cache
+H:\Documents\Herr Zimmer\Projekt2\ParkplatzManagementCSharp\ProjektParkplatzManagement\obj\Debug\net6.0-windows\ProjektParkplatzManagement.GeneratedMSBuildEditorConfig.editorconfig
+H:\Documents\Herr Zimmer\Projekt2\ParkplatzManagementCSharp\ProjektParkplatzManagement\obj\Debug\net6.0-windows\ProjektParkplatzManagement.AssemblyInfoInputs.cache
+H:\Documents\Herr Zimmer\Projekt2\ParkplatzManagementCSharp\ProjektParkplatzManagement\obj\Debug\net6.0-windows\ProjektParkplatzManagement.AssemblyInfo.cs
+H:\Documents\Herr Zimmer\Projekt2\ParkplatzManagementCSharp\ProjektParkplatzManagement\obj\Debug\net6.0-windows\ProjektParkplatzManagement.csproj.CoreCompileInputs.cache
+H:\Documents\Herr Zimmer\Projekt2\ParkplatzManagementCSharp\ProjektParkplatzManagement\obj\Debug\net6.0-windows\ProjektParkplatzManagement.csproj.CopyComplete
+H:\Documents\Herr Zimmer\Projekt2\ParkplatzManagementCSharp\ProjektParkplatzManagement\obj\Debug\net6.0-windows\ProjektParkplatzManagement.dll
+H:\Documents\Herr Zimmer\Projekt2\ParkplatzManagementCSharp\ProjektParkplatzManagement\obj\Debug\net6.0-windows\ref\ProjektParkplatzManagement.dll
+H:\Documents\Herr Zimmer\Projekt2\ParkplatzManagementCSharp\ProjektParkplatzManagement\obj\Debug\net6.0-windows\ProjektParkplatzManagement.pdb
+H:\Documents\Herr Zimmer\Projekt2\ParkplatzManagementCSharp\ProjektParkplatzManagement\obj\Debug\net6.0-windows\ProjektParkplatzManagement.genruntimeconfig.cache

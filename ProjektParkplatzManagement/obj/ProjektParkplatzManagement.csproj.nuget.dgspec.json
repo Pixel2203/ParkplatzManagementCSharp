@@ -1,24 +1,28 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\marvin.kaiser\\source\\repos\\ProjektParkplatzManagement\\ProjektParkplatzManagement\\ProjektParkplatzManagement.csproj": {}
+    "H:\\Documents\\Herr Zimmer\\Projekt2\\ParkplatzManagementCSharp\\ProjektParkplatzManagement\\ProjektParkplatzManagement.csproj": {}
   },
   "projects": {
-    "C:\\Users\\marvin.kaiser\\source\\repos\\ProjektParkplatzManagement\\ProjektParkplatzManagement\\ProjektParkplatzManagement.csproj": {
+    "H:\\Documents\\Herr Zimmer\\Projekt2\\ParkplatzManagementCSharp\\ProjektParkplatzManagement\\ProjektParkplatzManagement.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\marvin.kaiser\\source\\repos\\ProjektParkplatzManagement\\ProjektParkplatzManagement\\ProjektParkplatzManagement.csproj",
+        "projectUniqueName": "H:\\Documents\\Herr Zimmer\\Projekt2\\ParkplatzManagementCSharp\\ProjektParkplatzManagement\\ProjektParkplatzManagement.csproj",
         "projectName": "ProjektParkplatzManagement",
-        "projectPath": "C:\\Users\\marvin.kaiser\\source\\repos\\ProjektParkplatzManagement\\ProjektParkplatzManagement\\ProjektParkplatzManagement.csproj",
+        "projectPath": "H:\\Documents\\Herr Zimmer\\Projekt2\\ParkplatzManagementCSharp\\ProjektParkplatzManagement\\ProjektParkplatzManagement.csproj",
         "packagesPath": "C:\\Users\\marvin.kaiser\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\marvin.kaiser\\source\\repos\\ProjektParkplatzManagement\\ProjektParkplatzManagement\\obj\\",
+        "outputPath": "H:\\Documents\\Herr Zimmer\\Projekt2\\ParkplatzManagementCSharp\\ProjektParkplatzManagement\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
           "C:\\Users\\marvin.kaiser\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "net6.0-windows"
+          "net6.0-windows7.0"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
@@ -55,8 +59,7 @@
             "net47",
             "net471",
             "net472",
-            "net48",
-            "net481"
+            "net48"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -68,7 +71,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.113\\RuntimeIdentifierGraph.json"
         }
       }
     }

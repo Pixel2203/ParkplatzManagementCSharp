@@ -28,197 +28,169 @@
         /// </summary>
         private void InitializeComponent()
         {
-            menuStrip1 = new MenuStrip();
-            benutzerToolStripMenuItem = new ToolStripMenuItem();
-            abmeldenToolStripMenuItem = new ToolStripMenuItem();
-            changePassword = new Button();
-            listView2 = new ListView();
-            columnHeader7 = new ColumnHeader();
-            columnHeader6 = new ColumnHeader();
-            listBox1 = new ListBox();
-            label1 = new Label();
-            selectedUserLabel = new Label();
-            button3 = new Button();
-            loadBookings = new Button();
-            deleteBooking = new Button();
-            menuStrip1.SuspendLayout();
-            SuspendLayout();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.benutzerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.abmeldenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.listView2 = new System.Windows.Forms.ListView();
+            this.columnHeader7 = new System.Windows.Forms.ColumnHeader();
+            this.columnHeader6 = new System.Windows.Forms.ColumnHeader();
+            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.selectedUserLabel = new System.Windows.Forms.Label();
+            this.button3 = new System.Windows.Forms.Button();
+            this.loadBookings = new System.Windows.Forms.Button();
+            this.deleteBooking = new System.Windows.Forms.Button();
+            this.menuStrip1.SuspendLayout();
+            this.SuspendLayout();
             // 
             // menuStrip1
             // 
-            menuStrip1.ImageScalingSize = new Size(20, 20);
-            menuStrip1.Items.AddRange(new ToolStripItem[] { benutzerToolStripMenuItem });
-            menuStrip1.Location = new Point(0, 0);
-            menuStrip1.Name = "menuStrip1";
-            menuStrip1.Padding = new Padding(6, 3, 0, 3);
-            menuStrip1.Size = new Size(800, 30);
-            menuStrip1.TabIndex = 1;
-            menuStrip1.Text = "menuStrip1";
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.benutzerToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
+            this.menuStrip1.Size = new System.Drawing.Size(612, 24);
+            this.menuStrip1.TabIndex = 1;
+            this.menuStrip1.Text = "menuStrip1";
             // 
             // benutzerToolStripMenuItem
             // 
-            benutzerToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { abmeldenToolStripMenuItem });
-            benutzerToolStripMenuItem.Name = "benutzerToolStripMenuItem";
-            benutzerToolStripMenuItem.Size = new Size(81, 24);
-            benutzerToolStripMenuItem.Text = "Benutzer";
+            this.benutzerToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.abmeldenToolStripMenuItem});
+            this.benutzerToolStripMenuItem.Name = "benutzerToolStripMenuItem";
+            this.benutzerToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
+            this.benutzerToolStripMenuItem.Text = "Benutzer";
             // 
             // abmeldenToolStripMenuItem
             // 
-            abmeldenToolStripMenuItem.Name = "abmeldenToolStripMenuItem";
-            abmeldenToolStripMenuItem.Size = new Size(161, 26);
-            abmeldenToolStripMenuItem.Text = "Abmelden";
-            abmeldenToolStripMenuItem.Click += abmeldenToolStripMenuItem_Click;
-            // 
-            // changePassword
-            // 
-            changePassword.Enabled = false;
-            changePassword.Location = new Point(623, 288);
-            changePassword.Margin = new Padding(3, 4, 3, 4);
-            changePassword.Name = "changePassword";
-            changePassword.Size = new Size(119, 31);
-            changePassword.TabIndex = 36;
-            changePassword.Text = "Passwort ändern";
-            changePassword.UseVisualStyleBackColor = true;
+            this.abmeldenToolStripMenuItem.Name = "abmeldenToolStripMenuItem";
+            this.abmeldenToolStripMenuItem.Size = new System.Drawing.Size(129, 22);
+            this.abmeldenToolStripMenuItem.Text = "Abmelden";
             // 
             // listView2
             // 
-            listView2.BackColor = Color.FromArgb(255, 240, 230);
-            listView2.Columns.AddRange(new ColumnHeader[] { columnHeader7, columnHeader6 });
-            listView2.Enabled = false;
-            listView2.Location = new Point(268, 31);
-            listView2.MultiSelect = false;
-            listView2.Name = "listView2";
-            listView2.Size = new Size(419, 214);
-            listView2.TabIndex = 37;
-            listView2.UseCompatibleStateImageBehavior = false;
-            listView2.View = View.Details;
+            this.listView2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(240)))), ((int)(((byte)(230)))));
+            this.listView2.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader7,
+            this.columnHeader6});
+            this.listView2.Enabled = false;
+            this.listView2.Location = new System.Drawing.Point(234, 31);
+            this.listView2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.listView2.MultiSelect = false;
+            this.listView2.Name = "listView2";
+            this.listView2.Size = new System.Drawing.Size(367, 154);
+            this.listView2.TabIndex = 37;
+            this.listView2.UseCompatibleStateImageBehavior = false;
+            this.listView2.View = System.Windows.Forms.View.Details;
             // 
             // columnHeader7
             // 
-            columnHeader7.Text = "Datum";
-            columnHeader7.Width = 150;
+            this.columnHeader7.Text = "Datum";
+            this.columnHeader7.Width = 150;
             // 
             // columnHeader6
             // 
-            columnHeader6.Text = "Buchungsnummer";
-            columnHeader6.Width = 120;
-            // 
-            // 
-            // deleteBooking
-            // 
-            deleteBooking.Enabled = false;
-            deleteBooking.Location = new Point(623, 112);
-            deleteBooking.Margin = new Padding(3, 4, 3, 4);
-            deleteBooking.Name = "deleteBooking";
-            deleteBooking.Size = new Size(162, 31);
-            deleteBooking.TabIndex = 40;
-            deleteBooking.Text = "Buchung löschen";
-            deleteBooking.UseVisualStyleBackColor = true;
-            deleteBooking.Click += button4_Click;
-            // 
-            // loadBookings
-            // 
-            loadBookings.Enabled = false;
-            loadBookings.Location = new Point(623, 47);
-            loadBookings.Margin = new Padding(3, 4, 3, 4);
-            loadBookings.Name = "loadBookings";
-            loadBookings.Size = new Size(162, 31);
-            loadBookings.TabIndex = 41;
-            loadBookings.Text = "Buchungen laden";
-            loadBookings.UseVisualStyleBackColor = true;
-            loadBookings.Click += loadBookings_Click;
+            this.columnHeader6.Text = "Buchungsnummer";
+            this.columnHeader6.Width = 120;
             // 
             // listBox1
             // 
-            listBox1.BackColor = Color.FromArgb(255, 240, 230);
-            listBox1.FormattingEnabled = true;
-            listBox1.ItemHeight = 20;
-            listBox1.Location = new Point(14, 41);
-            listBox1.Margin = new Padding(3, 4, 3, 4);
-            listBox1.Name = "listBox1";
-            listBox1.Size = new Size(237, 214);
-            listBox1.TabIndex = 42;
-            listBox1.SelectedIndexChanged += listBox1_SelectedIndexChanged;
+            this.listBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(240)))), ((int)(((byte)(230)))));
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.ItemHeight = 15;
+            this.listBox1.Location = new System.Drawing.Point(12, 31);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(208, 154);
+            this.listBox1.TabIndex = 42;
+            this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged_1);
             // 
             // label1
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.Location = new Point(14, 341);
-            label1.Name = "label1";
-            label1.Size = new Size(87, 23);
-            label1.TabIndex = 43;
-            label1.Text = "Benutzer:";
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label1.Location = new System.Drawing.Point(12, 256);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(67, 17);
+            this.label1.TabIndex = 43;
+            this.label1.Text = "Benutzer:";
             // 
             // selectedUserLabel
             // 
-            selectedUserLabel.AutoSize = true;
-            selectedUserLabel.Location = new Point(95, 344);
-            selectedUserLabel.Name = "selectedUserLabel";
-            selectedUserLabel.Size = new Size(183, 20);
-            selectedUserLabel.TabIndex = 44;
-            selectedUserLabel.Text = "Kein Benutzer ausgewählt!";
+            this.selectedUserLabel.AutoSize = true;
+            this.selectedUserLabel.Location = new System.Drawing.Point(83, 258);
+            this.selectedUserLabel.Name = "selectedUserLabel";
+            this.selectedUserLabel.Size = new System.Drawing.Size(145, 15);
+            this.selectedUserLabel.TabIndex = 44;
+            this.selectedUserLabel.Text = "Kein Benutzer ausgewählt!";
             // 
             // button3
             // 
-            button3.BackColor = Color.FromArgb(255, 240, 230);
-            button3.Location = new Point(12, 297);
-            button3.Margin = new Padding(3, 2, 3, 2);
-            button3.Name = "button3";
-            button3.Size = new Size(142, 34);
-            button3.TabIndex = 46;
-            button3.Text = "Zurück";
-            button3.UseVisualStyleBackColor = false;
+            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(240)))), ((int)(((byte)(230)))));
+            this.button3.Location = new System.Drawing.Point(10, 223);
+            this.button3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(124, 26);
+            this.button3.TabIndex = 46;
+            this.button3.Text = "Zurück";
+            this.button3.UseVisualStyleBackColor = false;
             // 
             // loadBookings
             // 
-            loadBookings.BackColor = Color.FromArgb(255, 240, 230);
-            loadBookings.Location = new Point(492, 293);
-            loadBookings.Margin = new Padding(3, 2, 3, 2);
-            loadBookings.Name = "loadBookings";
-            loadBookings.Size = new Size(142, 34);
-            loadBookings.TabIndex = 47;
-            loadBookings.Text = "Buchungen laden";
-            loadBookings.UseVisualStyleBackColor = false;
+            this.loadBookings.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(240)))), ((int)(((byte)(230)))));
+            this.loadBookings.Enabled = false;
+            this.loadBookings.Location = new System.Drawing.Point(430, 220);
+            this.loadBookings.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.loadBookings.Name = "loadBookings";
+            this.loadBookings.Size = new System.Drawing.Size(124, 26);
+            this.loadBookings.TabIndex = 47;
+            this.loadBookings.Text = "Buchungen laden";
+            this.loadBookings.UseVisualStyleBackColor = false;
+            this.loadBookings.Click += new System.EventHandler(this.loadBookings_Click_1);
             // 
             // deleteBooking
             // 
-            deleteBooking.BackColor = Color.FromArgb(255, 240, 230);
-            deleteBooking.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            deleteBooking.Location = new Point(640, 293);
-            deleteBooking.Margin = new Padding(3, 2, 3, 2);
-            deleteBooking.Name = "deleteBooking";
-            deleteBooking.Size = new Size(47, 34);
-            deleteBooking.TabIndex = 48;
-            deleteBooking.Text = "🗑";
-            deleteBooking.UseVisualStyleBackColor = false;
+            this.deleteBooking.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(240)))), ((int)(((byte)(230)))));
+            this.deleteBooking.Enabled = false;
+            this.deleteBooking.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.deleteBooking.Location = new System.Drawing.Point(559, 210);
+            this.deleteBooking.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.deleteBooking.Name = "deleteBooking";
+            this.deleteBooking.Size = new System.Drawing.Size(41, 36);
+            this.deleteBooking.TabIndex = 48;
+            this.deleteBooking.Text = "🗑";
+            this.deleteBooking.UseVisualStyleBackColor = false;
+            this.deleteBooking.Click += new System.EventHandler(this.deleteBooking_Click);
             // 
             // Manager
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
-            AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.FromArgb(255, 224, 192);
-            ClientSize = new Size(700, 338);
-            Controls.Add(deleteBooking);
-            Controls.Add(loadBookings);
-            Controls.Add(button3);
-            Controls.Add(selectedUserLabel);
-            Controls.Add(label1);
-            Controls.Add(listBox1);
-            Controls.Add(listView2);
-            Controls.Add(changePassword);
-            Controls.Add(blockUser);
-            Controls.Add(menuStrip1);
-            MainMenuStrip = menuStrip1;
-            Name = "Manager";
-            ShowIcon = false;
-            StartPosition = FormStartPosition.CenterScreen;
-            Text = "Verwaltung";
-            Load += Manager_Load;
-            menuStrip1.ResumeLayout(false);
-            menuStrip1.PerformLayout();
-            ResumeLayout(false);
-            PerformLayout();
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.ClientSize = new System.Drawing.Size(612, 254);
+            this.Controls.Add(this.deleteBooking);
+            this.Controls.Add(this.loadBookings);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.selectedUserLabel);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.listBox1);
+            this.Controls.Add(this.listView2);
+            this.Controls.Add(this.menuStrip1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MainMenuStrip = this.menuStrip1;
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.MaximizeBox = false;
+            this.Name = "Manager";
+            this.ShowIcon = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Verwaltung";
+            this.Load += new System.EventHandler(this.Manager_Load_1);
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion
@@ -226,7 +198,6 @@
         private ToolStripMenuItem benutzerToolStripMenuItem;
         private ToolStripMenuItem abmeldenToolStripMenuItem;
         private CheckBox blockUser;
-        private Button changePassword;
         private ListView listView2;
         private ColumnHeader columnHeader7;
         private ColumnHeader columnHeader6;

@@ -40,7 +40,46 @@ namespace ProjektParkplatzManagement
             ResponseObject response = Form1.controller.deleteBookingById(bookingId);
         }
 
-        private void loadBookings_Click(object sender, EventArgs e)
+        private void addBookingItemToListView(Booking booking)
+        {
+            ListViewItem item = new ListViewItem(Utils.fromMilliseconds(booking.startDate).ToString(Utils.formatDateWithYearMonthDayHoursMinutes));
+            item.SubItems.Add(booking.id.ToString());
+            listView2.Items.Add(item);
+
+        }
+
+
+        private void updateUserList()
+        {
+            if (this.users == null)
+            {
+                return;
+            }
+            this.users.ForEach(user => listBox1.Items.Add(user.email));
+        }
+
+        private void deleteBooking_Click(object sender, EventArgs e)
+        {
+            int bookingId = int.Parse(listView2.SelectedItems[0].SubItems[1].Text);
+            listView2.SelectedItems[0].Remove();
+            ResponseObject response = Form1.controller.deleteBookingById(bookingId);
+            string title = response.worked ? "Erfolgreich gelöscht!" : "Fehler!";
+            MessageBox.Show(response.message, title, MessageBoxButtons.OK, response.worked ? MessageBoxIcon.None : MessageBoxIcon.Error);
+        }
+
+        private void Manager_Load_1(object sender, EventArgs e)
+        {
+            FullUserListResponse response = Form1.controller.getAllUsers();
+            if (response.worked)
+            {
+                this.users = response.getValue();
+                updateUserList();
+                return;
+            }
+            MessageBox.Show(response.message, "Fehler!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
+        private void loadBookings_Click_1(object sender, EventArgs e)
         {
             listView2.Items.Clear();
             if (users == null)
@@ -71,44 +110,14 @@ namespace ProjektParkplatzManagement
                 listView2.Enabled = true;
             }
             recentBookings.ForEach(booking => addBookingItemToListView(booking));
-            // 
-        }
-        private void addBookingItemToListView(Booking booking)
-        {
-            ListViewItem item = new ListViewItem(Utils.fromMilliseconds(booking.startDate).ToString(Utils.formatDateWithYearMonthDayHoursMinutes));
-            item.SubItems.Add(booking.id.ToString());
-            listView2.Items.Add(item);
-
         }
 
-        private void Manager_Load(object sender, EventArgs e)
-        {
-            FullUserListResponse response = Form1.controller.getAllUsers();
-            if (response.worked)
-            {
-                this.users = response.getValue();
-                updateUserList();
-                return;
-            }
-            MessageBox.Show(response.message, "Fehler!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-        }
-
-        private void updateUserList()
-        {
-            if (this.users == null)
-            {
-                return;
-            }
-            this.users.ForEach(user => listBox1.Items.Add(user.email));
-        }
-
-        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        private void listBox1_SelectedIndexChanged_1(object sender, EventArgs e)
         {
             selectedUserLabel.Text = listBox1.Text;
             loadBookings.Enabled = true;
             deleteBooking.Enabled = false;
             listView2.Enabled = false;
         }
-
     }
 }
