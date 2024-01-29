@@ -10,8 +10,8 @@ namespace ProjektParkplatzManagement.com
     {
         DEFAULT,
         EPARKING,
-        BIOGAS,
+        /*BIOGAS,
         PETROL,
-        DIESEL
+        DIESEL*/
     }
 }

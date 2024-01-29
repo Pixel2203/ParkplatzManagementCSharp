@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.Button configureUser;
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.benutzerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.abmeldenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -41,10 +40,8 @@
             this.loadBookings = new System.Windows.Forms.Button();
             this.deleteBooking = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            configureUser = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
- 
             // 
             // menuStrip1
             // 
@@ -171,11 +168,9 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.ClientSize = new System.Drawing.Size(612, 299);
-            this.Controls.Add(this.button1);
+            this.ClientSize = new System.Drawing.Size(612, 254);
             this.Controls.Add(this.deleteBooking);
             this.Controls.Add(this.loadBookings);
-            this.Controls.Add(configureUser);
             this.Controls.Add(this.selectedUserLabel);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.listBox1);
@@ -188,7 +183,7 @@
             this.Name = "Manager";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Verwaltung";
+            this.Text = "z";
             this.Load += new System.EventHandler(this.Manager_Load_1);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
@@ -208,7 +203,6 @@
         private ListBox listBox1;
         private Label label1;
         private Label selectedUserLabel;
-        private Button configureUser;
         private Button loadBookings;
         private Button deleteBooking;
         private Button button1;

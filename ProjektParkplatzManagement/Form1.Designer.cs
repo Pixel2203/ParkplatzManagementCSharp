@@ -29,186 +29,182 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            button1 = new Button();
-            textBox1 = new TextBox();
-            label1 = new Label();
-            label2 = new Label();
-            maskedTextBox2 = new MaskedTextBox();
-            linkLabel1 = new LinkLabel();
-            label3 = new Label();
-            pictureBox1 = new PictureBox();
-            pictureBox2 = new PictureBox();
-            pictureBox3 = new PictureBox();
-            linkLabel2 = new LinkLabel();
-            label4 = new Label();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
-            SuspendLayout();
+            this.button1 = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.maskedTextBox2 = new System.Windows.Forms.MaskedTextBox();
+            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.linkLabel2 = new System.Windows.Forms.LinkLabel();
+            this.label4 = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            this.SuspendLayout();
             // 
             // button1
             // 
-            button1.BackColor = Color.FromArgb(255, 240, 230);
-            button1.Location = new Point(525, 283);
-            button1.Margin = new Padding(3, 2, 3, 2);
-            button1.Name = "button1";
-            button1.Size = new Size(104, 26);
-            button1.TabIndex = 1;
-            button1.Text = "Anmelden";
-            button1.UseVisualStyleBackColor = false;
-            button1.Click += button1_Click;
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(240)))), ((int)(((byte)(230)))));
+            this.button1.Location = new System.Drawing.Point(525, 283);
+            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(104, 26);
+            this.button1.TabIndex = 3;
+            this.button1.Text = "Anmelden";
+            this.button1.UseVisualStyleBackColor = false;
             // 
             // textBox1
             // 
-            textBox1.BackColor = Color.FromArgb(255, 240, 230);
-            textBox1.Location = new Point(380, 154);
-            textBox1.Margin = new Padding(3, 2, 3, 2);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(252, 23);
-            textBox1.TabIndex = 2;
+            this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(240)))), ((int)(((byte)(230)))));
+            this.textBox1.Location = new System.Drawing.Point(380, 154);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(252, 23);
+            this.textBox1.TabIndex = 1;
             // 
             // label1
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(377, 130);
-            label1.Name = "label1";
-            label1.Size = new Size(53, 15);
-            label1.TabIndex = 3;
-            label1.Text = "Benutzer";
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(377, 130);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(53, 15);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "Benutzer";
             // 
             // label2
             // 
-            label2.AutoSize = true;
-            label2.Location = new Point(377, 199);
-            label2.Name = "label2";
-            label2.Size = new Size(54, 15);
-            label2.TabIndex = 4;
-            label2.Text = "Passwort";
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(377, 199);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(54, 15);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "Passwort";
             // 
             // maskedTextBox2
             // 
-            maskedTextBox2.BackColor = Color.FromArgb(255, 240, 230);
-            maskedTextBox2.Location = new Point(377, 223);
-            maskedTextBox2.Margin = new Padding(3, 2, 3, 2);
-            maskedTextBox2.Name = "maskedTextBox2";
-            maskedTextBox2.Size = new Size(252, 23);
-            maskedTextBox2.TabIndex = 5;
+            this.maskedTextBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(240)))), ((int)(((byte)(230)))));
+            this.maskedTextBox2.Location = new System.Drawing.Point(377, 223);
+            this.maskedTextBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.maskedTextBox2.Name = "maskedTextBox2";
+            this.maskedTextBox2.Size = new System.Drawing.Size(252, 23);
+            this.maskedTextBox2.TabIndex = 2;
             // 
             // linkLabel1
             // 
-            linkLabel1.AutoSize = true;
-            linkLabel1.BackColor = Color.Transparent;
-            linkLabel1.LinkColor = Color.FromArgb(255, 224, 192);
-            linkLabel1.Location = new Point(111, 288);
-            linkLabel1.Name = "linkLabel1";
-            linkLabel1.Size = new Size(77, 15);
-            linkLabel1.TabIndex = 6;
-            linkLabel1.TabStop = true;
-            linkLabel1.Text = "Zurücksetzen";
-            linkLabel1.LinkClicked += linkLabel1_LinkClicked;
+            this.linkLabel1.AutoSize = true;
+            this.linkLabel1.BackColor = System.Drawing.Color.Transparent;
+            this.linkLabel1.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.linkLabel1.Location = new System.Drawing.Point(111, 288);
+            this.linkLabel1.Name = "linkLabel1";
+            this.linkLabel1.Size = new System.Drawing.Size(77, 15);
+            this.linkLabel1.TabIndex = 6;
+            this.linkLabel1.TabStop = true;
+            this.linkLabel1.Text = "Zurücksetzen";
             // 
             // label3
             // 
-            label3.AutoSize = true;
-            label3.BackColor = Color.Transparent;
-            label3.ForeColor = Color.FromArgb(128, 255, 128);
-            label3.Location = new Point(89, 265);
-            label3.Name = "label3";
-            label3.Size = new Size(117, 15);
-            label3.TabIndex = 7;
-            label3.Text = "Password vergessen?";
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.label3.Location = new System.Drawing.Point(89, 265);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(117, 15);
+            this.label3.TabIndex = 4;
+            this.label3.Text = "Password vergessen?";
             // 
             // pictureBox1
             // 
-            pictureBox1.BackColor = Color.Transparent;
-            pictureBox1.BackgroundImage = Properties.Resources.eye_hidden;
-            pictureBox1.BackgroundImageLayout = ImageLayout.Stretch;
-            pictureBox1.Location = new Point(642, 223);
-            pictureBox1.Margin = new Padding(3, 2, 3, 2);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(24, 20);
-            pictureBox1.TabIndex = 9;
-            pictureBox1.TabStop = false;
-            pictureBox1.Click += pictureBox1_Click;
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.BackgroundImage = global::ProjektParkplatzManagement.Properties.Resources.eye_hidden;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.Location = new System.Drawing.Point(642, 223);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(24, 20);
+            this.pictureBox1.TabIndex = 9;
+            this.pictureBox1.TabStop = false;
             // 
             // pictureBox2
             // 
-            pictureBox2.BackgroundImage = Properties.Resources.color_baner;
-            pictureBox2.Location = new Point(-4, -2);
-            pictureBox2.Margin = new Padding(3, 2, 3, 2);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(305, 342);
-            pictureBox2.TabIndex = 10;
-            pictureBox2.TabStop = false;
+            this.pictureBox2.BackgroundImage = global::ProjektParkplatzManagement.Properties.Resources.color_baner;
+            this.pictureBox2.Location = new System.Drawing.Point(-4, -2);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(305, 342);
+            this.pictureBox2.TabIndex = 10;
+            this.pictureBox2.TabStop = false;
             // 
             // pictureBox3
             // 
-            pictureBox3.BackColor = Color.Transparent;
-            pictureBox3.BackgroundImage = Properties.Resources.Banner;
-            pictureBox3.BackgroundImageLayout = ImageLayout.Stretch;
-            pictureBox3.Location = new Point(354, 9);
-            pictureBox3.Margin = new Padding(3, 2, 3, 2);
-            pictureBox3.Name = "pictureBox3";
-            pictureBox3.Size = new Size(290, 106);
-            pictureBox3.TabIndex = 11;
-            pictureBox3.TabStop = false;
+            this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox3.BackgroundImage = global::ProjektParkplatzManagement.Properties.Resources.Banner;
+            this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox3.Location = new System.Drawing.Point(354, 9);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(290, 106);
+            this.pictureBox3.TabIndex = 11;
+            this.pictureBox3.TabStop = false;
             // 
             // linkLabel2
             // 
-            linkLabel2.AutoSize = true;
-            linkLabel2.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold, GraphicsUnit.Point);
-            linkLabel2.LinkColor = Color.FromArgb(66, 129, 31);
-            linkLabel2.Location = new Point(380, 286);
-            linkLabel2.Name = "linkLabel2";
-            linkLabel2.Size = new Size(104, 19);
-            linkLabel2.TabIndex = 12;
-            linkLabel2.TabStop = true;
-            linkLabel2.Text = "Konto erstellen";
-            linkLabel2.LinkClicked += linkLabel2_LinkClicked;
+            this.linkLabel2.AutoSize = true;
+            this.linkLabel2.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.linkLabel2.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(129)))), ((int)(((byte)(31)))));
+            this.linkLabel2.Location = new System.Drawing.Point(380, 286);
+            this.linkLabel2.Name = "linkLabel2";
+            this.linkLabel2.Size = new System.Drawing.Size(104, 19);
+            this.linkLabel2.TabIndex = 5;
+            this.linkLabel2.TabStop = true;
+            this.linkLabel2.Text = "Konto erstellen";
             // 
             // label4
             // 
-            label4.AutoSize = true;
-            label4.BackColor = Color.Transparent;
-            label4.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label4.ForeColor = Color.Red;
-            label4.Location = new Point(51, 152);
-            label4.Name = "label4";
-            label4.Size = new Size(210, 21);
-            label4.TabIndex = 13;
-            label4.Text = "Verbindung fehlgeschlagen";
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label4.ForeColor = System.Drawing.Color.Red;
+            this.label4.Location = new System.Drawing.Point(51, 152);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(210, 21);
+            this.label4.TabIndex = 13;
+            this.label4.Text = "Verbindung fehlgeschlagen";
             // 
             // Form1
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
-            AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.FromArgb(255, 224, 192);
-            ClientSize = new Size(700, 338);
-            Controls.Add(label4);
-            Controls.Add(linkLabel2);
-            Controls.Add(linkLabel1);
-            Controls.Add(label3);
-            Controls.Add(pictureBox3);
-            Controls.Add(pictureBox2);
-            Controls.Add(pictureBox1);
-            Controls.Add(maskedTextBox2);
-            Controls.Add(label2);
-            Controls.Add(label1);
-            Controls.Add(textBox1);
-            Controls.Add(button1);
-            FormBorderStyle = FormBorderStyle.FixedSingle;
-            Icon = (Icon)resources.GetObject("$this.Icon");
-            Margin = new Padding(3, 2, 3, 2);
-            MaximizeBox = false;
-            Name = "Form1";
-            StartPosition = FormStartPosition.CenterScreen;
-            Text = "Anmelden";
-            Load += Form1_Load;
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
-            ResumeLayout(false);
-            PerformLayout();
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.ClientSize = new System.Drawing.Size(700, 338);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.linkLabel2);
+            this.Controls.Add(this.linkLabel1);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.pictureBox3);
+            this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.maskedTextBox2);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.button1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.MaximizeBox = false;
+            this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Anmelden";
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion
