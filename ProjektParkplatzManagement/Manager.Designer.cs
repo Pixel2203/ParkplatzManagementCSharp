@@ -35,13 +35,12 @@
             listView2 = new ListView();
             columnHeader7 = new ColumnHeader();
             columnHeader6 = new ColumnHeader();
-            saveChanges = new Button();
-            discardChanges = new Button();
-            deleteBooking = new Button();
-            loadBookings = new Button();
             listBox1 = new ListBox();
             label1 = new Label();
             selectedUserLabel = new Label();
+            button3 = new Button();
+            loadBookings = new Button();
+            deleteBooking = new Button();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
@@ -86,11 +85,10 @@
             listView2.BackColor = Color.FromArgb(255, 240, 230);
             listView2.Columns.AddRange(new ColumnHeader[] { columnHeader7, columnHeader6 });
             listView2.Enabled = false;
-            listView2.Location = new Point(270, 41);
-            listView2.Margin = new Padding(3, 4, 3, 4);
+            listView2.Location = new Point(268, 31);
             listView2.MultiSelect = false;
             listView2.Name = "listView2";
-            listView2.Size = new Size(314, 276);
+            listView2.Size = new Size(419, 214);
             listView2.TabIndex = 37;
             listView2.UseCompatibleStateImageBehavior = false;
             listView2.View = View.Details;
@@ -154,12 +152,13 @@
             // 
             // listBox1
             // 
+            listBox1.BackColor = Color.FromArgb(255, 240, 230);
             listBox1.FormattingEnabled = true;
             listBox1.ItemHeight = 20;
             listBox1.Location = new Point(14, 41);
             listBox1.Margin = new Padding(3, 4, 3, 4);
             listBox1.Name = "listBox1";
-            listBox1.Size = new Size(230, 264);
+            listBox1.Size = new Size(237, 214);
             listBox1.TabIndex = 42;
             listBox1.SelectedIndexChanged += listBox1_SelectedIndexChanged;
             // 
@@ -182,21 +181,55 @@
             selectedUserLabel.TabIndex = 44;
             selectedUserLabel.Text = "Kein Benutzer ausgewählt!";
             // 
+            // button3
+            // 
+            button3.BackColor = Color.FromArgb(255, 240, 230);
+            button3.Location = new Point(12, 297);
+            button3.Margin = new Padding(3, 2, 3, 2);
+            button3.Name = "button3";
+            button3.Size = new Size(142, 34);
+            button3.TabIndex = 46;
+            button3.Text = "Zurück";
+            button3.UseVisualStyleBackColor = false;
+            // 
+            // loadBookings
+            // 
+            loadBookings.BackColor = Color.FromArgb(255, 240, 230);
+            loadBookings.Location = new Point(492, 293);
+            loadBookings.Margin = new Padding(3, 2, 3, 2);
+            loadBookings.Name = "loadBookings";
+            loadBookings.Size = new Size(142, 34);
+            loadBookings.TabIndex = 47;
+            loadBookings.Text = "Buchungen laden";
+            loadBookings.UseVisualStyleBackColor = false;
+            // 
+            // deleteBooking
+            // 
+            deleteBooking.BackColor = Color.FromArgb(255, 240, 230);
+            deleteBooking.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            deleteBooking.Location = new Point(640, 293);
+            deleteBooking.Margin = new Padding(3, 2, 3, 2);
+            deleteBooking.Name = "deleteBooking";
+            deleteBooking.Size = new Size(47, 34);
+            deleteBooking.TabIndex = 48;
+            deleteBooking.Text = "🗑";
+            deleteBooking.UseVisualStyleBackColor = false;
+            // 
             // Manager
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(255, 224, 192);
-            ClientSize = new Size(800, 451);
+            ClientSize = new Size(700, 338);
+            Controls.Add(deleteBooking);
+            Controls.Add(loadBookings);
+            Controls.Add(button3);
             Controls.Add(selectedUserLabel);
             Controls.Add(label1);
             Controls.Add(listBox1);
-            Controls.Add(loadBookings);
-            Controls.Add(deleteBooking);
-            Controls.Add(discardChanges);
-            Controls.Add(saveChanges);
             Controls.Add(listView2);
             Controls.Add(changePassword);
+            Controls.Add(blockUser);
             Controls.Add(menuStrip1);
             MainMenuStrip = menuStrip1;
             Name = "Manager";
@@ -214,16 +247,16 @@
         private MenuStrip menuStrip1;
         private ToolStripMenuItem benutzerToolStripMenuItem;
         private ToolStripMenuItem abmeldenToolStripMenuItem;
+        private CheckBox blockUser;
         private Button changePassword;
         private ListView listView2;
         private ColumnHeader columnHeader7;
         private ColumnHeader columnHeader6;
-        private Button saveChanges;
-        private Button discardChanges;
-        private Button deleteBooking;
-        private Button loadBookings;
         private ListBox listBox1;
         private Label label1;
         private Label selectedUserLabel;
+        private Button button3;
+        private Button loadBookings;
+        private Button deleteBooking;
     }
 }
