@@ -168,7 +168,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.ClientSize = new System.Drawing.Size(612, 254);
+            this.ClientSize = new System.Drawing.Size(612, 257);
             this.Controls.Add(this.deleteBooking);
             this.Controls.Add(this.loadBookings);
             this.Controls.Add(this.button3);
@@ -184,7 +184,7 @@
             this.Name = "Manager";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Verwaltung";
+            this.Text = "z";
             this.Load += new System.EventHandler(this.Manager_Load_1);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
