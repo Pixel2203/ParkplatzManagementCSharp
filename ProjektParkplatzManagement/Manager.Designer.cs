@@ -103,28 +103,6 @@
             columnHeader6.Text = "Buchungsnummer";
             columnHeader6.Width = 120;
             // 
-            // saveChanges
-            // 
-            saveChanges.BackColor = Color.FromArgb(128, 255, 128);
-            saveChanges.Enabled = false;
-            saveChanges.Location = new Point(466, 396);
-            saveChanges.Margin = new Padding(3, 4, 3, 4);
-            saveChanges.Name = "saveChanges";
-            saveChanges.Size = new Size(160, 45);
-            saveChanges.TabIndex = 38;
-            saveChanges.Text = "Änderungen Speichern";
-            saveChanges.UseVisualStyleBackColor = false;
-            // 
-            // discardChanges
-            // 
-            discardChanges.BackColor = Color.Red;
-            discardChanges.Location = new Point(633, 396);
-            discardChanges.Margin = new Padding(3, 4, 3, 4);
-            discardChanges.Name = "discardChanges";
-            discardChanges.Size = new Size(160, 45);
-            discardChanges.TabIndex = 39;
-            discardChanges.Text = "Änderungen verwerfen";
-            discardChanges.UseVisualStyleBackColor = false;
             // 
             // deleteBooking
             // 
