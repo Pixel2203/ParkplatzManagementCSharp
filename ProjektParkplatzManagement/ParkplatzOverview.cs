@@ -18,7 +18,6 @@ namespace ProjektParkplatzManagement
 
     public partial class ParkplatzOverview : Form
     {
-        int translatedbookingduration = 0;
         List<ParkingLotData> parkingLotDatas = new List<ParkingLotData>();
         List<ParkingTicket> recentBookings = new List<ParkingTicket>();
         public ParkplatzOverview()
@@ -87,6 +86,7 @@ namespace ProjektParkplatzManagement
                 MessageBox.Show(response.message, "Fehler!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
+            listView2.Items.Clear();
             response.getValue().ForEach(booking => addBookingItemToListView(booking));
 
         }

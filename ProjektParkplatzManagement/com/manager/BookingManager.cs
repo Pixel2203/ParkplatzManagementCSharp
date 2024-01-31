@@ -76,6 +76,15 @@ namespace ProjektParkplatzManagement.com.manager
             string message = worked ? "Buchung erfolgreich gelöscht!" : "Konnte Buchung nicht löschen!";
             return new ResponseObject(message, worked);
         }
+        public FullAdvancedBookingListResponse getAdvancedBookingByFilter(string filter, string value)
+        {
+            List<AdvancedBooking> result = bookingDAO.getAdvancedBookingsByFilter(filter, value);
+            if(result.Count > 0)
+            {
+                return new FullAdvancedBookingListResponse("Buchungen geladen!", true, result);
+            }
+            return new FullAdvancedBookingListResponse("Keine Buchungen gefunden!", true, result);
+        }
 
 
     }

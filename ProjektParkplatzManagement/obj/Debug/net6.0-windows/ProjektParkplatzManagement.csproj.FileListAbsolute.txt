@@ -177,3 +177,4 @@ H:\Documents\Herr Zimmer\Projekt2\ParkplatzManagementCSharp\ProjektParkplatzMana
 H:\Documents\Herr Zimmer\Projekt2\ParkplatzManagementCSharp\ProjektParkplatzManagement\obj\Debug\net6.0-windows\ProjektParkplatzManagement.pdb
 H:\Documents\Herr Zimmer\Projekt2\ParkplatzManagementCSharp\ProjektParkplatzManagement\obj\Debug\net6.0-windows\ProjektParkplatzManagement.genruntimeconfig.cache
 C:\Users\elias.liebelt\Source\Repos\Pixel2203\ParkplatzManagementCSharp\ProjektParkplatzManagement\bin\Debug\net6.0-windows\ref\ProjektParkplatzManagement.dll
+D:\VSProjects\ProjektParkplatzManagement\obj\Debug\net6.0-windows\ProjektParkplatzManagement.BuchungsManager.resources

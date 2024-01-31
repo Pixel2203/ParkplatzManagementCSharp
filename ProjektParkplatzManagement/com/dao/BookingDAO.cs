@@ -172,9 +172,9 @@ namespace ProjektParkplatzManagement.com.dao
         {
             DateTime now = DateTime.Now;
             List<ParkingTicket> result = new List<ParkingTicket>(); 
-            String sql = string.Format("SELECT parkinglot.name,booking.id,booking.start,booking.end,booking.plate,booking.parkinglotId,parkinglottypes.type FROM booking,user, parkinglot,parkinglottypes WHERE booking.start < '{0}' AND booking.end < '{0}' AND user.id = booking.userId AND user.id = '{1}' AND parkinglottypes.id = parkinglot.typeId", now.ToString(Utils.formatDateWithYearMonthDayHoursMinutes), user.id);
+            String sql = string.Format("SELECT booking.id,parkinglot.name,booking.start,booking.end,parkinglottypes.type,booking.plate,booking.parkinglotId FROM booking,user,parkinglot,parkinglottypes WHERE user.id = booking.userId AND booking.parkinglotId = parkinglot.id AND parkinglottypes.id = parkinglot.typeId AND booking.start < '{0}' AND booking.end < '{0}' AND user.id = {1}", now.ToString(Utils.formatDateWithYearMonthDayHoursMinutes), user.id);
             MySqlDataReader reader = Utils.runCommandWithReader(connection, sql);
-            if(reader.Read())
+            while(reader.Read())
             {
                 ParkingLotType type = (ParkingLotType)Enum.Parse(typeof(ParkingLotType), reader.GetString("type"));
                 ParkingTicket ticket = new ParkingTicket(
@@ -204,6 +204,28 @@ namespace ProjektParkplatzManagement.com.dao
             MySqlCommand command = connection.CreateCommand();
             command.CommandText = sql;
             return command.ExecuteNonQuery() == 1;
+        }
+        public List<AdvancedBooking> getAdvancedBookingsByFilter(string filter, string value)
+        {
+            List<AdvancedBooking> advancedBookings = new List<AdvancedBooking>();
+
+            string sql = string.Format("SELECT booking.id,booking.start,booking.plate,parkinglot.name,user.email FROM booking,parkinglot,user WHERE booking.parkinglotId = parkinglot.id AND user.id = booking.userId AND {0} LIKE '%{1}%'", filter, value);
+            MySqlDataReader reader = Utils.runCommandWithReader(connection, sql);
+
+            while (reader.Read())
+            {
+                AdvancedBooking booking = new AdvancedBooking(
+                        reader.GetInt32("id"),
+                        Utils.toMilliseconds(reader.GetDateTime("start")),
+                        reader.GetString("plate"),
+                        reader.GetString("name"),
+                        reader.GetString("email")
+                    );
+                advancedBookings.Add(booking);
+            }
+
+            reader.Close();
+            return advancedBookings;
         }
 
         /*

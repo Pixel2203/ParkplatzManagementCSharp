@@ -17,13 +17,13 @@ namespace ProjektParkplatzManagement.com
         private readonly DBManager dBManager;
         private readonly BookingManager bookingManager;
         private readonly UserManager userManager;
-        private readonly string connectionString = "server=127.0.0.1;uid=root;pwd=;database=parkingdatabase";
+        private readonly string connectionString = "server=127.0.0.1;uid=root;pwd=Kaiser.331;database=parkingdatabase";
         public Controller()
         {
             currentUser = null;
             this.dBManager = new DBManager();
             this.dBManager.establishConnection(connectionString);
-            bookingManager = new BookingManager(this.dBManager.getConnection());
+            bookingManager = new manager.BookingManager(this.dBManager.getConnection());
             userManager = new UserManager(this.dBManager.getConnection());
         }
 
@@ -97,9 +97,13 @@ namespace ProjektParkplatzManagement.com
             return dBManager.isConnected();
         }
 
-        internal ResponseObject updateUser(User user)
+        public ResponseObject updateUser(User user)
         {
             return userManager.updateUser(user);
+        }
+        public FullAdvancedBookingListResponse getAdvancedBookingsByFilter(string filter, string value)
+        {
+            return bookingManager.getAdvancedBookingByFilter(filter, value);
         }
     }
 }

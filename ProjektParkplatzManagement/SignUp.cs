@@ -56,45 +56,52 @@ namespace ProjektParkplatzManagement
                 user = new User(0, prename, name, plate, email, 0, Permissions.DEFAULT, password);
             }
 
-
-
-
-            if (ValidateFormData(prename, name, email, plate, password, passwordRepeated))
+            if (isAdminMode)
             {
-
-                
-
-                
-                
-                if (isAdminMode)
+                bool fullyValidated = ValidateFormData(prename, name, email, plate,password,passwordRepeated);
+                if (fullyValidated)
                 {
                     ResponseObject response = Form1.controller.updateUser(user);
                     string title = response.worked ? "Erfolgreich geändert!" : "Änderung fehlgeschlagen!";
                     label9.Text = title;
                     MessageBox.Show(response.message, title, MessageBoxButtons.OK, response.worked ? MessageBoxIcon.Information : MessageBoxIcon.Error);
-
+                    return;
                 }
                 else
                 {
+                    bool partlyValidated = ValidateFormData(prename, name, email, plate);
+                    if(textBox5.Text == textBox6.Text && textBox6.Text == string.Empty && partlyValidated)
+                    {
+                        ResponseObject response = Form1.controller.updateUser(user);
+                        string title = response.worked ? "Erfolgreich geändert!" : "Änderung fehlgeschlagen!";
+                        label9.Text = title;
+                        MessageBox.Show(response.message, title, MessageBoxButtons.OK, response.worked ? MessageBoxIcon.Information : MessageBoxIcon.Error);
+                        return;
+                    }
+
+                    MessageBox.Show("Daten ungültig oder unvollständig!", "Ungültige Angaben", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+            }else
+            {
+                bool fullyValidated = ValidateFormData(prename, name, email, plate, password, passwordRepeated);
+                if (fullyValidated)
+                {
+                    
                     ResponseObject response = Form1.controller.registerUser(user);
                     string title = response.worked ? "Erfolgreich Registriert!" : "Registrierung Fehlgeschlagen!";
                     label9.Text = title;
                     MessageBox.Show(response.message, title, MessageBoxButtons.OK, response.worked ? MessageBoxIcon.Information : MessageBoxIcon.Error);
-                }
-            }
-            else
-            {
-                if (isAdminMode)
-                {
-                    ResponseObject response = Form1.controller.updateUser(user);
-                    string title = response.worked ? "Erfolgreich Registriert!" : "Registrierung Fehlgeschlagen!";
-                    label9.Text = title;
-                    MessageBox.Show(response.message, title, MessageBoxButtons.OK, response.worked ? MessageBoxIcon.Information : MessageBoxIcon.Error);
                     return;
-
                 }
-                MessageBox.Show("Daten ungültig oder unvollständig!", "Ungültige Angaben", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                else
+                {
+                    MessageBox.Show("Daten ungültig oder unvollständig!", "Ungültige Angaben", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
             }
+
+
         }
 
         private bool CheckIsNum(string number)
@@ -147,6 +154,42 @@ namespace ProjektParkplatzManagement
 
             return true;
         }
+
+
+        private bool ValidateFormData(string prename, string name, string email, string plate)
+        {
+            string[] requiredFields = { prename, name, email, plate };
+
+            foreach (string item in requiredFields)
+            {
+                if (string.IsNullOrEmpty(item))
+                {
+                    return false;
+                }
+            }
+
+            if (plate.Length > 8)
+            {
+                return false;
+            }
+
+            // Validate Kennzeichen
+            if (!ValidatePlate(plate))
+            {
+                return false;
+            }
+
+            // Validate Email
+            if (!ValidateEmail(email))
+            {
+                return false;
+            }
+
+            return true;
+        }
+
+
+
 
         private bool ValidatePlate(string plate)
         {

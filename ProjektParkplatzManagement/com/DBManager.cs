@@ -20,18 +20,24 @@ namespace ProjektParkplatzManagement.com
         {
             if(!isConnected())
             {
-                connection.ConnectionString = connectionDetails;
-                connection.Open();
+                try
+                {
+                    connection.ConnectionString = connectionDetails;
+                    connection.Open();
+                    return true;
+                }
+                catch (Exception)
+                {
 
-                return isConnected();
-
+                    return false;
+                }
             }
             return false;
         }
 
         public bool isConnected()
         {
-            return connection.State == System.Data.ConnectionState.Open; ;
+            return connection.State == System.Data.ConnectionState.Open;
         }
         public MySqlConnection getConnection()
         {

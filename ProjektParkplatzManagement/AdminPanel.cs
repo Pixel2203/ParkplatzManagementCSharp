@@ -50,5 +50,12 @@ namespace ProjektParkplatzManagement
         {
             Form1.controller.logoutUser(this);
         }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            this.Hide();
+            new BuchungsManager().ShowDialog();
+            this.Close();
+        }
     }
 }
