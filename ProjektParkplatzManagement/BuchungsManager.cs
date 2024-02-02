@@ -22,7 +22,7 @@ namespace ProjektParkplatzManagement
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string value = textBox1.Text ;
+            string value = textBox1.Text;
             string column = "";
             foreach (Control control in groupBox1.Controls)
             {
@@ -32,8 +32,8 @@ namespace ProjektParkplatzManagement
                     // Check if the radio button is checked
                     if (radioButton.Checked)
                     {
-                        
-                        
+
+
                         string selectedRadioButtonText = radioButton.Text;
                         switch (selectedRadioButtonText)
                         {
@@ -54,14 +54,14 @@ namespace ProjektParkplatzManagement
                                 break;
                         }
 
-                        if(string.IsNullOrEmpty(column))
+                        if (string.IsNullOrEmpty(column))
                         {
-                            MessageBox.Show("Keinen Filter spezifiziert!" , "Info" , MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            MessageBox.Show("Keinen Filter spezifiziert!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             return;
 
                         }
                         break;
-                       
+
                     }
                 }
             }
@@ -75,9 +75,9 @@ namespace ProjektParkplatzManagement
             com.dto.response.FullAdvancedBookingListResponse response = Form1.controller.getAdvancedBookingsByFilter(column, value);
             if (!response.worked)
             {
-                MessageBox.Show(response.message, "Fehler!" , MessageBoxButtons.OK,MessageBoxIcon.Error);
+                MessageBox.Show(response.message, "Fehler!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            if(response.getValue().Count == 0)
+            if (response.getValue().Count == 0)
             {
                 MessageBox.Show(response.message, "Info!", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
@@ -92,6 +92,11 @@ namespace ProjektParkplatzManagement
             item.SubItems.Add(booking.parkinglotname);
             item.SubItems.Add(booking.email);
             listView1.Items.Add(item);
+        }
+
+        private void abmeldenToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form1.controller.logoutUser(this);
         }
     }
 }

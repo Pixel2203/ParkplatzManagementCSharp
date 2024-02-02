@@ -44,7 +44,11 @@
             radioButton3 = new RadioButton();
             radioButton2 = new RadioButton();
             radioButton1 = new RadioButton();
+            menuStrip1 = new MenuStrip();
+            benutzerToolStripMenuItem = new ToolStripMenuItem();
+            abmeldenToolStripMenuItem = new ToolStripMenuItem();
             groupBox1.SuspendLayout();
+            menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
             // label2
@@ -58,6 +62,7 @@
             // 
             // listView1
             // 
+            listView1.BackColor = Color.FromArgb(255, 240, 230);
             listView1.Columns.AddRange(new ColumnHeader[] { columnHeader1, columnHeader3, columnHeader4, columnHeader5, columnHeader6 });
             listView1.Location = new Point(13, 181);
             listView1.Name = "listView1";
@@ -112,6 +117,7 @@
             // 
             // textBox1
             // 
+            textBox1.BackColor = Color.FromArgb(255, 240, 230);
             textBox1.Location = new Point(11, 48);
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(193, 23);
@@ -186,21 +192,52 @@
             radioButton1.Text = "Buchungsnummer";
             radioButton1.UseVisualStyleBackColor = true;
             // 
+            // menuStrip1
+            // 
+            menuStrip1.ImageScalingSize = new Size(20, 20);
+            menuStrip1.Items.AddRange(new ToolStripItem[] { benutzerToolStripMenuItem });
+            menuStrip1.Location = new Point(0, 0);
+            menuStrip1.Name = "menuStrip1";
+            menuStrip1.Padding = new Padding(5, 2, 0, 2);
+            menuStrip1.Size = new Size(800, 24);
+            menuStrip1.TabIndex = 14;
+            menuStrip1.Text = "menuStrip1";
+            // 
+            // benutzerToolStripMenuItem
+            // 
+            benutzerToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { abmeldenToolStripMenuItem });
+            benutzerToolStripMenuItem.Name = "benutzerToolStripMenuItem";
+            benutzerToolStripMenuItem.Size = new Size(65, 20);
+            benutzerToolStripMenuItem.Text = "Benutzer";
+            // 
+            // abmeldenToolStripMenuItem
+            // 
+            abmeldenToolStripMenuItem.Name = "abmeldenToolStripMenuItem";
+            abmeldenToolStripMenuItem.Size = new Size(129, 22);
+            abmeldenToolStripMenuItem.Text = "Abmelden";
+            abmeldenToolStripMenuItem.Click += abmeldenToolStripMenuItem_Click;
+            // 
             // BuchungsManager
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.FromArgb(255, 224, 192);
             ClientSize = new Size(800, 450);
+            Controls.Add(menuStrip1);
             Controls.Add(groupBox1);
             Controls.Add(label2);
             Controls.Add(listView1);
             Controls.Add(label1);
             Controls.Add(button1);
             Controls.Add(textBox1);
+            MaximizeBox = false;
             Name = "BuchungsManager";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "BuchungsManager";
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
+            menuStrip1.ResumeLayout(false);
+            menuStrip1.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -223,5 +260,8 @@
         private RadioButton radioButton3;
         private RadioButton radioButton2;
         private RadioButton radioButton1;
+        private MenuStrip menuStrip1;
+        private ToolStripMenuItem benutzerToolStripMenuItem;
+        private ToolStripMenuItem abmeldenToolStripMenuItem;
     }
 }

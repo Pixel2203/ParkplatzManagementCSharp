@@ -104,8 +104,9 @@
             // abmeldenToolStripMenuItem
             // 
             abmeldenToolStripMenuItem.Name = "abmeldenToolStripMenuItem";
-            abmeldenToolStripMenuItem.Size = new Size(129, 22);
+            abmeldenToolStripMenuItem.Size = new Size(180, 22);
             abmeldenToolStripMenuItem.Text = "Abmelden";
+            abmeldenToolStripMenuItem.Click += abmeldenToolStripMenuItem_Click_1;
             // 
             // AdminPanel
             // 
