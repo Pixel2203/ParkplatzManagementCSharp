@@ -15,6 +15,7 @@ namespace ProjektParkplatzManagement.com
     {
         public static readonly string formatDateWithYearMonthDayHoursMinutes = "yyyy-MM-dd HH:mm:00";
         public static readonly string formatDateWithYearMonthDay = "yyyy-MM-dd";
+        public static readonly string formatDateWithHoursMinutes = "HH:mm";
         public static long toMilliseconds(DateTime time)
         {
             return time.Ticks / TimeSpan.TicksPerMillisecond;

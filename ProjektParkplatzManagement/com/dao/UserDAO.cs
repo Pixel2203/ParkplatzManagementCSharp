@@ -150,6 +150,13 @@ namespace ProjektParkplatzManagement.com.dao
             return command.ExecuteNonQuery() == 1;
         }
 
+        public bool deleteUserById(int userId)
+        {
+            string sql = string.Format("DELETE FROM user WHERE id={0}", userId);
+            MySqlCommand command = new MySqlCommand(sql, connection);
+            return command.ExecuteNonQuery() == 1;
+        }
+
         /*
 
         public void imposePenalty(String plate)

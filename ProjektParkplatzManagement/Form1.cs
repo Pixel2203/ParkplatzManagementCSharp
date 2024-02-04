@@ -99,9 +99,5 @@ namespace ProjektParkplatzManagement
             new SignUp(false,null).ShowDialog();
         }
 
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

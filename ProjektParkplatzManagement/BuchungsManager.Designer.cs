@@ -47,6 +47,7 @@
             menuStrip1 = new MenuStrip();
             benutzerToolStripMenuItem = new ToolStripMenuItem();
             abmeldenToolStripMenuItem = new ToolStripMenuItem();
+            button2 = new Button();
             groupBox1.SuspendLayout();
             menuStrip1.SuspendLayout();
             SuspendLayout();
@@ -54,7 +55,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(13, 99);
+            label2.Location = new Point(11, 83);
             label2.Name = "label2";
             label2.Size = new Size(36, 15);
             label2.TabIndex = 12;
@@ -64,7 +65,7 @@
             // 
             listView1.BackColor = Color.FromArgb(255, 240, 230);
             listView1.Columns.AddRange(new ColumnHeader[] { columnHeader1, columnHeader3, columnHeader4, columnHeader5, columnHeader6 });
-            listView1.Location = new Point(13, 181);
+            listView1.Location = new Point(11, 165);
             listView1.Name = "listView1";
             listView1.Size = new Size(776, 239);
             listView1.TabIndex = 11;
@@ -79,7 +80,7 @@
             // columnHeader3
             // 
             columnHeader3.Text = "Datum";
-            columnHeader3.Width = 80;
+            columnHeader3.Width = 140;
             // 
             // columnHeader4
             // 
@@ -130,17 +131,16 @@
             groupBox1.Controls.Add(radioButton3);
             groupBox1.Controls.Add(radioButton2);
             groupBox1.Controls.Add(radioButton1);
-            groupBox1.Location = new Point(13, 117);
+            groupBox1.Location = new Point(9, 101);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(776, 58);
+            groupBox1.Size = new Size(778, 58);
             groupBox1.TabIndex = 13;
             groupBox1.TabStop = false;
-            groupBox1.Text = "groupBox1";
             // 
             // radioButton5
             // 
             radioButton5.AutoSize = true;
-            radioButton5.Location = new Point(463, 22);
+            radioButton5.Location = new Point(381, 22);
             radioButton5.Name = "radioButton5";
             radioButton5.Size = new Size(54, 19);
             radioButton5.TabIndex = 10;
@@ -151,7 +151,7 @@
             // radioButton4
             // 
             radioButton4.AutoSize = true;
-            radioButton4.Location = new Point(363, 22);
+            radioButton4.Location = new Point(302, 22);
             radioButton4.Name = "radioButton4";
             radioButton4.Size = new Size(73, 19);
             radioButton4.TabIndex = 9;
@@ -162,7 +162,7 @@
             // radioButton3
             // 
             radioButton3.AutoSize = true;
-            radioButton3.Location = new Point(263, 22);
+            radioButton3.Location = new Point(204, 22);
             radioButton3.Name = "radioButton3";
             radioButton3.Size = new Size(92, 19);
             radioButton3.TabIndex = 8;
@@ -173,7 +173,7 @@
             // radioButton2
             // 
             radioButton2.AutoSize = true;
-            radioButton2.Location = new Point(172, 22);
+            radioButton2.Location = new Point(137, 22);
             radioButton2.Name = "radioButton2";
             radioButton2.Size = new Size(61, 19);
             radioButton2.TabIndex = 7;
@@ -184,7 +184,7 @@
             // radioButton1
             // 
             radioButton1.AutoSize = true;
-            radioButton1.Location = new Point(33, 22);
+            radioButton1.Location = new Point(7, 22);
             radioButton1.Name = "radioButton1";
             radioButton1.Size = new Size(124, 19);
             radioButton1.TabIndex = 6;
@@ -217,12 +217,23 @@
             abmeldenToolStripMenuItem.Text = "Abmelden";
             abmeldenToolStripMenuItem.Click += abmeldenToolStripMenuItem_Click;
             // 
+            // button2
+            // 
+            button2.Location = new Point(11, 415);
+            button2.Name = "button2";
+            button2.Size = new Size(75, 23);
+            button2.TabIndex = 15;
+            button2.Text = "Zurück";
+            button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
+            // 
             // BuchungsManager
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(255, 224, 192);
             ClientSize = new Size(800, 450);
+            Controls.Add(button2);
             Controls.Add(menuStrip1);
             Controls.Add(groupBox1);
             Controls.Add(label2);
@@ -263,5 +274,6 @@
         private MenuStrip menuStrip1;
         private ToolStripMenuItem benutzerToolStripMenuItem;
         private ToolStripMenuItem abmeldenToolStripMenuItem;
+        private Button button2;
     }
 }

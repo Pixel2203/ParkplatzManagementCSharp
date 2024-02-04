@@ -48,10 +48,15 @@
             columnHeader6 = new ColumnHeader();
             columnHeader9 = new ColumnHeader();
             label1 = new Label();
+            radioButton1 = new RadioButton();
+            radioButton2 = new RadioButton();
+            panel1 = new Panel();
+            radioButton3 = new RadioButton();
             menuStrip1.SuspendLayout();
             tabControl1.SuspendLayout();
             tabPage1.SuspendLayout();
             tabPage2.SuspendLayout();
+            panel1.SuspendLayout();
             SuspendLayout();
             // 
             // label5
@@ -85,7 +90,7 @@
             // abmeldenToolStripMenuItem
             // 
             abmeldenToolStripMenuItem.Name = "abmeldenToolStripMenuItem";
-            abmeldenToolStripMenuItem.Size = new Size(180, 22);
+            abmeldenToolStripMenuItem.Size = new Size(129, 22);
             abmeldenToolStripMenuItem.Text = "Abmelden";
             abmeldenToolStripMenuItem.Click += abmeldenToolStripMenuItem_Click;
             // 
@@ -141,6 +146,7 @@
             // tabPage2
             // 
             tabPage2.BackColor = Color.FromArgb(255, 224, 192);
+            tabPage2.Controls.Add(panel1);
             tabPage2.Controls.Add(button2);
             tabPage2.Controls.Add(listView2);
             tabPage2.Controls.Add(label1);
@@ -156,9 +162,9 @@
             button2.BackColor = Color.FromArgb(255, 240, 230);
             button2.Location = new Point(8, 265);
             button2.Name = "button2";
-            button2.Size = new Size(75, 23);
+            button2.Size = new Size(142, 23);
             button2.TabIndex = 36;
-            button2.Text = "Refresh";
+            button2.Text = "Buchungen Laden";
             button2.UseVisualStyleBackColor = false;
             button2.Click += button2_Click;
             // 
@@ -206,11 +212,54 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(8, 23);
+            label1.Location = new Point(6, 3);
             label1.Name = "label1";
             label1.Size = new Size(66, 15);
             label1.TabIndex = 0;
             label1.Text = "Dein Konto";
+            // 
+            // radioButton1
+            // 
+            radioButton1.AutoSize = true;
+            radioButton1.Location = new Point(144, 3);
+            radioButton1.Name = "radioButton1";
+            radioButton1.Size = new Size(151, 19);
+            radioButton1.TabIndex = 37;
+            radioButton1.TabStop = true;
+            radioButton1.Text = "Vergangene Buchungen";
+            radioButton1.UseVisualStyleBackColor = true;
+            // 
+            // radioButton2
+            // 
+            radioButton2.AutoSize = true;
+            radioButton2.Location = new Point(316, 3);
+            radioButton2.Name = "radioButton2";
+            radioButton2.Size = new Size(167, 19);
+            radioButton2.TabIndex = 38;
+            radioButton2.TabStop = true;
+            radioButton2.Text = "Bevorstehende Buchungen";
+            radioButton2.UseVisualStyleBackColor = true;
+            // 
+            // panel1
+            // 
+            panel1.Controls.Add(radioButton3);
+            panel1.Controls.Add(radioButton2);
+            panel1.Controls.Add(radioButton1);
+            panel1.Location = new Point(8, 22);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(486, 23);
+            panel1.TabIndex = 39;
+            // 
+            // radioButton3
+            // 
+            radioButton3.AutoSize = true;
+            radioButton3.Location = new Point(3, 3);
+            radioButton3.Name = "radioButton3";
+            radioButton3.Size = new Size(109, 19);
+            radioButton3.TabIndex = 39;
+            radioButton3.TabStop = true;
+            radioButton3.Text = "Alle Buchungen";
+            radioButton3.UseVisualStyleBackColor = true;
             // 
             // ParkplatzOverview
             // 
@@ -234,6 +283,8 @@
             tabPage1.PerformLayout();
             tabPage2.ResumeLayout(false);
             tabPage2.PerformLayout();
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -264,5 +315,9 @@
         private ColumnHeader columnHeader4;
         private Button button2;
         private ColumnHeader columnHeader6;
+        private Panel panel1;
+        private RadioButton radioButton3;
+        private RadioButton radioButton2;
+        private RadioButton radioButton1;
     }
 }
