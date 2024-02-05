@@ -51,14 +51,6 @@ namespace ProjektParkplatzManagement.com
         {
             return bookingManager.getParkingLotData();
         }
-        public FullParkingTicketListResponse getRecentBookingsByLoggedInUser()
-        {
-            if(currentUser == null)
-            {
-                return new FullParkingTicketListResponse("Es ist kein Benutzer angemeldet!", false, null);
-            }
-            return bookingManager.getRecentBookingsByUser(this.currentUser);
-        }
         public FullBookingListResponse getAllBookingsByUserId(int userId)
         {
             return bookingManager.getAllBookingsByUserId(userId);
@@ -101,9 +93,39 @@ namespace ProjektParkplatzManagement.com
         {
             return userManager.updateUser(user);
         }
+        public ResponseObject deleteUserById(int id)
+        {
+            return userManager.deleteUser(id);
+        }
         public FullAdvancedBookingListResponse getAdvancedBookingsByFilter(string filter, string value)
         {
             return bookingManager.getAdvancedBookingByFilter(filter, value);
         }
+
+        public FullParkingTicketListResponse getRecentBookingsByLoggedInUser()
+        {
+            if (currentUser == null)
+            {
+                return new FullParkingTicketListResponse("Es ist kein Benutzer angemeldet!", false, null);
+            }
+            return bookingManager.getPastParkingTicketsByUser(this.currentUser);
+        }
+        public FullParkingTicketListResponse getAllParkingTicketsByLoggedInUser()
+        {
+            if (currentUser == null)
+            {
+                return new FullParkingTicketListResponse("Es ist kein Benutzer angemeldet!", false, null);
+            }
+            return bookingManager.getAllParkingTicketsByUser(this.currentUser);
+        }
+        public FullParkingTicketListResponse getFutureParkingTicketsByLoggedInUser()
+        {
+            if (currentUser == null)
+            {
+                return new FullParkingTicketListResponse("Es ist kein Benutzer angemeldet!", false, null);
+            }
+            return bookingManager.getParkingTicketsByUserInFuture(this.currentUser);
+        }
+
     }
 }

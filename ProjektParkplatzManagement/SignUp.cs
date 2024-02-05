@@ -30,10 +30,6 @@ namespace ProjektParkplatzManagement
 
         private void button1_Click_2(object sender, EventArgs e)
         {
-            //To-Do:
-
-            //Authorized Key > Datenbank
-            //> Anfrage zur Nutzung bereits verwendetem Kennzeichen > Ehefrau...
 
             string prename = textBox3.Text;
             string name = textBox2.Text;
@@ -51,14 +47,15 @@ namespace ProjektParkplatzManagement
             {
                 string fallback = string.IsNullOrEmpty(password) ? userInfoOptional.password : password;
                 user = new User(uid, prename, name, plate, email, penalties, uPermission, fallback);
-            }else
+            }
+            else
             {
                 user = new User(0, prename, name, plate, email, 0, Permissions.DEFAULT, password);
             }
 
             if (isAdminMode)
             {
-                bool fullyValidated = ValidateFormData(prename, name, email, plate,password,passwordRepeated);
+                bool fullyValidated = ValidateFormData(prename, name, email, plate, password, passwordRepeated);
                 if (fullyValidated)
                 {
                     ResponseObject response = Form1.controller.updateUser(user);
@@ -70,7 +67,7 @@ namespace ProjektParkplatzManagement
                 else
                 {
                     bool partlyValidated = ValidateFormData(prename, name, email, plate);
-                    if(textBox5.Text == textBox6.Text && textBox6.Text == string.Empty && partlyValidated)
+                    if (textBox5.Text == textBox6.Text && textBox6.Text == string.Empty && partlyValidated)
                     {
                         ResponseObject response = Form1.controller.updateUser(user);
                         string title = response.worked ? "Erfolgreich geändert!" : "Änderung fehlgeschlagen!";
@@ -82,12 +79,13 @@ namespace ProjektParkplatzManagement
                     MessageBox.Show("Daten ungültig oder unvollständig!", "Ungültige Angaben", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
-            }else
+            }
+            else
             {
                 bool fullyValidated = ValidateFormData(prename, name, email, plate, password, passwordRepeated);
                 if (fullyValidated)
                 {
-                    
+
                     ResponseObject response = Form1.controller.registerUser(user);
                     string title = response.worked ? "Erfolgreich Registriert!" : "Registrierung Fehlgeschlagen!";
                     label9.Text = title;
@@ -230,8 +228,9 @@ namespace ProjektParkplatzManagement
             {
                 label10.Visible = true;
                 comboBox1.Visible = true;
-                comboBox1.SelectedIndex = userInfoOptional.permission==Permissions.ADMIN?1: 0;
+                comboBox1.SelectedIndex = userInfoOptional.permission == Permissions.ADMIN ? 1 : 0;
                 blockUser.Visible = true;
+                button2.Visible = true;
                 label3.Text = "Neues Password";
                 label4.Text = "Neues Password wiederholen";
                 button1.Text = "Speichern";
@@ -245,23 +244,28 @@ namespace ProjektParkplatzManagement
                 textBox2.Text = userInfoOptional.name;
                 textBox4.Text = userInfoOptional.plate;
             }
-            
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
 
         }
 
-        private void button3_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
+
 
         private void button3_Click_1(object sender, EventArgs e)
         {
             this.Close();
         }
 
+        private void button2_Click(object sender, EventArgs e)
+        {
+            DialogResult res = MessageBox.Show(string.Format("Benutzer {0} wirklich löschen?", userInfoOptional.name), "Sicher?" , MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+            if (res == DialogResult.OK)
+            {
+                ResponseObject result = Form1.controller.deleteUserById(userInfoOptional.id);
+                MessageBox.Show(result.message, result.worked ? "Erfolgreich gelöscht!" : "Fehler!", MessageBoxButtons.OK, result.worked ? MessageBoxIcon.Information : MessageBoxIcon.Error);
+                if(result.worked)
+                {
+                    this.Close();
+                }
+            }
+        }
     }
 }

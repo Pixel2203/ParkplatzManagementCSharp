@@ -27,6 +27,9 @@ namespace ProjektParkplatzManagement
             this.label1.Text = parkingLotData.name;
             this.label2.Text = parkingLotData.type.ToString();
             this.label3.Text = parkingLotData.id.ToString();
+
+            // Set current time in Datepicker
+            timepicker.Text = DateTime.Now.ToString(Utils.formatDateWithHoursMinutes);
         }
 
         private void bookButton_Click(object sender, EventArgs e)

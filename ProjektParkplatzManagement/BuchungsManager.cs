@@ -23,7 +23,14 @@ namespace ProjektParkplatzManagement
         private void button1_Click(object sender, EventArgs e)
         {
             string value = textBox1.Text;
+            if (string.IsNullOrEmpty(value))
+            {
+                MessageBox.Show("Keinen Wert angegeben!", "Fehler!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+
+            }
             string column = "";
+            bool isAnyFilterSet = false;
             foreach (Control control in groupBox1.Controls)
             {
                 // Check if the control is a RadioButton
@@ -32,7 +39,7 @@ namespace ProjektParkplatzManagement
                     // Check if the radio button is checked
                     if (radioButton.Checked)
                     {
-
+                        isAnyFilterSet = true;
 
                         string selectedRadioButtonText = radioButton.Text;
                         switch (selectedRadioButtonText)
@@ -65,13 +72,13 @@ namespace ProjektParkplatzManagement
                     }
                 }
             }
-
-            if (string.IsNullOrEmpty(value))
+            if (!isAnyFilterSet)
             {
-                MessageBox.Show("Keinen Wert angegeben!", "Fehler!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Keinen Filter spezifiziert!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
-
             }
+
+
             com.dto.response.FullAdvancedBookingListResponse response = Form1.controller.getAdvancedBookingsByFilter(column, value);
             if (!response.worked)
             {
@@ -97,6 +104,13 @@ namespace ProjektParkplatzManagement
         private void abmeldenToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Form1.controller.logoutUser(this);
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new AdminPanel().ShowDialog();
+            this.Close();
         }
     }
 }

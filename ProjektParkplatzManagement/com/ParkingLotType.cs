@@ -9,9 +9,6 @@ namespace ProjektParkplatzManagement.com
     public enum ParkingLotType
     {
         DEFAULT,
-        EPARKING,
-        /*BIOGAS,
-        PETROL,
-        DIESEL*/
+        EPARKING
     }
 }
