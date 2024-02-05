@@ -8,7 +8,6 @@ namespace ProjektParkplatzManagement
     public partial class ParkplatzOverview : Form
     {
         List<ParkingLotData> parkingLotDatas = new List<ParkingLotData>();
-        List<ParkingTicket> recentBookings = new List<ParkingTicket>();
         public ParkplatzOverview()
         {
             InitializeComponent();

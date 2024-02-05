@@ -36,16 +36,6 @@ namespace ProjektParkplatzManagement
             this.Close();
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void contextMenuStrip1_Opening(object sender, CancelEventArgs e)
-        {
-
-        }
-
         private void abmeldenToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Form1.controller.logoutUser(this);

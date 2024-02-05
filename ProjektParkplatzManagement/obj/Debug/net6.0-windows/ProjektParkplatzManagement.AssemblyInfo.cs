@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ProjektParkplatzManagement")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6b262404a783e4fbb5c1d3bf77e856ded41d4be4")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c19f072cbc5f611db623184860ced48e3397e65f")]
 [assembly: System.Reflection.AssemblyProductAttribute("ProjektParkplatzManagement")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ProjektParkplatzManagement")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

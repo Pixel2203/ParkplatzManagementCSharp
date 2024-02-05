@@ -74,17 +74,6 @@ namespace ProjektParkplatzManagement
             label4.Visible = false;
 
         }
-        private void showError()
-        {
-            label4.Visible = true;
-        }
-
-        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            /*this.Hide();
-            new SignUp().ShowDialog();
-            this.Close();*/
-        }
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             maskedTextBox2.UseSystemPasswordChar = !maskedTextBox2.UseSystemPasswordChar;

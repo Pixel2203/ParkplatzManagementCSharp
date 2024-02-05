@@ -84,7 +84,7 @@ namespace ProjektParkplatzManagement.com
             return this.currentUser;
         }
 
-        public Boolean isValidConnection()
+        public bool isValidConnection()
         {
             return dBManager.isConnected();
         }
