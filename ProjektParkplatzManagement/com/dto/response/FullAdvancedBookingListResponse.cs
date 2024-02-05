@@ -6,16 +6,16 @@ using System.Threading.Tasks;
 
 namespace ProjektParkplatzManagement.com.dto.response
 {
-    public class FullBookingListResponse : ResponseObject, IValueResponse<List<Booking>>
+    public class FullAdvancedBookingListResponse : ResponseObject, IValueResponse<List<AdvancedBooking>>
     { 
-        private readonly List<Booking>? bookings;
+        private readonly List<AdvancedBooking>? bookings;
     
-        public FullBookingListResponse(string message, bool worked, List<Booking>? bookings) : base(message, worked)
+        public FullAdvancedBookingListResponse(string message, bool worked, List<AdvancedBooking>? bookings) : base(message, worked)
         {
             this.bookings = bookings;
         }
 
-        public List<Booking>? getValue()
+        public List<AdvancedBooking>? getValue()
         {
             return this.bookings;
         }

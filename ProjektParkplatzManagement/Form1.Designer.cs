@@ -105,7 +105,6 @@
             linkLabel1.TabIndex = 6;
             linkLabel1.TabStop = true;
             linkLabel1.Text = "Zurücksetzen";
-            linkLabel1.LinkClicked += linkLabel1_LinkClicked;
             // 
             // label3
             // 
