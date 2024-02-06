@@ -12,7 +12,7 @@
       }
     ],
     "additionalProbingPaths": [
-      "C:\\Users\\PlayTics\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\pixel\\.dotnet\\store\\|arch|\\|tfm|",
       "C:\\Users\\PlayTics\\.nuget\\packages"
     ],
     "configProperties": {
