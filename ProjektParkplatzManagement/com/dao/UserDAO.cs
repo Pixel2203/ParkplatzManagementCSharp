@@ -72,7 +72,6 @@ namespace ProjektParkplatzManagement.com.dao
 
         public ResponseObject registerUser(User user)
         {
-            //TODO umwandeln um gegen SQL injection zu schützen
             if(getUserByEmail(user.email) != null)
             {
                 return new ResponseObject("Nutzer mit dieser Email existiert bereits", false);
@@ -104,7 +103,6 @@ namespace ProjektParkplatzManagement.com.dao
 
         public User? getUserByEmail(string email)
         {
-            //TODO sql injection absichern
             string sql = string.Format("SELECT * FROM user WHERE email LIKE '{0}'",email);
             return getUserBySql(sql);
         }
@@ -156,52 +154,5 @@ namespace ProjektParkplatzManagement.com.dao
             MySqlCommand command = new MySqlCommand(sql, connection);
             return command.ExecuteNonQuery() == 1;
         }
-
-        /*
-
-        public void imposePenalty(String plate)
-        {
-            // Get current Penalties
-
-            try
-            {
-                int currentPenalties = getPenaltiesByPlate(plate);
-                String sql = "UPDATE user SET penalties=" + (currentPenalties + 1) + " WHERE plate LIKE '" + plate + "'";
-                Statement statement = dbManager.getConnection().createStatement();
-                statement.execute(sql);
-            }
-            catch (SQLException e)
-            {
-                throw new RuntimeException(e);
-            }
-
-
-        }
-
-
-        public User getUserByEmailAndPlate(String email, String plate)
-        {
-            String sql = "SELECT * FROM user WHERE email LIKE '" + email + "' AND plate LIKE '" + plate + "'";
-            Statement statement = null;
-            return getUserBySql(sql);
-
-        }
-
-
-        public Optional<User> getUserById(int userId)
-        {
-            String sql = "SELECT * FROM user WHERE id=" + userId;
-            User foundUser = getUserBySql(sql);
-            if (foundUser == null)
-            {
-                return Optional.empty();
-            }
-            return Optional.of(foundUser);
-        }
-
-
-
-
-        */
     }
 }

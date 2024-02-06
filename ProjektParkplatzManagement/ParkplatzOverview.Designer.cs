@@ -295,7 +295,6 @@
         private DateTimePicker dateTimePicker1;
         private Label label5;
         private ComboBox comboBox1;
-        private ComboBox comboBox2;
         private MenuStrip menuStrip1;
         private ToolStripMenuItem benutzerToolStripMenuItem;
         private ToolStripMenuItem abmeldenToolStripMenuItem;

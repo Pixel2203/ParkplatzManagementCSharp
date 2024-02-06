@@ -3312,19 +3312,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\pixel\\.nuget\\packages\\": {}
+    "C:\\Users\\PlayTics\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\VSProjects\\ProjektParkplatzManagement\\ProjektParkplatzManagement.csproj",
+      "projectUniqueName": "C:\\Users\\PlayTics\\Source\\Repos\\Pixel2203\\ParkplatzManagementCSharp\\ProjektParkplatzManagement\\ProjektParkplatzManagement.csproj",
       "projectName": "ProjektParkplatzManagement",
-      "projectPath": "D:\\VSProjects\\ProjektParkplatzManagement\\ProjektParkplatzManagement.csproj",
-      "packagesPath": "C:\\Users\\pixel\\.nuget\\packages\\",
-      "outputPath": "D:\\VSProjects\\ProjektParkplatzManagement\\obj\\",
+      "projectPath": "C:\\Users\\PlayTics\\Source\\Repos\\Pixel2203\\ParkplatzManagementCSharp\\ProjektParkplatzManagement\\ProjektParkplatzManagement.csproj",
+      "packagesPath": "C:\\Users\\PlayTics\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\PlayTics\\Source\\Repos\\Pixel2203\\ParkplatzManagementCSharp\\ProjektParkplatzManagement\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\pixel\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\PlayTics\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -3370,24 +3370,6 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "downloadDependencies": [
-          {
-            "name": "Microsoft.AspNetCore.App.Ref",
-            "version": "[6.0.26, 6.0.26]"
-          },
-          {
-            "name": "Microsoft.NETCore.App.Host.win-x64",
-            "version": "[6.0.26, 6.0.26]"
-          },
-          {
-            "name": "Microsoft.NETCore.App.Ref",
-            "version": "[6.0.26, 6.0.26]"
-          },
-          {
-            "name": "Microsoft.WindowsDesktop.App.Ref",
-            "version": "[6.0.26, 6.0.26]"
-          }
-        ],
         "frameworkReferences": {
           "Microsoft.NETCore.App": {
             "privateAssets": "all"

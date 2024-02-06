@@ -221,7 +221,6 @@
         private MenuStrip menuStrip1;
         private ToolStripMenuItem benutzerToolStripMenuItem;
         private ToolStripMenuItem abmeldenToolStripMenuItem;
-        private CheckBox blockUser;
         private ListView listView2;
         private ColumnHeader columnHeader7;
         private ColumnHeader columnHeader6;
