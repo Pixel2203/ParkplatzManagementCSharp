@@ -64,5 +64,11 @@ namespace ProjektParkplatzManagement.com.manager
             string message = worked ? "Benutzerdaten geändert!" : "Konnte Benutzerdaten nicht ändern!";
             return new ResponseObject(message, worked); 
         }
+        public ResponseObject deleteUser(int userId)
+        {
+            bool worked = agent.deleteUserById(userId);
+            string message = worked ? "Benutzer gelöscht!" : "Konnte Benutzer nicht löschen!";
+            return new ResponseObject(message, worked);
+        }
     }   
 }

@@ -12,9 +12,8 @@
       }
     ],
     "additionalProbingPaths": [
-      "C:\\Users\\marvin.kaiser\\.dotnet\\store\\|arch|\\|tfm|",
-      "C:\\Users\\marvin.kaiser\\.nuget\\packages",
-      "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      "C:\\Users\\pixel\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\PlayTics\\.nuget\\packages"
     ],
     "configProperties": {
       "Microsoft.NETCore.DotNetHostPolicy.SetAppPaths": true

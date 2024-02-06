@@ -49,7 +49,7 @@
             button1.TabIndex = 0;
             button1.Text = "Buchungsmanager";
             button1.UseVisualStyleBackColor = false;
-            button1.Click += button1_Click;
+            button1.Click += button1_Click_1;
             // 
             // button2
             // 
@@ -61,24 +61,25 @@
             button2.TabIndex = 1;
             button2.Text = "Benutzermanager";
             button2.UseVisualStyleBackColor = false;
-            button2.Click += button2_Click;
+            button2.Click += button2_Click_1;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
             label1.Location = new Point(69, 40);
             label1.Name = "label1";
-            label1.Size = new Size(76, 15);
+            label1.Size = new Size(101, 21);
             label1.TabIndex = 2;
             label1.Text = "Wilkommen,";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(69, 68);
+            label2.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            label2.Location = new Point(69, 70);
             label2.Name = "label2";
-            label2.Size = new Size(73, 15);
+            label2.Size = new Size(86, 19);
             label2.TabIndex = 3;
             label2.Text = "USER_NAME";
             // 
@@ -105,7 +106,7 @@
             abmeldenToolStripMenuItem.Name = "abmeldenToolStripMenuItem";
             abmeldenToolStripMenuItem.Size = new Size(180, 22);
             abmeldenToolStripMenuItem.Text = "Abmelden";
-            abmeldenToolStripMenuItem.Click += abmeldenToolStripMenuItem_Click;
+            abmeldenToolStripMenuItem.Click += abmeldenToolStripMenuItem_Click_1;
             // 
             // AdminPanel
             // 
@@ -124,7 +125,7 @@
             Name = "AdminPanel";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Admin Dashboard";
-            Load += AdminPanel_Load;
+            Load += AdminPanel_Load_1;
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
             ResumeLayout(false);

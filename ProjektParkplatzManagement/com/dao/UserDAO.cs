@@ -72,7 +72,6 @@ namespace ProjektParkplatzManagement.com.dao
 
         public ResponseObject registerUser(User user)
         {
-            //TODO umwandeln um gegen SQL injection zu schützen
             if(getUserByEmail(user.email) != null)
             {
                 return new ResponseObject("Nutzer mit dieser Email existiert bereits", false);
@@ -104,7 +103,6 @@ namespace ProjektParkplatzManagement.com.dao
 
         public User? getUserByEmail(string email)
         {
-            //TODO sql injection absichern
             string sql = string.Format("SELECT * FROM user WHERE email LIKE '{0}'",email);
             return getUserBySql(sql);
         }
@@ -145,56 +143,16 @@ namespace ProjektParkplatzManagement.com.dao
 
         public bool updateUser(User user)
         {
-            string sql = string.Format("UPDATE user SET prename={0},name={1},email={2},plate={3},penalties={4},password={5},permission={6} WHERE id={7}", user.prename, user.name, user.email, user.plate, user.penalties, user.password, Enum.GetName(user.permission), user.id);
+            string sql = string.Format("UPDATE user SET prename='{0}',name='{1}',email='{2}',plate='{3}',penalties={4},password='{5}',permission='{6}' WHERE id={7}", user.prename, user.name, user.email, user.plate, user.penalties, user.password, Enum.GetName(user.permission), user.id);
             MySqlCommand command = new MySqlCommand(sql, connection);
             return command.ExecuteNonQuery() == 1;
         }
 
-        /*
-
-        public void imposePenalty(String plate)
+        public bool deleteUserById(int userId)
         {
-            // Get current Penalties
-
-            try
-            {
-                int currentPenalties = getPenaltiesByPlate(plate);
-                String sql = "UPDATE user SET penalties=" + (currentPenalties + 1) + " WHERE plate LIKE '" + plate + "'";
-                Statement statement = dbManager.getConnection().createStatement();
-                statement.execute(sql);
-            }
-            catch (SQLException e)
-            {
-                throw new RuntimeException(e);
-            }
-
-
+            string sql = string.Format("DELETE FROM user WHERE id={0}", userId);
+            MySqlCommand command = new MySqlCommand(sql, connection);
+            return command.ExecuteNonQuery() == 1;
         }
-
-
-        public User getUserByEmailAndPlate(String email, String plate)
-        {
-            String sql = "SELECT * FROM user WHERE email LIKE '" + email + "' AND plate LIKE '" + plate + "'";
-            Statement statement = null;
-            return getUserBySql(sql);
-
-        }
-
-
-        public Optional<User> getUserById(int userId)
-        {
-            String sql = "SELECT * FROM user WHERE id=" + userId;
-            User foundUser = getUserBySql(sql);
-            if (foundUser == null)
-            {
-                return Optional.empty();
-            }
-            return Optional.of(foundUser);
-        }
-
-
-
-
-        */
     }
 }

@@ -1,17 +1,7 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection.Metadata;
-using System.Text;
-using System.Threading.Tasks;
-using static System.Windows.Forms.Design.AxImporter;
-using Tweetinvi.Core.Extensions;
+﻿using Tweetinvi.Core.Extensions;
 using ProjektParkplatzManagement.com.dto;
-using static System.Windows.Forms.AxHost;
-using Tweetinvi.Models;
 using MySqlConnector;
-using System.CodeDom;
+
 
 namespace ProjektParkplatzManagement.com.dao
 {
@@ -55,13 +45,14 @@ namespace ProjektParkplatzManagement.com.dao
         public bool getBookingStatusInPeriodBySensorId(int sensorId, long bookingStartTime, long bookingEndTime)
         {
             string sql = string.Format("SELECT COUNT(*) FROM booking WHERE parkinglotId={0} AND ((start >= '{1}' AND start <= '{2}') OR (end >= '{1}' AND end <= '{2}') OR (start <= '{1}' AND end >= '{2}'))", sensorId, Utils.fromMilliseconds(bookingStartTime).ToString(Utils.formatDateWithYearMonthDayHoursMinutes), Utils.fromMilliseconds(bookingEndTime).ToString(Utils.formatDateWithYearMonthDayHoursMinutes));
-            return ((Int64)new MySqlCommand(sql, connection).ExecuteScalar()) > 0;
+            long rows = (long)new MySqlCommand(sql, connection).ExecuteScalar();
+            return rows > 0;
         }
 
         public bool checkParallelBookings(string plate, long plannedBookingStart, long plannedBookingEnd)
         {
             string sql = string.Format("SELECT COUNT(*) FROM booking WHERE plate='{0}' AND ((start >= '{1}' AND start <= '{2}') OR (end >= '{1}' AND end <= '{2}') OR (start <= '{1}' AND end >= '{2}'))", plate, Utils.fromMilliseconds(plannedBookingStart).ToString(Utils.formatDateWithYearMonthDayHoursMinutes), Utils.fromMilliseconds(plannedBookingEnd).ToString(Utils.formatDateWithYearMonthDayHoursMinutes));
-            return ((Int64)new MySqlCommand(sql, connection).ExecuteScalar()) > 0;
+            return ((long)new MySqlCommand(sql, connection).ExecuteScalar()) > 0;
 
         }
 
@@ -69,7 +60,7 @@ namespace ProjektParkplatzManagement.com.dao
         {
             DateTime date = Utils.fromMilliseconds(startDateInMilliseconds);
 
-            string sql = "SELECT * FROM booking WHERE plate LIKE '" + plate + "' AND start LIKE '" + date.ToString() + "%'";
+            string sql = "SELECT * FROM booking WHERE plate LIKE '" + plate + "' AND start LIKE '" + date.ToString() + "%' ORDER BY start desc";
             List<Booking>? bookings = getBookingsBySql(sql);
             if (bookings != null)
             {
@@ -121,7 +112,7 @@ namespace ProjektParkplatzManagement.com.dao
             MySqlDataReader reader = Utils.runCommandWithReader(connection, sql);
             List<ParkingLotData> foundSensors = new List<ParkingLotData>();
             DateTime timeStamp1 = DateTime.Now;
-            DateTime timeStamp2 = DateTime.Now.AddMilliseconds(1800000);
+            DateTime timeStamp2 = DateTime.Now.AddMilliseconds(1800000); // + 30 Minuten da dies die Minimum Buchungsdauer ist
             while (reader.Read())
             {
                 ParkingLotType type = (ParkingLotType)Enum.Parse(typeof(ParkingLotType), reader.GetString("type"));
@@ -141,7 +132,7 @@ namespace ProjektParkplatzManagement.com.dao
                 updatedSensors.Add(parkingLot);
             });
 
-            return foundSensors;
+            return updatedSensors;
         }
 
         private ParkingLotData? getParkingLotDataById(int parkingLotId)
@@ -149,7 +140,7 @@ namespace ProjektParkplatzManagement.com.dao
             DateTime timestamp = DateTime.Now;
             DateTime timestamp2 = DateTime.Now.AddMilliseconds(1800000);
             bool bookable = !getBookingStatusInPeriodBySensorId(parkingLotId, Utils.toMilliseconds(timestamp), Utils.toMilliseconds(timestamp2));
-            String sql = string.Format("SELECT * FROM parkinglot,parkinglottypes WHERE parkinglot.id={0} AND typeId=parkinglottypes.id", parkingLotId);
+            string sql = string.Format("SELECT * FROM parkinglot,parkinglottypes WHERE parkinglot.id={0} AND typeId=parkinglottypes.id", parkingLotId);
             MySqlDataReader reader = Utils.runCommandWithReader(connection, sql);
 
             if (reader.Read())
@@ -168,30 +159,7 @@ namespace ProjektParkplatzManagement.com.dao
             return null;
         }
 
-        public List<ParkingTicket>? getBookingHistoryByUser(User user)
-        {
-            DateTime now = DateTime.Now;
-            List<ParkingTicket> result = new List<ParkingTicket>(); 
-            String sql = string.Format("SELECT parkinglot.name,booking.id,booking.start,booking.end,booking.plate,booking.parkinglotId,parkinglottypes.type FROM booking,user, parkinglot,parkinglottypes WHERE booking.start < '{0}' AND booking.end < '{0}' AND user.id = booking.userId AND user.id = '{1}' AND parkinglottypes.id = parkinglot.typeId", now.ToString(Utils.formatDateWithYearMonthDayHoursMinutes), user.id);
-            MySqlDataReader reader = Utils.runCommandWithReader(connection, sql);
-            if(reader.Read())
-            {
-                ParkingLotType type = (ParkingLotType)Enum.Parse(typeof(ParkingLotType), reader.GetString("type"));
-                ParkingTicket ticket = new ParkingTicket(
-                        reader.GetString("name"),
-                        (int)reader.GetUInt64("id"),
-                        Utils.toMilliseconds(reader.GetDateTime("start")),
-                        Utils.toMilliseconds(reader.GetDateTime("end")),
-                        reader.GetString("plate"),
-                        reader.GetInt32("parkinglotId"),
-                        type);
 
-                result.Add(ticket);
-
-            }
-            reader.Close();
-            return result;
-        }
         public List<Booking>? getAllBookingsByUserId(int userId)
         {
             string sql = string.Format("SELECT * FROM booking WHERE userId = {0}", userId.ToString());
@@ -205,281 +173,65 @@ namespace ProjektParkplatzManagement.com.dao
             command.CommandText = sql;
             return command.ExecuteNonQuery() == 1;
         }
+        public List<AdvancedBooking> getAdvancedBookingsByFilter(string filter, string value)
+        {
+            List<AdvancedBooking> advancedBookings = new List<AdvancedBooking>();
 
-        /*
-       public Optional<List<Booking>> findBookingsByDateAndSensor(int sensorId, long dateInMilliseconds)
-       {
-           Timestamp timestamp = new Timestamp(dateInMilliseconds);
-           String timestampString = timestamp.toString();
-           Date date = new Date(dateInMilliseconds);
-           String dateString = date.toString();
-           String sql = "SELECT * FROM booking WHERE sensorId=" + sensorId +
-                   " AND ((start > '" + timestampString + "' AND start LIKE '" + dateString + "%') " +
-                   " OR (start < '" + timestampString + "' AND end > '" + timestampString + "'))";
-           return getBookingsBySql(sql);
+            string sql = string.Format("SELECT booking.id,booking.start,booking.plate,parkinglot.name,user.email FROM booking,parkinglot,user WHERE booking.parkinglotId = parkinglot.id AND user.id = booking.userId AND {0} LIKE '%{1}%' ORDER BY start desc", filter, value);
+            MySqlDataReader reader = Utils.runCommandWithReader(connection, sql);
 
-       }
+            while (reader.Read())
+            {
+                AdvancedBooking booking = new AdvancedBooking(
+                        reader.GetInt32("id"),
+                        Utils.toMilliseconds(reader.GetDateTime("start")),
+                        reader.GetString("plate"),
+                        reader.GetString("name"),
+                        reader.GetString("email")
+                    );
+                advancedBookings.Add(booking);
+            }
 
-       public Optional<List<Booking>> getBookingsByPlate(String plate)
-       {
-           String sql = "SELECT * FROM booking WHERE plate LIKE '" + plate + "'";
-           return getBookingsBySql(sql);
-       }
+            reader.Close();
+            return advancedBookings;
+        }
+        public List<ParkingTicket>? getBookingHistoryByUser(User user)
+        {
+            String sql = string.Format("SELECT booking.id,parkinglot.name,booking.start,booking.end,parkinglottypes.type,booking.plate,booking.parkinglotId FROM booking,user,parkinglot,parkinglottypes WHERE user.id = booking.userId AND booking.parkinglotId = parkinglot.id AND parkinglottypes.id = parkinglot.typeId AND booking.end < '{0}' AND user.id = {1} ORDER BY start desc", DateTime.Now.ToString(Utils.formatDateWithYearMonthDayHoursMinutes), user.id);
+            return getParkingTicketListBySql(sql);
+        }
+        public List<ParkingTicket>? getAllParkingTicketsByUser(int id)
+        {
+            string sql = string.Format("SELECT booking.id,parkinglot.name,booking.start,booking.end,parkinglottypes.type,booking.plate,booking.parkinglotId FROM booking,user,parkinglot,parkinglottypes WHERE user.id = booking.userId AND booking.parkinglotId = parkinglot.id AND parkinglottypes.id = parkinglot.typeId AND user.id = {0} ORDER BY start desc", id);
+            return getParkingTicketListBySql(sql);
+        }
+        public List<ParkingTicket>? getParkingTicketsByUserInFuture(int id)
+        {
+            string sql = string.Format("SELECT booking.id,parkinglot.name,booking.start,booking.end,parkinglottypes.type,booking.plate,booking.parkinglotId FROM booking,user,parkinglot,parkinglottypes WHERE user.id = booking.userId AND booking.parkinglotId = parkinglot.id AND parkinglottypes.id = parkinglot.typeId AND user.id = {0} AND start > '{1}' ORDER BY start desc", id, DateTime.Now.ToString(Utils.formatDateWithYearMonthDayHoursMinutes));
+            return getParkingTicketListBySql(sql);
+        }
+        private List<ParkingTicket> getParkingTicketListBySql(string sql)
+        {
+            MySqlDataReader reader = Utils.runCommandWithReader(connection, sql);
+            List<ParkingTicket> parkingTickets = new List<ParkingTicket>();
+            while (reader.Read())
+            {
+                ParkingLotType type = (ParkingLotType)Enum.Parse(typeof(ParkingLotType), reader.GetString("type"));
+                ParkingTicket ticket = new ParkingTicket(
+                        reader.GetString("name"),
+                        (int)reader.GetUInt64("id"),
+                        Utils.toMilliseconds(reader.GetDateTime("start")),
+                        Utils.toMilliseconds(reader.GetDateTime("end")),
+                        reader.GetString("plate"),
+                        reader.GetInt32("parkinglotId"),
+                        type);
 
-       public Optional<List<Booking>> getFutureBookingsByPlate(String plate)
-       {
+                parkingTickets.Add(ticket);
 
-           Timestamp now = Timestamp.from(Instant.now());
-           String sql = "SELECT * FROM booking WHERE start > '" + now + "' AND plate LIKE '" + plate + "'";
-           return getBookingsBySql(sql);
-       }
+            }
+            reader.Close();
+            return parkingTickets;
+        }
 
-       
-
-       
-
-
-
-       public Optional<Map<Integer, List<ParkingTicket>>> getAvailableTimesFromStartDate(long startDate, int duration)
-       {
-
-           // Return List :)
-           Map<Integer, List<ParkingTicket>> parkingTicketMap = new HashMap<>();
-
-           // Get Booking
-           Optional<Map<Integer, List<Booking>>> listMap = getBookingsByDateGroupedBySensorId(new Timestamp(startDate));
-           if (listMap.isEmpty())
-           {
-               return Optional.empty();
-           }
-           Map<Integer, List<Booking>> foundBookingsGrouped = listMap.get();
-           // Get Sensors
-
-           Optional<List<SensorData>> optionalSensorDataList = getSensorData();
-           if (optionalSensorDataList.isEmpty())
-           {
-               return Optional.empty();
-           }
-           List<SensorData> sensorList = optionalSensorDataList.get();
-
-           for (SensorData sensor : sensorList)
-           {
-               if (foundBookingsGrouped.get(sensor.id()) == null)
-               {
-                   Optional<List<ParkingTicket>> availableTimes = getRecommendationsByDate(startDate, sensor, List.of(), duration * 1000 * 60);
-                   if (availableTimes.isEmpty())
-                   {
-                       continue;
-                   }
-                   parkingTicketMap.put(
-                           sensor.id(),
-                           availableTimes.get()
-                   );
-                   continue;
-               }
-
-               Optional<List<ParkingTicket>> availableTimes = getRecommendationsByDate(startDate, sensor, foundBookingsGrouped.get(sensor.id()), duration * 1000 * 60);
-               if (availableTimes.isEmpty())
-               {
-                   continue;
-               }
-               parkingTicketMap.put(
-               sensor.id(),
-                       availableTimes.get()
-               );
-           }
-
-           return Optional.of(parkingTicketMap);
-
-       }
-
-       private Optional<Map<Integer, List<Booking>>> getBookingsByDateGroupedBySensorId(Timestamp startTime)
-       {
-           Date startDate = new Date(startTime.getTime());
-           String sql = "SELECT * FROM booking WHERE (start >= '" + startTime + "' AND start LIKE '" + startDate + "%') OR (end >= '" + startTime + "' AND end LIKE '" + startDate + "%')";
-           Optional<List<Booking>> bookings = getBookingsBySql(sql);
-           return bookings.map(bookingList->bookingList
-                   .stream()
-                   .sorted(Comparator.comparing(Booking::startDate))
-                   .collect(Collectors.groupingBy(Booking::sensorId)));
-
-       }
-       public Optional<List<ParkingTicket>> getRecommendationsByDate(long startDate, SensorData sensorData, List<Booking> bookingListWithSameSensorId, int minDuration)
-       {
-           List<ParkingTicket> newList = new ArrayList<>();
-
-           Timestamp lastAvailableTime = new Timestamp(startDate);
-           lastAvailableTime.setHours(23);
-           lastAvailableTime.setMinutes(59);
-           final String sensorName = sensorData.name();
-           if (bookingListWithSameSensorId.isEmpty())
-           {
-               return Optional.of(List.of(
-                       new ParkingTicket(sensorName, 0, startDate, lastAvailableTime.getTime(), null, sensorData.id())
-               ));
-           }
-           for (int i = 0; i <= bookingListWithSameSensorId.size(); i++)
-           {
-               boolean lastElement = i == bookingListWithSameSensorId.size();
-               Timestamp endDate;
-               if (lastElement)
-               {
-                   newList.add(new ParkingTicket(sensorName, 0,
-                           bookingListWithSameSensorId.get(bookingListWithSameSensorId.size() - 1).endDate() + (1000 * 60),
-                           lastAvailableTime.getTime(),
-                           null, sensorData.id())
-                   );
-                   continue;
-               }
-
-               if (bookingListWithSameSensorId.get(i).startDate() - startDate > minDuration)
-               {
-                   // Calc end Time;
-                   endDate = new Timestamp(bookingListWithSameSensorId.get(i).startDate());
-                   //long correctedStartDate = bookingListWithSameSensorId.get(i-1).endDate() == startDate ? startDate + (60*1000) : startDate;
-                   long correctedStartDate = startDate;
-                   if (i > 0)
-                   {
-                       correctedStartDate += 60000;
-                   }
-                   newList.add(new ParkingTicket(sensorName, 0, correctedStartDate, endDate.getTime(), null, sensorData.id()));
-               }
-               startDate = bookingListWithSameSensorId.get(i).endDate();
-
-           }
-           return Optional.of(newList);
-       }
-
-       public Optional<String> updateSensor(int id, int sensorStatus)
-       {
-           String sql = "UPDATE sensor SET status=" + sensorStatus + " WHERE id=" + id;
-           try
-           {
-               Statement statement = dbManager.getConnection().createStatement();
-               statement.execute(sql);
-               statement.close();
-               return Optional.of("MEINE ID: " + id + " Mein Status: " + sensorStatus);
-           }
-           catch (SQLException e)
-           {
-               return Optional.empty();
-           }
-
-       }
-
- 
-
-       public boolean carRemovedFromParkingLot(UserService userService, int sensorId)
-       {
-           Booking booking = getActiveBooking(sensorId);
-           if (booking == null)
-           {
-               return false;
-           }
-           boolean worked = updateBookingEndedStatus(booking.id());
-
-           Timestamp currentTime = Timestamp.from(Instant.now());
-           long timeDifference = (currentTime.getTime() - booking.endDate()) / 1000 / 60;
-           if (timeDifference > 2)
-           {
-               // Mehr als 2 Stunden zu spät
-               userService.imposePenalty(booking.plate());
-           }
-           return worked;
-       }
-
-       public boolean carEnteredParkingLot(int sensorId)
-       {
-           Booking booking = getCurrentBooking(sensorId);
-           if (booking == null)
-           {
-               return false;
-           }
-           return updateBookingStartedStatus(booking.id());
-       }
-       private Booking getCurrentBooking(int sensorId)
-       {
-           Timestamp currentTime = Timestamp.from(Instant.now());
-           String sql = "SELECT * FROM booking WHERE sensorId=" + sensorId + " AND start <= '" + currentTime + "' AND end >= '" + currentTime + "'";
-           return getBooking(sql);
-
-       }
-       private Booking getActiveBooking(int sensorId)
-       {
-           String sql = "SELECT * from booking WHERE sensorId=" + sensorId + " AND entered=1 AND removed=0";
-           return getBooking(sql);
-       }
-
-       private Booking getBooking(String sql)
-       {
-           Optional<List<Booking>> optionalBookings = getBookingsBySql(sql);
-           if (optionalBookings.isEmpty())
-           {
-               return null;
-           }
-           else if (optionalBookings.get().size() > 1 || optionalBookings.get().isEmpty())
-           {
-               // Wäre ein Fehler in der Datenbank (mehrere Fahrzeuge auf einem Parkplatz)
-               return null;
-           }
-           return optionalBookings.get().get(0);
-       }
-
-       private boolean updateBookingEndedStatus(int bookingId)
-       {
-           String sql = "UPDATE booking SET removed=" + 1 + " WHERE id=" + bookingId;
-           try
-           {
-               Statement statement = dbManager.getConnection().createStatement();
-               statement.execute(sql);
-               statement.close();
-               return true;
-           }
-           catch (SQLException e)
-           {
-               return false;
-           }
-       }
-       private boolean updateBookingStartedStatus(int bookingId)
-       {
-           String sql = "UPDATE booking SET entered=" + 1 + ", removed=0 WHERE id=" + bookingId;
-           try
-           {
-               Statement statement = dbManager.getConnection().createStatement();
-               statement.execute(sql);
-               statement.close();
-               return true;
-           }
-           catch (SQLException e)
-           {
-               return false;
-           }
-       }
-
-
-       public List<Booking> getBookingsRunningOut(Timestamp endTime)
-       {
-           Timestamp timeNow = Timestamp.from(Instant.now());
-           String sql = "SELECT * FROM booking WHERE start<= '" + timeNow + "' AND end <= '" + endTime + "' AND reminded=0 AND end > '" + timeNow + "'";
-           Optional<List<Booking>> bookings = getBookingsBySql(sql);
-           return bookings.orElseGet(List::of);
-       }
-
-       public void remindedUser(int id)
-       {
-           String sql = "UPDATE booking SET reminded=1 WHERE id=" + id;
-           try
-           {
-               Statement statement = dbManager.getConnection().createStatement();
-               statement.execute(sql);
-               statement.close();
-           }
-           catch (SQLException ignored)
-           {
-
-           }
-
-       }
-       */
     }
 }

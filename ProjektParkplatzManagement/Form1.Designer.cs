@@ -53,10 +53,10 @@
             button1.Margin = new Padding(3, 2, 3, 2);
             button1.Name = "button1";
             button1.Size = new Size(104, 26);
-            button1.TabIndex = 1;
+            button1.TabIndex = 3;
             button1.Text = "Anmelden";
             button1.UseVisualStyleBackColor = false;
-            button1.Click += button1_Click;
+            button1.Click += button1_Click_1;
             // 
             // textBox1
             // 
@@ -65,16 +65,16 @@
             textBox1.Margin = new Padding(3, 2, 3, 2);
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(252, 23);
-            textBox1.TabIndex = 2;
+            textBox1.TabIndex = 1;
             // 
             // label1
             // 
             label1.AutoSize = true;
             label1.Location = new Point(377, 130);
             label1.Name = "label1";
-            label1.Size = new Size(53, 15);
+            label1.Size = new Size(36, 15);
             label1.TabIndex = 3;
-            label1.Text = "Benutzer";
+            label1.Text = "Email";
             // 
             // label2
             // 
@@ -92,7 +92,7 @@
             maskedTextBox2.Margin = new Padding(3, 2, 3, 2);
             maskedTextBox2.Name = "maskedTextBox2";
             maskedTextBox2.Size = new Size(252, 23);
-            maskedTextBox2.TabIndex = 5;
+            maskedTextBox2.TabIndex = 2;
             // 
             // linkLabel1
             // 
@@ -105,7 +105,6 @@
             linkLabel1.TabIndex = 6;
             linkLabel1.TabStop = true;
             linkLabel1.Text = "Zurücksetzen";
-            linkLabel1.LinkClicked += linkLabel1_LinkClicked;
             // 
             // label3
             // 
@@ -115,7 +114,7 @@
             label3.Location = new Point(89, 265);
             label3.Name = "label3";
             label3.Size = new Size(117, 15);
-            label3.TabIndex = 7;
+            label3.TabIndex = 4;
             label3.Text = "Password vergessen?";
             // 
             // pictureBox1
@@ -161,7 +160,7 @@
             linkLabel2.Location = new Point(380, 286);
             linkLabel2.Name = "linkLabel2";
             linkLabel2.Size = new Size(104, 19);
-            linkLabel2.TabIndex = 12;
+            linkLabel2.TabIndex = 5;
             linkLabel2.TabStop = true;
             linkLabel2.Text = "Konto erstellen";
             linkLabel2.LinkClicked += linkLabel2_LinkClicked;

@@ -118,6 +118,34 @@ namespace ProjektParkplatzManagement
             loadBookings.Enabled = true;
             deleteBooking.Enabled = false;
             listView2.Enabled = false;
+            button1.Enabled = true;
+
+        }
+
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            string selectedEmail = listBox1.Text;
+            foreach (User user in users)
+            {
+                if (user.email.Equals(selectedEmail))
+                {
+                    new SignUp(true, user).ShowDialog();
+                    break;
+                }
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new AdminPanel().ShowDialog();
+            this.Close();
+        }
+
+        private void abmeldenToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            Form1.controller.logoutUser(this);
         }
     }
 }

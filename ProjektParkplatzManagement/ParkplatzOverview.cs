@@ -1,26 +1,13 @@
 ﻿using ProjektParkplatzManagement.com;
 using ProjektParkplatzManagement.com.dto;
 using ProjektParkplatzManagement.com.dto.response;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Diagnostics;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using System.Windows.Forms.VisualStyles;
 
 namespace ProjektParkplatzManagement
 {
 
     public partial class ParkplatzOverview : Form
     {
-        int translatedbookingduration = 0;
         List<ParkingLotData> parkingLotDatas = new List<ParkingLotData>();
-        List<ParkingTicket> recentBookings = new List<ParkingTicket>();
         public ParkplatzOverview()
         {
             InitializeComponent();
@@ -38,7 +25,7 @@ namespace ProjektParkplatzManagement
         {
             ListViewItem item = new ListViewItem(lotData.name);
             item.SubItems.Add(Enum.GetName(lotData.type));
-            item.SubItems.Add(lotData.bookable.ToString());
+            item.SubItems.Add(lotData.bookable ? "Frei" : "Gebucht");
             item.SubItems.Add(lotData.id.ToString());
             listView1.Items.Add(item);
 
@@ -65,28 +52,70 @@ namespace ProjektParkplatzManagement
         private void addBookingItemToListView(ParkingTicket ticket)
         {
             ListViewItem item = new ListViewItem(Utils.fromMilliseconds(ticket.startDate).ToString(Utils.formatDateWithYearMonthDay));
-
+            Parkplatz parkplatz;
+            float parkzeit = ticket.getParkingDuration() / 1000 / 60;
+            if (ticket.type == ParkingLotType.DEFAULT)
+            {
+                parkplatz = new StandartParkplatz(parkzeit);
+            }else
+            {
+                parkplatz = new EParkplatz(parkzeit);
+            }
             item.SubItems.Add((ticket.getParkingDuration() / 1000 / 60).ToString() + " Minuten");
             item.SubItems.Add(ticket.name);
             item.SubItems.Add(Enum.GetName(ticket.type));
             item.SubItems.Add(ticket.plate);
-            item.SubItems.Add("00,00 EUR");
+            item.SubItems.Add(parkplatz.berechneKosten()+" EUR");
             listView2.Items.Add(item);
 
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            if (recentBookings.Count > 0)
+            bool isAnyFilterSet = false;
+            FullParkingTicketListResponse response = null;
+            foreach (Control control in panel1.Controls)
             {
+                if (control is RadioButton radioButton)
+                {
+                    // Check if the radio button is checked
+                    if (radioButton.Checked)
+                    {
+                        isAnyFilterSet = true;
+                        switch (radioButton.Text)
+                        {
+                            case "Vergangene Buchungen":
+                                response = Form1.controller.getRecentBookingsByLoggedInUser();
+                                break;
+                            case "Bevorstehende Buchungen":
+                                response = Form1.controller.getFutureParkingTicketsByLoggedInUser();
+                                break;
+                            default:
+                                response = Form1.controller.getAllParkingTicketsByLoggedInUser();
+                                break;
+                        }
+                        break;
+
+
+                    }
+                }
+            }
+            if (!isAnyFilterSet || response == null)
+            {
+                MessageBox.Show("Keinen Filter spezifiziert!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
-            FullParkingTicketListResponse response = Form1.controller.getRecentBookingsByLoggedInUser();
+
+
+
+
+
             if (!response.worked)
             {
                 MessageBox.Show(response.message, "Fehler!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
+            listView2.Items.Clear();
             response.getValue().ForEach(booking => addBookingItemToListView(booking));
 
         }
